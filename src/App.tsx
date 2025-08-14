@@ -1,10 +1,22 @@
-import { Button } from "@/components/ui/button"
+import { Home } from "lucide-react"
+import { Route, Routes } from "react-router-dom"
+import MainLayout from "./components/MainLayout"
+import About from "./pages/About"
+import Contactus from "./pages/Contactus"
+import NoPage from "./pages/NoPage"
+import Services from "./pages/Services"
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contactus />} />
+        <Route path="services" element={<Services />} />
+        <Route path="*" element={<NoPage />} />
+      </Route>
+    </Routes>
   )
 }
 
