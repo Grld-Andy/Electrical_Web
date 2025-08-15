@@ -17,6 +17,8 @@ const Footer = () => {
             </p>
           </div>
 
+          <div></div>
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-blue-800">Quick Links</h3>
@@ -32,7 +34,7 @@ const Footer = () => {
           </div>
 
           {/* Articles & News */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold mb-4 text-blue-800">Articles & News</h3>
             <div className="space-y-4">
               <article>
@@ -44,7 +46,7 @@ const Footer = () => {
                 <p className="text-sm text-gray-500">March 13, 2023 - No Comments</p>
               </article>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Newsletter */}

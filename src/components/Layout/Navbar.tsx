@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <FaPhone className="text-xs" />
-              <span>24/7 Emergency: (555) 123-4567</span>
+              <span>24/7 Emergency: +233272952311</span>
             </div>
             <div className="hidden md:block">
               <span>Licensed & Insured • Free Estimates</span>
@@ -161,7 +161,7 @@ const Navbar: React.FC = () => {
 
               {/* Emergency Call Button */}
               <Link
-                to="tel:5551234567"
+                to="tel:+233272952311"
                 className="hidden md:flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg pulse-glow"
               >
                 <FaPhone className="text-sm animate-pulse" />
@@ -207,11 +207,11 @@ const Navbar: React.FC = () => {
             {/* Mobile Emergency Button */}
             <div className="pt-4 border-t border-blue-200">
               <Link
-                to="tel:5551234567"
+                to="tel:+233272952311"
                 className="flex items-center justify-center space-x-2 w-full bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 <FaPhone className="text-sm animate-pulse" />
-                <span>Emergency Call: (555) 123-4567</span>
+                <span>Emergency Call: +233272952311</span>
               </Link>
             </div>
           </div>
