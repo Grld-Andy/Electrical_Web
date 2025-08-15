@@ -12,7 +12,7 @@ const AboutUs: React.FC = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="bg-gray-100 w-full">
       {/* Hero Section */}
       <div
         className="bg-cover bg-center h-48 flex items-center justify-center"
@@ -86,7 +86,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* Team Section */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8 bg-white">
         <h2 className="text-2xl font-bold text-center mb-2">Our Team</h2>
         <p className="text-center text-gray-600 mb-8">
           Meet our professional team members who are ever ready and up to the
