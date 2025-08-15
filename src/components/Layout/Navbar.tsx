@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaBolt, FaPhone, FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,9 +27,9 @@ const Navbar: React.FC = () => {
   const NavLink: React.FC<{ to: string; className?: string; children: React.ReactNode; style?: React.CSSProperties }> = ({ 
     to, className, children, style 
   }) => (
-    <a href={to} className={className} style={style}>
+    <Link to={to} className={className} style={style}>
       {children}
-    </a>
+    </Link>
   );
 
   return (
@@ -93,13 +94,13 @@ const Navbar: React.FC = () => {
             <span>Follow us:</span>
             <div className="flex space-x-2">
               {['facebook', 'twitter', 'linkedin'].map((social) => (
-                <a 
+                <Link
                   key={social}
-                  href="#" 
+                  to="#" 
                   className="w-5 h-5 rounded-full bg-blue-700 hover:bg-white hover:text-blue-900 flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                 >
                   <span className="text-xs">f</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -159,13 +160,13 @@ const Navbar: React.FC = () => {
               </button>
 
               {/* Emergency Call Button */}
-              <a 
-                href="tel:5551234567"
+              <Link
+                to="tel:5551234567"
                 className="hidden md:flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg pulse-glow"
               >
                 <FaPhone className="text-sm animate-pulse" />
                 <span className="text-sm">Emergency</span>
-              </a>
+              </Link>
 
               {/* Mobile Menu Button */}
               <button
@@ -205,13 +206,13 @@ const Navbar: React.FC = () => {
             
             {/* Mobile Emergency Button */}
             <div className="pt-4 border-t border-blue-200">
-              <a 
-                href="tel:5551234567"
+              <Link
+                to="tel:5551234567"
                 className="flex items-center justify-center space-x-2 w-full bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 <FaPhone className="text-sm animate-pulse" />
                 <span>Emergency Call: (555) 123-4567</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

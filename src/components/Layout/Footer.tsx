@@ -1,4 +1,5 @@
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,11 +21,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4 text-blue-800">Quick Links</h3>
             <ul className="space-y-2">
-              {['Projects', 'Services', 'Our Team', 'Pricing', 'Blog Archives'].map((link) => (
+              {['Home', 'Projects', 'Services', 'About Us'].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  <Link to="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                     {link}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -68,31 +69,31 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-wrap gap-4 justify-center mb-4 md:mb-0">
             {['Privacy Policy', 'Terms & Conditions', 'Disclaimer', 'Support', 'FAQ'].map((item) => (
-              <a key={item} href="#" className="text-gray-600 hover:text-blue-600 text-sm transition-colors">
+              <Link key={item} to="#" className="text-gray-600 hover:text-blue-600 text-sm transition-colors">
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
           
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-600 hover:text-blue-600">
+            <Link to="#" className="text-gray-600 hover:text-blue-600">
               <FaFacebook size={18} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">
+            </Link>
+            <Link to="#" className="text-gray-600 hover:text-blue-600">
               <FaTwitter size={18} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">
+            </Link>
+            <Link to="#" className="text-gray-600 hover:text-blue-600">
               <FaLinkedin size={18} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">
+            </Link>
+            <Link to="#" className="text-gray-600 hover:text-blue-600">
               <FaInstagram size={18} />
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-6 text-center text-sm text-gray-500">
-          Copyright 2023 © All Right Reserved Design by Rometheme
+          Copyright {new Date().getFullYear()} © All Right Reserved Design by Lymfz Engineering Ltd
         </div>
       </div>
     </footer>
