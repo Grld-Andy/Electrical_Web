@@ -1,45 +1,102 @@
-import React from 'react'
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className='bg-blue-900 p-5'>
-      <div className='grid grid-cols-4 gap-3'>
-        <div className='flex flex-col gap-2'>
-          <div className='flex gap-1'>
-            <img src='/vite.svg'/>
-            <div>
-              <h1>Lymfz</h1>
-              <p>Electrical Company</p>
-            </div>
+    <footer className="bg-gray-100 text-gray-800 w-full py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          {/* Company Info */}
+          <div className="col-span-1 md:col-span-2">
+            <h1 className="text-3xl font-bold text-blue-800">Detroit</h1>
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">Electrical Company</h2>
+            <p className="text-gray-600">
+              Nullam mollis sit amet nibh et ludius. Ut cursus quam in volutpat elementum.
+              Quisque rutrum sit amet arcu.
+            </p>
           </div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, veniam.</div>
-        </div>
-        <div className=''>
-          <h1>Quick Links</h1>
-        </div>
-        <div className=''>
-          <h1>Contacts</h1>
-          <div className='flex gap-2'>
-            <div className='rounded-full bg-white p-1'>
-              <FaFacebook className='text-blue-800 w-[20px] h-[20px]' />
-            </div>
-            <div className='rounded-full bg-white p-1'>
-              <FaTwitter className='text-blue-800 w-[20px] h-[20px]' />
-            </div>
-            <div className='rounded-full bg-white p-1'>
-              <FaInstagram className='text-blue-800 w-[20px] h-[20px]' />
-            </div>
-            <div className='rounded-full bg-white p-1'>
-              <FaYoutube className='text-blue-800 w-[20px] h-[20px]' />
-            </div>
-          </div>
-        </div>
-        <div className=''>1</div>
-      </div>
-      <div className=''></div>
-    </footer>
-  )
-}
 
-export default Footer
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-blue-800">Quick Links</h3>
+            <ul className="space-y-2">
+              {['Projects', 'Services', 'Our Team', 'Pricing', 'Blog Archives'].map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Articles & News */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-blue-800">Articles & News</h3>
+            <div className="space-y-4">
+              <article>
+                <h4 className="font-semibold text-gray-700">Current Conversations: Insights on Electrical System</h4>
+                <p className="text-sm text-gray-500">March 13, 2023 - No Comments</p>
+              </article>
+              <article>
+                <h4 className="font-semibold text-gray-700">SparkWire: Your Source for Electrical News</h4>
+                <p className="text-sm text-gray-500">March 13, 2023 - No Comments</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="mb-12">
+          <h3 className="text-lg font-bold mb-4 text-blue-800">Subscribe for Newsletter</h3>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+            <input 
+              type="email" 
+              placeholder="Your Email" 
+              className="flex-grow px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition-colors whitespace-nowrap">
+              Subscribe Now
+            </button>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-300 my-6"></div>
+
+        {/* Bottom Footer */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-wrap gap-4 justify-center mb-4 md:mb-0">
+            {['Privacy Policy', 'Terms & Conditions', 'Disclaimer', 'Support', 'FAQ'].map((item) => (
+              <a key={item} href="#" className="text-gray-600 hover:text-blue-600 text-sm transition-colors">
+                {item}
+              </a>
+            ))}
+          </div>
+          
+          <div className="flex space-x-4">
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaFacebook size={18} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaTwitter size={18} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaLinkedin size={18} />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-600">
+              <FaInstagram size={18} />
+            </a>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-6 text-center text-sm text-gray-500">
+          Copyright 2023 © All Right Reserved Design by Rometheme
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

@@ -1,0 +1,40 @@
+@keyframes electric-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.05; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-electric-pulse {
+  animation: electric-pulse 2s infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.1; }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
