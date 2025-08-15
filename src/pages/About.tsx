@@ -75,7 +75,7 @@ const AboutUs: React.FC = () => {
           {/* Right Text */}
           <div className="prose lg:prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Welcome to Lymfz Electrical Engineering
+              Welcome to Lymfz
             </h2>
             <p className="text-gray-600 leading-relaxed">
               With over 8 years of dedicated experience in the electrical

@@ -295,7 +295,7 @@ const Home: React.FC = () => {
               About Us
             </span>
             <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-6">
-              Bringing light to your home, 
+              Bringing electricity to your home, 
               <span className="gradient-text block">one wire at a time</span>
             </h1>
             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
