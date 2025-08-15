@@ -64,7 +64,7 @@ const teamMembers = [
     name: "Sarah Wilson",
     role: "Project Manager",
     bio: "Coordinating excellence in every project",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b070?w=300&h=300&fit=crop&crop=face"
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
   },
   {
     name: "David Chen",
@@ -172,8 +172,8 @@ const Home: React.FC = () => {
           <div className="max-w-4xl">
             <div className="animate-slide-in-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Welcome to <span className="gradient-text">Detroit</span>
-                <div className="inline-block ml-4 animate-bounce">
+                Welcome to <span className="gradient-text">Lymfz Engineering Ltd</span>
+                <div className="inline-block ml-4">
                   <FaBolt className="text-yellow-400" />
                 </div>
               </h1>
@@ -535,7 +535,7 @@ const Home: React.FC = () => {
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
                 },
                 {
-                  quote: "Reliable, knowledgeable, and always on time. Detroit Electric has been our go-to for all commercial projects.",
+                  quote: "Reliable, knowledgeable, and always on time. Lymfz Engineering Ltd has been our go-to for all commercial projects.",
                   name: "Sarah Johnson",
                   role: "Business Owner",
                   image: "https://images.unsplash.com/photo-1494790108755-2616b612b070?w=60&h=60&fit=crop&crop=face"
