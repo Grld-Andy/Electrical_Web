@@ -186,7 +186,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu */}
         <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen 
-            ? 'max-h-96 opacity-100' 
+            ? 'max-h-full opacity-100' 
             : 'max-h-0 opacity-0'
         }`}>
           <div className="bg-gradient-to-b from-white to-blue-50 border-t border-blue-100 px-4 py-6 space-y-4">
