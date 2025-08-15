@@ -11,113 +11,185 @@ const AboutUs: React.FC = () => {
     "/team4.webp",
   ];
 
+  const teamMembers = [
+    {
+      name: "Bra. Fii",
+      title: "Lead Electrician",
+      email: "fii.lead@lymfz.com",
+      phone: "+233 456 789 978",
+    },
+    {
+      name: "Jane Doe",
+      title: "Wiring Technician",
+      email: "jane.doe@lymfz.com",
+      phone: "+233 123 456 789",
+    },
+    {
+      name: "John Smith",
+      title: "Service Manager",
+      email: "john.smith@lymfz.com",
+      phone: "+233 987 654 321",
+    },
+    {
+      name: "Emily White",
+      title: "Accountant",
+      email: "emily.white@lymfz.com",
+      phone: "+233 555 123 456",
+    },
+  ];
+
   return (
-    <div className="bg-gray-100 w-full">
+    <div className="bg-white text-gray-800">
       {/* Hero Section */}
       <div
-        className="bg-cover bg-center h-48 flex items-center justify-center"
+        className="bg-cover bg-center h-64 flex items-center justify-center text-white"
         style={{
-          backgroundImage: "url('/aboutbanner.jpg')", // from public
+          backgroundImage: "url('/aboutbanner.jpg')",
         }}
       >
-        <h1 className="text-white text-4xl font-bold">ABOUT US</h1>
+        <div className="bg-black/50 bg-opacity-0 w-full h-full flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold tracking-wide text-shadow-lg">
+            ABOUT US
+          </h1>
+        </div>
       </div>
 
       {/* Breadcrumb */}
-      <div className="max-w-6xl mx-auto py-4 text-gray-600 text-sm">
-        Home <span className="mx-2">/</span> About
+      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-sm text-gray-500">
+        Home <span className="mx-2">/</span>{" "}
+        <span className="font-semibold">About</span>
       </div>
 
       {/* Intro Section */}
-      <div className="max-w-6xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 items-center">
-        {/* Left Image */}
-        <img
-          src={aboutImage}
-          alt="About Electro"
-          className="w-full rounded-lg shadow-lg"
-        />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Image */}
+          <div className="rounded-lg overflow-hidden shadow-2xl">
+            <img
+              src={aboutImage}
+              alt="About Electro"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-        {/* Right Text */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">Welcome to Lymfz</h2>
-          <p className="mb-4 text-gray-700">
-            With over 8 years of experience in the industry, adipiscing elit.
-            Tortor vel posuere viverra, metus malesuada. Dolor consequat eget
-            orci, ac mattis est. Sed ipsum lorem fugiat iaculis molestie.
-          </p>
-          <p className="mb-4 text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor vel
-            posuere viverra, metus malesuada. Dolor consequat eget orci, ac
-            mattis est. Sed ipsum lorem fugiat iaculis molestie.
-          </p>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>Lorem ipsum dolor sit amet consectetur adipiscing elit.</li>
-            <li>8 years experience in the electrical installation industry.</li>
-            <li>Providing top-notch services to our valued customers.</li>
-          </ul>
+          {/* Right Text */}
+          <div className="prose lg:prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Welcome to Lymfz Electrical Engineering
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              With over 8 years of dedicated experience in the electrical
+              engineering industry, Lymfz has established itself as a trusted
+              leader in providing innovative and reliable solutions. Our
+              commitment to excellence and safety is at the core of everything
+              we do.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Our team of certified professionals is equipped with the latest
+              technology and expertise to handle projects of any scale. We
+              pride ourselves on delivering top-notch services that meet the
+              highest industry standards, ensuring the satisfaction and safety
+              of our valued clients.
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-600">
+              <li>
+                Unwavering commitment to safety and quality standards.
+              </li>
+              <li>
+                Over 8 years of proven experience in the electrical industry.
+              </li>
+              <li>
+                Providing cutting-edge and reliable services to all our customers.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       {/* Features Section */}
-      <div className="bg-gray-100 py-8">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
-          <div>
-            <FaListAlt className="mx-auto text-4xl text-blue-600 mb-2" />
-            <h3 className="font-semibold text-lg">Free Estimation</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <div className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              Why Choose Us
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              We are committed to providing the best services in the industry.
             </p>
           </div>
-          <div>
-            <FaClock className="mx-auto text-4xl text-blue-600 mb-2" />
-            <h3 className="font-semibold text-lg">24/7 Available</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-          <div>
-            <FaWallet className="mx-auto text-4xl text-blue-600 mb-2" />
-            <h3 className="font-semibold text-lg">Affordable Prices</h3>
-            <p className="text-gray-600 text-sm mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
+          <div className="grid md:grid-cols-3 gap-10 text-center">
+            <div className="p-8 bg-white rounded-lg shadow-lg">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto mb-4">
+                <FaListAlt size={30} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Free Estimation</h3>
+              <p className="text-gray-600">
+                We provide a comprehensive and transparent estimation for your
+                projects at no cost.
+              </p>
+            </div>
+            <div className="p-8 bg-white rounded-lg shadow-lg">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto mb-4">
+                <FaClock size={30} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">24/7 Availability</h3>
+              <p className="text-gray-600">
+                Our dedicated team is available around the clock to address
+                your electrical emergencies.
+              </p>
+            </div>
+            <div className="p-8 bg-white rounded-lg shadow-lg">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto mb-4">
+                <FaWallet size={30} />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Affordable Prices</h3>
+              <p className="text-gray-600">
+                We offer competitive and fair pricing without compromising on
+                the quality of our work.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Team Section */}
-      <div className=" px-15 py-8 bg-white">
-        <h2 className="text-2xl font-bold text-center mb-2">Our Team</h2>
-        <p className="text-center text-gray-600 mb-8">
-          Meet our professional team members who are ever ready and up to the
-          task of assisting you
-        </p>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {teamImages.map((member, idx) => (
-            <div
-              key={idx}
-              className="bg-white shadow rounded-lg overflow-hidden"
-            >
-              <img
-                src={member}
-                alt={`Team member ${idx + 1}`}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 text-center">
-                <h4 className="font-semibold">Bra. Fii</h4>
-                <p className="text-sm text-gray-500">
-                  {[
-                    "Electrician",
-                    "Wiring Technician",
-                    "Service Manager",
-                    "Accountant",
-                  ][idx]}
-                </p>
-                <p className="text-sm text-gray-500">fii@lymfz.com</p>
-                <p className="text-sm text-gray-500">+233456789978</p>
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-gray-900">
+              Our Professional Team
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Meet the experts who are dedicated to delivering excellence in
+              every project.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              >
+                <img
+                  src={teamImages[idx]}
+                  alt={`Team member ${member.name}`}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-6 text-center">
+                  <h4 className="text-xl font-semibold text-gray-900">
+                    {member.name}
+                  </h4>
+                  <p className="text-md text-blue-600 font-medium">
+                    {member.title}
+                  </p>
+                  <div className="mt-4 text-sm text-gray-600">
+                    <p>{member.email}</p>
+                    <p>{member.phone}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
