@@ -104,7 +104,7 @@ const AboutUs: React.FC = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4 text-center">
-                <h4 className="font-semibold">Jack Wilshere</h4>
+                <h4 className="font-semibold">Bra. Fii</h4>
                 <p className="text-sm text-gray-500">
                   {[
                     "Electrician",
@@ -113,8 +113,8 @@ const AboutUs: React.FC = () => {
                     "Accountant",
                   ][idx]}
                 </p>
-                <p className="text-sm text-gray-500">jack@electro.com</p>
-                <p className="text-sm text-gray-500">+123456789</p>
+                <p className="text-sm text-gray-500">fii@lymfz.com</p>
+                <p className="text-sm text-gray-500">+233456789978</p>
               </div>
             </div>
           ))}
