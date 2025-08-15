@@ -1,7 +1,7 @@
 import MemberCard from '@/components/ui/MemberCard';
 import teamMembers from '@/constants/teamMembers';
 import React, { useState, useEffect } from 'react';
-import { FaBolt, FaHome, FaIndustry, FaLightbulb, FaProjectDiagram, FaCarBattery, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaTools, FaShieldAlt } from 'react-icons/fa';
+import { FaBolt, FaHome, FaIndustry, FaLightbulb, FaProjectDiagram, FaCarBattery, FaTools, FaShieldAlt } from 'react-icons/fa';
 
 // Mock data since we don't have the actual constants files
 const tinyCard = [
