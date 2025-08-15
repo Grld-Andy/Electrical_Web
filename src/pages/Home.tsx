@@ -481,7 +481,7 @@ const Home: React.FC = () => {
                   quote: "Reliable, knowledgeable, and always on time. Lymfz Engineering Ltd has been our go-to for all commercial projects.",
                   name: "Sarah Johnson",
                   role: "Business Owner",
-                  image: "https://images.unsplash.com/photo-1494790108755-2616b612b070?w=60&h=60&fit=crop&crop=face"
+                  image: teamMembers[3].image
                 }
               ].map((testimonial, index) => (
                 <div 
@@ -527,7 +527,7 @@ const Home: React.FC = () => {
                 Don't just take our word for it. Hear from satisfied customers who trust us with their electrical needs.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* <div className="flex flex-col sm:flex-row gap-4">
                 <button className="group flex items-center space-x-3 border-2 border-white rounded-full px-6 py-3 hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105 w-fit">
                   <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-blue-700 group-hover:text-white transition-colors duration-300">
                     <svg
@@ -554,7 +554,7 @@ const Home: React.FC = () => {
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
