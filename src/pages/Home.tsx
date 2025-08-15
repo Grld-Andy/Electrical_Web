@@ -1,3 +1,5 @@
+import MemberCard from '@/components/ui/MemberCard';
+import teamMembers from '@/constants/teamMembers';
 import React, { useState, useEffect } from 'react';
 import { FaBolt, FaHome, FaIndustry, FaLightbulb, FaProjectDiagram, FaCarBattery, FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaTools, FaShieldAlt } from 'react-icons/fa';
 
@@ -50,33 +52,6 @@ const services = [
     icon: <FaProjectDiagram className="text-2xl" />,
     title: "Project Planning",
     description: "Complete electrical project design and management services."
-  }
-];
-
-const teamMembers = [
-  {
-    name: "Mike Johnson",
-    role: "Senior Electrician",
-    bio: "20+ years of electrical expertise",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
-  },
-  {
-    name: "Sarah Wilson",
-    role: "Project Manager",
-    bio: "Coordinating excellence in every project",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
-  },
-  {
-    name: "David Chen",
-    role: "Master Electrician",
-    bio: "Specialized in commercial installations",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
-  },
-  {
-    name: "Lisa Rodriguez",
-    role: "Safety Inspector",
-    bio: "Ensuring compliance and safety standards",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
   }
 ];
 
@@ -466,39 +441,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <div 
-                key={index} 
-                className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
-              >
-                <div className="relative h-72 overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 font-semibold mb-3">{member.role}</p>
-                  <p className="text-gray-600 mb-6 text-sm">{member.bio}</p>
-                  
-                  <div className="flex justify-center space-x-3">
-                    {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, iconIndex) => (
-                      <a 
-                        key={iconIndex}
-                        href="#" 
-                        className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                      >
-                        <Icon size={16} />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <MemberCard member={member} key={index} />
             ))}
           </div>
 

@@ -1,42 +1,11 @@
+import MemberCard from "@/components/ui/MemberCard";
+import teamMembers from "@/constants/teamMembers";
 import React from "react";
 import { FaListAlt, FaClock, FaWallet } from "react-icons/fa"; // Icons for features
 
 const AboutUs: React.FC = () => {
   // Local public image paths
-  const aboutImage = "/about-image.webp"; // in public folder
-  const teamImages = [
-    "/team1.webp", // in public folder
-    "/team2.webp",
-    "/team3.jpg",
-    "/team4.webp",
-  ];
-
-  const teamMembers = [
-    {
-      name: "Bra. Fii",
-      title: "Lead Electrician",
-      email: "fii.lead@lymfz.com",
-      phone: "+233 456 789 978",
-    },
-    {
-      name: "Jane Doe",
-      title: "Wiring Technician",
-      email: "jane.doe@lymfz.com",
-      phone: "+233 123 456 789",
-    },
-    {
-      name: "John Smith",
-      title: "Service Manager",
-      email: "john.smith@lymfz.com",
-      phone: "+233 987 654 321",
-    },
-    {
-      name: "Emily White",
-      title: "Accountant",
-      email: "emily.white@lymfz.com",
-      phone: "+233 555 123 456",
-    },
-  ];
+  const aboutImage = "/about-image.webp";
 
   return (
     <div className="bg-white text-gray-800">
@@ -52,12 +21,6 @@ const AboutUs: React.FC = () => {
             ABOUT US
           </h1>
         </div>
-      </div>
-
-      {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-sm text-gray-500">
-        Home <span className="mx-2">/</span>{" "}
-        <span className="font-semibold">About</span>
       </div>
 
       {/* Intro Section */}
@@ -165,29 +128,9 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, idx) => (
-              <div
-                key={idx}
-                className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-              >
-                <img
-                  src={teamImages[idx]}
-                  alt={`Team member ${member.name}`}
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-6 text-center">
-                  <h4 className="text-xl font-semibold text-gray-900">
-                    {member.name}
-                  </h4>
-                  <p className="text-md text-blue-600 font-medium">
-                    {member.title}
-                  </p>
-                  <div className="mt-4 text-sm text-gray-600">
-                    <p>{member.email}</p>
-                    <p>{member.phone}</p>
-                  </div>
-                </div>
-              </div>
+            
+            {teamMembers.map((member, index) => (
+              <MemberCard member={member} key={index} />
             ))}
           </div>
         </div>
