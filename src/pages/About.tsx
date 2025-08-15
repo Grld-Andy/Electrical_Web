@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTools, FaClock, FaTags } from "react-icons/fa"; // Icons for features
+import { FaListAlt, FaClock, FaWallet } from "react-icons/fa"; // Icons for features
 
 const AboutUs: React.FC = () => {
   // Local public image paths
@@ -62,7 +62,7 @@ const AboutUs: React.FC = () => {
       <div className="bg-gray-100 py-8">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
           <div>
-            <FaTools className="mx-auto text-4xl text-blue-600 mb-2" />
+            <FaListAlt className="mx-auto text-4xl text-blue-600 mb-2" />
             <h3 className="font-semibold text-lg">Free Estimation</h3>
             <p className="text-gray-600 text-sm mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -76,7 +76,7 @@ const AboutUs: React.FC = () => {
             </p>
           </div>
           <div>
-            <FaTags className="mx-auto text-4xl text-blue-600 mb-2" />
+            <FaWallet className="mx-auto text-4xl text-blue-600 mb-2" />
             <h3 className="font-semibold text-lg">Affordable Prices</h3>
             <p className="text-gray-600 text-sm mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
