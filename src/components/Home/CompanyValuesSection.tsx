@@ -101,7 +101,7 @@ const CompanyValuesSection = () => {
                         className="text-gray-200 leading-relaxed space-y-4"
                         variants={itemVariants}
                     >
-                        <p>At Hertz Engineering Limited, safety is not just a requirement—it is a core value. We are committed to ensuring the highest standards of health, safety, and environmental protection across all our operations.</p>
+                        <p>At Hertz Engineering Limited, safety is not just a requirement, it is a core value. We are committed to ensuring the highest standards of health, safety, and environmental protection across all our operations.</p>
                         <p>Our team is trained to prioritize safety at all levels, proactively identifying risks and implementing effective control measures, because we believe that every successful project begins and ends with safety.</p>
                     </motion.div>
                 </div>

@@ -108,13 +108,13 @@ const SmootherHeroSlider = () => {
                     variants={textContainerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="max-w-3xl"
+                    className="max-w-3xl relative left-10"
                 >
                     {slides[slideIndex].title.map((line, i) => (
                         <motion.h1
                             key={i}
                             variants={textItemVariants}
-                            className="text-4xl sm:text-5xl md:text-6xl font-bold font-sans leading-tight tracking-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans leading-tight tracking-tight"
                         >
                             {line}
                         </motion.h1>

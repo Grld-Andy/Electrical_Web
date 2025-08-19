@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaMapMarkerAlt, FaLinkedinIn, FaFacebookF, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', href: '#' },
-  { name: 'About Us', href: '#' },
-  { name: 'Solutions', href: '#' },
-  { name: 'Products & Services', href: '#' },
-  { name: 'Our Projects', href: '#' },
-  { name: 'Leadership', href: '#' },
-  { name: 'Contact Us', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Solutions', href: '/services' },
+  { name: 'Products & Services', href: '/services' },
+  { name: 'Our Projects', href: '/projects' },
+  { name: 'Leadership', href: '/leadership' },
+  { name: 'Contact Us', href: '/contact' },
 ];
 
 const Header = () => {
@@ -26,9 +27,9 @@ const Header = () => {
       {/* Desktop Header */}
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-          <a href="#" title="Lymfz Engineering Ltd">
+          <Link to="#" title="Lymfz Engineering Ltd">
             <img src="./vite.svg" alt="Lymfz Engineering Ltd" className="h-16" />
-          </a>
+          </Link>
           <div className="flex items-center space-x-4">
             <a href="#" className="hover:text-hertz-blue transition-colors"><FaMapMarkerAlt /></a>
             <a href="#" className="hover:text-hertz-blue transition-colors"><FaLinkedinIn /></a>
@@ -41,10 +42,10 @@ const Header = () => {
         </div>
         <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative group">
+            <Link key={link.name} to={link.href} className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative group">
               {link.name}
               <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
