@@ -17,8 +17,8 @@ const Header = () => {
 
   const mobileMenuVariants = {
     hidden: { x: '-100%' },
-    visible: { x: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
-    exit: { x: '-100%', transition: { duration: 0.3, ease: 'easeInOut' } },
+    visible: { x: 0, transition: { duration: 0.3 } },
+    exit: { x: '-100%', transition: { duration: 0.3 } },
   };
 
   return (
