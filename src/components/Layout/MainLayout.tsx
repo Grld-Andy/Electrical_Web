@@ -1,21 +1,17 @@
-import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
+import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const MainLayout = () => {
-  const location = useLocation();
-
-  const showNavbar = location.pathname !== "/";
-
   return (
     <div className="w-full">
-      {showNavbar && <Navbar />}
+      <Header/>
       <div className="min-h-[calc(100vh-80px)]">
-        <Outlet />
+        <Outlet/>
       </div>
-      <Footer />
+      <Footer/>
     </div>
-  );
+  )
 };
 
 export default MainLayout;

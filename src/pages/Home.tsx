@@ -1,4 +1,3 @@
-import Header from '../components/Home/Header';
 import HeroSlider from '../components/Home/HeroSlider';
 import Introduction from '../components/Home/Introduction';
 import InfoCards from '../components/Home/InfoCards';
@@ -12,16 +11,13 @@ import CompanyValuesSection from '../components/Home/CompanyValuesSection';
 const Home: React.FC = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
-      <Header />
-      <main>
-        <HeroSlider />
-        <Introduction />
-        <InfoCards />
-        <CompanyValuesSection />
-        <Partners />
-        <ProjectsCarousel />
-        <Newsletter />
-      </main>
+      <HeroSlider />
+      <Introduction />
+      <InfoCards />
+      <CompanyValuesSection />
+      <Partners />
+      <ProjectsCarousel />
+      <Newsletter />
     </div>
   );
 }

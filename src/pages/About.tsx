@@ -11,7 +11,7 @@ const AboutUs: React.FC = () => {
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
       <div
-        className="bg-cover bg-center h-64 flex items-center justify-center text-white"
+        className="bg-cover bg-center h-[400px] flex items-center justify-center text-white"
         style={{
           backgroundImage: "url('/aboutbanner.jpg')",
         }}
