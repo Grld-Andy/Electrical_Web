@@ -62,14 +62,14 @@ const CompanyValuesSection = () => {
                         className="text-3xl md:text-4xl font-bold text-[#003366] mb-6 border-l-4 border-[#0052a5] pl-4"
                         variants={itemVariants}
                     >
-                        Why Choose Hertz Engineering
+                        Why Choose Lymfz Engineering
                     </motion.h2>
 
                     <motion.p 
                         className="text-base text-gray-700 leading-relaxed"
                         variants={itemVariants}
                     >
-                        Hertz Engineering Limited is a team of highly skilled and experienced professional Chartered Electrical Engineers, Designers, Project Managers, and Power System Consultants. Our passion is providing exceptional Electrical Engineering solutions to our clients.
+                        Lymfz Engineering Limited is a team of highly skilled and experienced professional Chartered Electrical Engineers, Designers, Project Managers, and Power System Consultants. Our passion is providing exceptional Electrical Engineering solutions to our clients.
                     </motion.p>
 
                     <motion.p 
@@ -101,7 +101,7 @@ const CompanyValuesSection = () => {
                         className="text-gray-200 leading-relaxed space-y-4"
                         variants={itemVariants}
                     >
-                        <p>At Hertz Engineering Limited, safety is not just a requirement, it is a core value. We are committed to ensuring the highest standards of health, safety, and environmental protection across all our operations.</p>
+                        <p>At Lymfz Engineering Limited, safety is not just a requirement, it is a core value. We are committed to ensuring the highest standards of health, safety, and environmental protection across all our operations.</p>
                         <p>Our team is trained to prioritize safety at all levels, proactively identifying risks and implementing effective control measures, because we believe that every successful project begins and ends with safety.</p>
                     </motion.div>
                 </div>
