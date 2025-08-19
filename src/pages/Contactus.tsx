@@ -87,8 +87,8 @@ const ContactPage = () => {
                             </ContactInfoCard>
 
                              <ContactInfoCard icon={<Mail className="text-blue-600" />} title="Email Addresses">
-                                <p>info@hertzengineering.com</p>
-                                <p>info.sa@hertzengineering.com</p>
+                                <p>info@lymfzengineering.com</p>
+                                <p>info.sa@lymfzengineering.com</p>
                             </ContactInfoCard>
                             
                              <ContactInfoCard icon={<Globe className="text-blue-600" />} title="Social Media">
@@ -140,7 +140,7 @@ const ContactPage = () => {
                     allowFullScreen
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Hertz Engineering Location"
+                    title="lymfz Engineering Location"
                 ></iframe>
             </section>
         </main>
