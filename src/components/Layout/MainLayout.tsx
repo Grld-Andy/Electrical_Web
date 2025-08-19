@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const MainLayout = () => {
   return (
     <div className="w-full">
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="min-h-[calc(100vh-80px)]">
         <Outlet/>
       </div>
