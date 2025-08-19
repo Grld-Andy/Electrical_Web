@@ -6,6 +6,7 @@ import NoPage from "./pages/NoPage"
 import Services from "./pages/Services"
 import Projects from "./pages/Projects"
 import Home from "./pages/Home"
+import Solutions from "./pages/Solutions"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="contact" element={<Contactus />} />
         <Route path="services" element={<Services />} />
+        <Route path="solutions" element={<Solutions />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
