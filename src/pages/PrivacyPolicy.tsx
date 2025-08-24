@@ -29,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
         </motion.div>
 
         {/* Sections */}
-        <div className="space-y-2">
+        <div className="space-y-">
           {[
             {
               title: "1. Introduction",

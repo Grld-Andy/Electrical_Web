@@ -4,13 +4,13 @@ import { FaMapMarkerAlt, FaLinkedinIn, FaFacebookF, FaEnvelope, FaBars, FaTimes 
 import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Products & Services', href: '/services' },
-  { name: 'Our Projects', href: '/projects' },
-  { name: 'Leadership', href: '/leadership' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: 'Home', to: '/' },
+  { name: 'About Us', to: '/about' },
+  { name: 'Solutions', to: '/solutions' },
+  { name: 'Products & Services', to: '/services' },
+  { name: 'Our Projects', to: '/projects' },
+  { name: 'Leadership', to: '/leadership' },
+  { name: 'Contact Us', to: '/contact' },
 ];
 
 const Header = () => {
@@ -32,42 +32,42 @@ const Header = () => {
           </Link>
           <div className="flex items-center space-x-4">
             {/* Location */}
-            <a
-              href="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
+            <Link
+              to="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaMapMarkerAlt />
-            </a>
+            </Link>
 
             {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/company/lymfz"
+            <Link
+              to="https://www.linkedin.com/company/lymfz"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaLinkedinIn />
-            </a>
+            </L>
 
             {/* Facebook */}
-            <a
-              href="https://www.facebook.com/lymfz"
+            <Link
+              to="https://www.facebook.com/lymfz"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaFacebookF />
-            </a>
+            </L>
 
             {/* Email */}
-            <a
-              href="mailto:info@lymfz.com"
+            <Link
+              to="mailto:info@lymfz.com"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaEnvelope />
-            </a>
+            </L>
           </div>
         </div>
         <div className="container mx-auto px-4">
@@ -77,7 +77,7 @@ const Header = () => {
           {navLinks.map((link) => (
             <Link
               key={link.name}
-              to={link.href}
+              to={link.to}
               className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative group"
             >
               {link.name}
@@ -89,9 +89,9 @@ const Header = () => {
 
       {/* Mobile Header */}
       <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
-        <a href="/" title="Lymfz Engineering Limited">
+        <Link to="/" title="Lymfz Engineering Limited">
           <img src="/logo.png" alt="Lymfz Engineering Limited" className="h-12" />
-        </a>
+        </L>
         <button
           onClick={() => setMobileMenuOpen(true)}
           className="text-white text-3xl"
@@ -134,7 +134,7 @@ const Header = () => {
                   {navLinks.map((link) => (
                     <li key={link.name}>
                       <Link
-                        to={link.href}
+                        to={link.to}
                         className="font-semibold text-lg hover:text-hertz-blue transition-colors block py-2"
                       >
                         {link.name}
