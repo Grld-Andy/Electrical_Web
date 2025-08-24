@@ -114,14 +114,6 @@ const ModernProjectsCarousel = () => {
                                         </div>
                                         <h3 className="mt-4 text-xl font-bold">{project.title}</h3>
                                         <p className="mt-1 text-sm text-gray-300">{project.client}</p>
-                                        
-                                        {/* Interactive Link that appears on hover */}
-                                        <div className="mt-6 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                                            <a href="#" className="inline-flex items-center font-semibold">
-                                                Learn More
-                                                <ArrowRight className="ml-2 h-4 w-4" />
-                                            </a>
-                                        </div>
                                     </div>
                                 </div>
                             </SwiperSlide>

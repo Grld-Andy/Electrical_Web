@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
-import { FaBuilding, FaAward, FaCogs, FaTools, FaShoppingBag, FaArrowRight } from 'react-icons/fa';
+import { FaBuilding, FaAward, FaCogs, FaTools, FaShoppingBag, FaFilePdf, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 // 1. UPDATED TYPE DEFINITIONS
 interface CardData {
@@ -19,53 +20,64 @@ interface CardProps {
 }
 
 // 2. ENRICHED DATA with hover colors
+// 2. ENRICHED DATA with hover colors (UPDATED CONTENT FOR Lymfz)
 const cardData: CardData[] = [
     { 
-      title: "Company Profile For", 
-      highlight: "2025", 
-      description: "Get an in-depth look at our company's mission, vision, and milestones in our official 2025 profile.",
-      buttonText: "Download Profile", 
-      href: "https://hertzengineering.com/wp-content/uploads/Hertz-Engineering-ltd-2025-Company-compressed.pdf",
+      title: "Company", 
+      highlight: "Profile", 
+      description: "Learn more about Lymfz Engineering Ltd, our mission, vision, and track record of delivering quality electrical solutions since 2020.",
+      buttonText: "View Profile", 
+      href: "#", // replace with actual PDF or about page
       icon: <FaBuilding />,
-      hoverColor: "rgba(0, 111, 255, 0.2)" // Hertz Blue
+      hoverColor: "rgba(0, 111, 255, 0.2)" // Blue
     },
     { 
-      title: "Our Acclaimed", 
-      highlight: "Awards", 
-      description: "Explore the recognition we've received for excellence and innovation in the engineering field.",
-      buttonText: "View Awards", 
-      href: "#",
+      title: "Trusted", 
+      highlight: "Clients", 
+      description: "We are proud to have worked with organizations such as AngloGold Ashanti, GIZ Technologies, First Atlantic Bank, and Ghana Manganese Company.",
+      buttonText: "See Clients", 
+      href: "#", 
       icon: <FaAward />,
-      hoverColor: "rgba(252, 211, 77, 0.2)" // Yellow/Gold
+      hoverColor: "rgba(252, 211, 77, 0.2)" // Gold
     },
     { 
-      title: "Integrated", 
-      highlight: "Solutions", 
-      description: "Discover our comprehensive, end-to-end engineering solutions tailored for complex industry demands.",
-      buttonText: "Explore Solutions", 
-      href: "https://hertzengineering.com/solutions/",
-      icon: <FaCogs />,
-      hoverColor: "rgba(5, 150, 105, 0.2)" // Green
-    },
-    { 
-      title: "Unique", 
+      title: "Our", 
       highlight: "Services", 
-      description: "Learn about the specialized services that set us apart, from advanced consultancy to implementation.",
-      buttonText: "See Services", 
-      href: "https://hertzengineering.com/productsandservices",
+      description: "From High & Low Voltage Transmission, MEP, and Consultancy to Solar Systems, Automation, Fiber Optics, and Data Networks, we deliver end-to-end solutions.",
+      buttonText: "View Services", 
+      href: "/services",
       icon: <FaTools />,
       hoverColor: "rgba(239, 68, 68, 0.2)" // Red
     },
     { 
-      title: "Curated", 
+      title: "Key", 
+      highlight: "Projects", 
+      description: "Supplying 11kV RMUs, 33kV auto-reclosers, armored cables, and solar installations, completed successfully for leading clients across Ghana.",
+      buttonText: "See Projects", 
+      href: "/projects",
+      icon: <FaCogs />,
+      hoverColor: "rgba(5, 150, 105, 0.2)" // Green
+    },
+    { 
+      title: "Quality", 
       highlight: "Products", 
-      description: "Browse our selection of high-quality engineering products from world-class partners and suppliers.",
+      description: "High-voltage & low-voltage cables, distribution equipment, surge protection, transformers, RMUs, and other electrical materials and supplies.",
       buttonText: "Browse Products", 
-      href: "https://hertzengineering.com/partneredproducts/",
+      href: "/products",
       icon: <FaShoppingBag />,
       hoverColor: "rgba(139, 92, 246, 0.2)" // Purple
-    }
+    },
+  { 
+    title: "Company", 
+    highlight: "Brochure", 
+    description: "Download our detailed company brochure to explore our services, projects, and solutions in one comprehensive PDF.",
+    buttonText: "Download Brochure", 
+    href: "/brochures/lymfz-brochure.pdf", // replace with actual file path or external link
+    icon: <FaFilePdf />,
+    hoverColor: "rgba(220, 38, 38, 0.2)" // Deep Red
+  }
 ];
+
 
 
 // 3. ANIMATION VARIANTS
@@ -111,7 +123,7 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
             ref={ref}
             variants={cardVariants}
             className={`relative p-8 rounded-2xl bg-white border border-slate-200 
-                        flex flex-col justify-between group
+                        flex flex-col cursor-pointer justify-between group
                         ${isLarge ? 'md:col-span-2 lg:col-span-2' : ''}`}
             onMouseMove={(e) => {
                 const { left, top } = e.currentTarget.getBoundingClientRect();
@@ -146,11 +158,11 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
             </div>
 
             <div className="relative z-10 mt-6">
-                <a href={card.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-slate-800 group/link">
+                <Link to={card.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-slate-800 group/link">
                     <span>{card.buttonText}</span>
                     <FaArrowRight className="transition-transform duration-300 group-hover/link:translate-x-1 text-hertz-blue" />
                     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left duration-300"></span>
-                </a>
+                </Link>
             </div>
         </motion.div>
     );
@@ -183,7 +195,7 @@ const InfoCards: React.FC = () => {
                     variants={containerVariants}
                 >
                     {cardData.map((card, index) => (
-                        <Card key={index} card={card} isLarge={index === 0} />
+                        <Card key={index} card={card} isLarge={index == 0 || index == 3 || index == 4} />
                     ))}
                 </motion.div>
             </div>

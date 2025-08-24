@@ -5,29 +5,60 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
     {
         image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
-        title: ['Electrical Infrastructure: Feasibility', 'Studies, Engineering, Procurement,'],
-        buttonText: 'Our Story',
-        buttonLink: '/our-story'
+        title: [
+            'Lymfz Engineering Ltd',
+            'Reliable Electrical Engineering Solutions',
+        ],
+        buttonText: 'About Us',
+        buttonLink: '/about'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0012.jpg',
-        title: ['High & Medium Voltage Transmission', '& Distribution (T&D) Network and', 'Substation Design'],
+        title: [
+            'High, Medium & Low Voltage',
+            'Transmission, Distribution & Wiring',
+        ],
         buttonText: 'Our Services',
         buttonLink: '/services'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20250626-WA0012.jpg',
-        title: ['LV (Low Voltage) Design', '& Electrical Installation'],
-        buttonText: 'Our Services',
-        buttonLink: '/services'
+        title: [
+            'Electrical Engineering Design &',
+            'Consultancy Services',
+        ],
+        buttonText: 'Our Projects',
+        buttonLink: '/projects'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
-        title: ['Power System', 'Modelling & Studies'],
-        buttonText: 'Our Services',
-        buttonLink: '/services'
+        title: [
+            'Solar, Automation & Fiber Optics',
+            'Smart Energy & Modern Infrastructure',
+        ],
+        buttonText: 'Our Solutions',
+        buttonLink: '/solutions'
+    },
+    {
+        image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
+        title: [
+            'Trusted by Leading Companies',
+            'AngloGold, GIZ, First Atlantic Bank & More',
+        ],
+        buttonText: 'Projects',
+        buttonLink: '/projects'
+    },
+    {
+        image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
+        title: [
+            'Safety Is Our Core Value',
+            'Delivering Quality with Zero Compromise',
+        ],
+        buttonText: '',
+        buttonLink: ''
     },
 ];
+
 
 // Smoother slide and fade variants
 const sliderVariants = {
@@ -81,7 +112,7 @@ const SmootherHeroSlider = () => {
     const slideIndex = page;
 
     return (
-        <div className="relative h-screen min-h-[700px] w-full overflow-hidden">
+        <div className="relative h-screen min-h-[700px] w-full overflow-hidden bg-gray-800">
             <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={page}
@@ -119,13 +150,17 @@ const SmootherHeroSlider = () => {
                             {line}
                         </motion.h1>
                     ))}
-                    <motion.a
-                        href={slides[slideIndex].buttonLink}
-                        variants={textItemVariants}
-                        className="inline-block mt-8 bg-blue-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-                    >
-                        {slides[slideIndex].buttonText}
-                    </motion.a>
+                    {
+                        slides[slideIndex].buttonText && (
+                            <motion.a
+                                href={slides[slideIndex].buttonLink}
+                                variants={textItemVariants}
+                                className="inline-block mt-8 bg-blue-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                            >
+                                {slides[slideIndex].buttonText}
+                            </motion.a>
+                        )
+                    }
                 </motion.div>
             </div>
             

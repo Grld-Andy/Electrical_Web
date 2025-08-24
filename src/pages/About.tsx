@@ -1,145 +1,236 @@
 import MemberCard from "@/components/ui/MemberCard";
+import PageHeader from "@/components/ui/PageHeader";
 import teamMembers from "@/constants/teamMembers";
 import React from "react";
-import { FaListAlt, FaClock, FaWallet } from "react-icons/fa"; // Icons for features
+import { motion, type Variants } from "framer-motion"; // Import motion from framer-motion
 
-const AboutUs: React.FC = () => {
-  // Local public image paths
-  const aboutImage = "/about-image.webp";
+const About: React.FC = () => {
+  // Animation variants for sections to fade in as they appear
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
+  // Staggering animation for list/grid items
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Time delay between each child animating in
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section */}
-      <div
-        className="bg-cover bg-center h-[400px] flex items-center justify-center text-white"
-        style={{
-          backgroundImage: "url('/aboutbanner.jpg')",
-        }}
-      >
-        <div className="bg-black/50 bg-opacity-0 w-full h-full flex items-center justify-center">
-          <h1 className="text-5xl font-extrabold tracking-wide text-shadow-lg">
-            ABOUT US
-          </h1>
-        </div>
-      </div>
+      {/* Hero Section - No animation needed here as it's the first thing seen */}
+      <PageHeader text={"ABOUT US"} />
 
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Image */}
-          <div className="rounded-lg overflow-hidden shadow-2xl">
+          {/* Left Image - Animate from the left */}
+          <motion.div
+            className="rounded-lg overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <img
-              src={aboutImage}
-              alt="About Electro"
+              src="./images/about.jpg"
+              alt="About Lymfz Engineering"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
 
-          {/* Right Text */}
-          <div className="prose lg:prose-lg max-w-none">
+          {/* Right Text - Animate from the right */}
+          <motion.div
+            className="prose lg:prose-lg max-w-none"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Welcome to Lymfz
+              Building Reliable Energy Solutions
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              With over 8 years of dedicated experience in the electrical
-              engineering industry, Lymfz has established itself as a trusted
-              leader in providing innovative and reliable solutions. Our
-              commitment to excellence and safety is at the core of everything
-              we do.
+              Lymfz Engineering Ltd specializes in delivering safe, efficient
+              and innovative electrical solutions. Our team of skilled engineers
+              and technicians combines technical expertise with modern tools to
+              execute projects on time and to the highest standards.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our team of certified professionals is equipped with the latest
-              technology and expertise to handle projects of any scale. We
-              pride ourselves on delivering top-notch services that meet the
-              highest industry standards, ensuring the satisfaction and safety
-              of our valued clients.
+              From residential and commercial installations to complex
+              industrial works, we provide tailored services that keep systems
+              reliable, sustainable, and future-ready.
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-600">
-              <li>
-                Unwavering commitment to safety and quality standards.
-              </li>
-              <li>
-                Over 8 years of proven experience in the electrical industry.
-              </li>
-              <li>
-                Providing cutting-edge and reliable services to all our customers.
-              </li>
-            </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="bg-gray-50 py-20">
+      {/* Services Section */}
+      <motion.div
+        className="bg-gray-50 py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              Why Choose Us
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              We are committed to providing the best services in the industry.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-10 text-center">
-            <div className="p-8 bg-white rounded-lg shadow-lg">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto mb-4">
-                <FaListAlt size={30} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Free Estimation</h3>
-              <p className="text-gray-600">
-                We provide a comprehensive and transparent estimation for your
-                projects at no cost.
-              </p>
-            </div>
-            <div className="p-8 bg-white rounded-lg shadow-lg">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto mb-4">
-                <FaClock size={30} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">24/7 Availability</h3>
-              <p className="text-gray-600">
-                Our dedicated team is available around the clock to address
-                your electrical emergencies.
-              </p>
-            </div>
-            <div className="p-8 bg-white rounded-lg shadow-lg">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto mb-4">
-                <FaWallet size={30} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Affordable Prices</h3>
-              <p className="text-gray-600">
-                We offer competitive and fair pricing without compromising on
-                the quality of our work.
-              </p>
-            </div>
-          </div>
+          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+            Our Services
+          </h2>
+          <motion.ul
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-disc list-inside text-gray-700"
+            variants={containerVariants}
+          >
+            {[
+              "High, Medium & Low Voltage Transmission Works",
+              "Mechanical, Electrical & Plumbing (MEP)",
+              "Electrical Engineering Design & Consultancy",
+              "Supply of Electrical Materials & Equipment",
+              "Instrumentation & Automation",
+              "Solar Power Systems",
+              "Fiber Optic Installations",
+              "Electric Fencing",
+              "Data & Telecommunication Networks",
+              "Air Conditioning & Refrigeration",
+            ].map((service, index) => (
+              <motion.li key={index} variants={itemVariants}>
+                {service}
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Projects Section */}
+      {/* This section remains commented out as in the original file */}
+
+      {/* Products Section */}
+      <motion.div
+        className="bg-gray-50 py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+            What We Supply
+          </h2>
+          <motion.ul
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-disc list-inside text-gray-700"
+            variants={containerVariants}
+          >
+             {[
+              "Lighting & Electrical Fittings",
+              "High & Low Voltage Cables (up to 33kv)",
+              "Instrumentation & Control Cables",
+              "Power Protection & Surge Control Devices",
+              "Distribution & Automation Equipment",
+              "Transformers up to 10MVA, 33KV",
+              "RMUs (11kv & 33KV up to 1000A)",
+            ].map((product, index) => (
+              <motion.li key={index} variants={itemVariants}>
+                {product}
+              </motion.li>
+            ))}
+          </motion.ul>
+        </div>
+      </motion.div>
+
+      {/* Safety Section */}
+      <motion.div
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
+            Safety First
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Safety is at the heart of everything we do. Every project is
+            executed under strict health, safety, and environmental protocols.
+            Our engineers and technicians are trained to minimize risks and
+            maintain compliance with international best practices.
+          </p>
+          <p className="text-lg text-gray-700 mt-4">
+            Because a successful project always begins and ends with safety.
+          </p>
+        </div>
+      </motion.div>
 
       {/* Team Section */}
-      <div className="py-20 bg-white">
+      <div className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={sectionVariants}
+          >
             <h2 className="text-3xl font-extrabold text-gray-900">
               Our Professional Team
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Meet the experts who are dedicated to delivering excellence in
-              every project.
+              Skilled engineers, technicians and managers dedicated to
+              delivering excellence in every project.
             </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
+          </motion.div>
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
             {teamMembers.map((member, index) => (
-              <MemberCard member={member} key={index} />
+              <motion.div key={index} variants={itemVariants}>
+                <MemberCard member={member} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Remarks Section */}
+      <motion.div
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
+            Our Commitment
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            We are committed to quality, reliability, and long-term partnership.
+            By combining expertise with innovation, Lymfz Engineering Ltd
+            delivers solutions that clients can depend on for years to come.
+          </p>
+        </div>
+      </motion.div>
     </div>
   );
 };
 
-export default AboutUs;
-
-
- 
+export default About;

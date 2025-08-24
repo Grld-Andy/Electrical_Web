@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
-  { name: 'Solutions', href: '/services' },
+  { name: 'Solutions', href: '/solutions' },
   { name: 'Products & Services', href: '/services' },
   { name: 'Our Projects', href: '/projects' },
   { name: 'Leadership', href: '/leadership' },
@@ -27,14 +27,47 @@ const Header = () => {
       {/* Desktop Header */}
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-          <Link to="#" title="Lymfz Engineering Ltd">
-            <img src="./vite.svg" alt="Lymfz Engineering Ltd" className="h-16" />
+          <Link to="/" title="Lymfz Engineering Ltd">
+            <img src="./logo.png" alt="Lymfz Engineering Ltd" className="h-16" />
           </Link>
           <div className="flex items-center space-x-4">
-            <a href="#" className="hover:text-hertz-blue transition-colors"><FaMapMarkerAlt /></a>
-            <a href="#" className="hover:text-hertz-blue transition-colors"><FaLinkedinIn /></a>
-            <a href="#" className="hover:text-hertz-blue transition-colors"><FaFacebookF /></a>
-            <a href="#" className="hover:text-hertz-blue transition-colors"><FaEnvelope /></a>
+            {/* Location */}
+            <a
+              href="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hertz-blue transition-colors"
+            >
+              <FaMapMarkerAlt />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/company/lymfz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hertz-blue transition-colors"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/lymfz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-hertz-blue transition-colors"
+            >
+              <FaFacebookF />
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:info@lymfz.com"
+              className="hover:text-hertz-blue transition-colors"
+            >
+              <FaEnvelope />
+            </a>
           </div>
         </div>
         <div className="container mx-auto px-4">
@@ -42,7 +75,11 @@ const Header = () => {
         </div>
         <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8">
           {navLinks.map((link) => (
-            <Link key={link.name} to={link.href} className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative group">
+            <Link
+              key={link.name}
+              to={link.href}
+              className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative group"
+            >
               {link.name}
               <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
@@ -52,8 +89,8 @@ const Header = () => {
 
       {/* Mobile Header */}
       <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
-        <a href="#" title="Lymfz Engineering Limited">
-          <img src="/vite.svg" alt="Lymfz Engineering Limited" className="h-12" />
+        <a href="/" title="Lymfz Engineering Limited">
+          <img src="/logo.png" alt="Lymfz Engineering Limited" className="h-12" />
         </a>
         <button
           onClick={() => setMobileMenuOpen(true)}
@@ -96,7 +133,10 @@ const Header = () => {
                 <ul className="space-y-4">
                   {navLinks.map((link) => (
                     <li key={link.name}>
-                      <a href={link.href} className="font-semibold text-lg hover:text-hertz-blue transition-colors block py-2">
+                      <a
+                        href={link.href}
+                        className="font-semibold text-lg hover:text-hertz-blue transition-colors block py-2"
+                      >
                         {link.name}
                       </a>
                     </li>
