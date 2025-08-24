@@ -32,42 +32,42 @@ const Header = () => {
           </Link>
           <div className="flex items-center space-x-4">
             {/* Location */}
-            <Link
-              to="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
+            <a
+              href="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaMapMarkerAlt />
-            </Link>
+            </a>
 
             {/* LinkedIn */}
-            <Link
-              to="https://www.linkedin.com/company/lymfz"
+            <a
+              href="https://www.linkedin.com/company/lymfz"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaLinkedinIn />
-            </L>
+            </a>
 
             {/* Facebook */}
-            <Link
-              to="https://www.facebook.com/lymfz"
+            <a
+              href="https://www.facebook.com/lymfz"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaFacebookF />
-            </L>
+            </a>
 
             {/* Email */}
-            <Link
-              to="mailto:info@lymfz.com"
+            <a
+              href="mailto:info@lymfz.com"
               className="hover:text-hertz-blue transition-colors"
             >
               <FaEnvelope />
-            </L>
+            </a>
           </div>
         </div>
         <div className="container mx-auto px-4">
@@ -91,7 +91,7 @@ const Header = () => {
       <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
         <Link to="/" title="Lymfz Engineering Limited">
           <img src="/logo.png" alt="Lymfz Engineering Limited" className="h-12" />
-        </L>
+        </Link>
         <button
           onClick={() => setMobileMenuOpen(true)}
           className="text-white text-3xl"
