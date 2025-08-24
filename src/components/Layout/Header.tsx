@@ -28,7 +28,7 @@ const Header = () => {
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <Link to="#" title="Lymfz Engineering Ltd">
-            <img src="./vite.svg" alt="Lymfz Engineering Ltd" className="h-16" />
+            <img src="./logo.png" alt="Lymfz Engineering Ltd" className="h-16" />
           </Link>
           <div className="flex items-center space-x-4">
             <a href="#" className="hover:text-hertz-blue transition-colors"><FaMapMarkerAlt /></a>
@@ -53,7 +53,7 @@ const Header = () => {
       {/* Mobile Header */}
       <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
         <a href="#" title="Lymfz Engineering Limited">
-          <img src="/vite.svg" alt="Lymfz Engineering Limited" className="h-12" />
+          <img src="/logo.png" alt="Lymfz Engineering Limited" className="h-12" />
         </a>
         <button
           onClick={() => setMobileMenuOpen(true)}
