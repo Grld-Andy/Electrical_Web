@@ -11,24 +11,29 @@ import Leadership from "./pages/Leadership"
 import Disclaimer from "./pages/Disclaimer"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
 import TermsConditions from "./pages/TermsConditions"
+import ScrollToTop from "./components/Layout/ScrollToTop"
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="contact" element={<Contactus />} />
-        <Route path="services" element={<Services />} />
-        <Route path="solutions" element={<Solutions />} />
-        <Route path="leadership" element={<Leadership />} />
-        <Route path="disclaimer" element={<Disclaimer />} />
-        <Route path="terms-and-conditions" element={<TermsConditions />} />
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="*" element={<NoPage />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="contact" element={<Contactus />} />
+          <Route path="services" element={<Services />} />
+          <Route path="solutions" element={<Solutions />} />
+          <Route path="leadership" element={<Leadership />} />
+          <Route path="disclaimer" element={<Disclaimer />} />
+          <Route path="terms-and-conditions" element={<TermsConditions />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </>
   )
 }
 
