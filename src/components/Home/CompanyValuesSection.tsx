@@ -47,7 +47,7 @@ const CompanyValuesSection = () => {
 
             {/* Section 1: Why Choose Us (Image | Text) */}
             <ParallaxImage 
-                imageUrl="https://hertzengineering.com/wp-content/uploads/IMG-20241221-WA0035.jpg"
+                imageUrl="https://yourdomain.com/images/lymfz-team.jpg" // replace with real photo
                 className="lg:h-[650px]"
             />
             <motion.div
@@ -59,7 +59,7 @@ const CompanyValuesSection = () => {
             >
                 <div>
                     <motion.h2 
-                        className="text-3xl md:text-4xl font-bold text-[#003366] mb-6 border-l-4 border-[#0052a5] pl-4"
+                        className="text-3xl md:text-4xl font-bold text-gray-700 mb-6 border-l-4 border-gray-700 pl-4"
                         variants={itemVariants}
                     >
                         Why Choose Lymfz Engineering
@@ -69,14 +69,19 @@ const CompanyValuesSection = () => {
                         className="text-base text-gray-700 leading-relaxed"
                         variants={itemVariants}
                     >
-                        Lymfz Engineering Limited is a team of highly skilled and experienced professional Chartered Electrical Engineers, Designers, Project Managers, and Power System Consultants. Our passion is providing exceptional Electrical Engineering solutions to our clients.
+                        Established in 2020, Lymfz Engineering Ltd is a Ghanaian-owned company delivering 
+                        cutting-edge solutions in High, Medium, and Low Voltage Transmission, MEP, 
+                        Instrumentation, Automation, Solar Power Systems, Fiber Optics, and Data Networks.
                     </motion.p>
 
                     <motion.p 
                         className="mt-4 text-base text-gray-700 leading-relaxed"
                         variants={itemVariants}
                     >
-                        We are dedicated to helping businesses achieve their goals by delivering expert technical advice and trusted, cost-effective, reliable, and resilient electrical power engineering solutions.
+                        With a dedicated team of engineers, technicians, and project managers, we have 
+                        successfully delivered projects for clients including GIZ Technologies, AngloGold Ashanti, 
+                        First Atlantic Bank, Ghana Manganese Company, and Solarshop Ghana. 
+                        We are committed to quality, reliability, and timely execution.
                     </motion.p>
                 </div>
             </motion.div>
@@ -94,24 +99,35 @@ const CompanyValuesSection = () => {
                         className="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-white pl-4"
                         variants={itemVariants}
                     >
-                        Safety Is Of The Utmost Importance.
+                        Safety Is Our Utmost Priority
                     </motion.h2>
 
                     <motion.div 
                         className="text-gray-200 leading-relaxed space-y-4"
                         variants={itemVariants}
                     >
-                        <p>At Lymfz Engineering Limited, safety is not just a requirement, it is a core value. We are committed to ensuring the highest standards of health, safety, and environmental protection across all our operations.</p>
-                        <p>Our team is trained to prioritize safety at all levels, proactively identifying risks and implementing effective control measures, because we believe that every successful project begins and ends with safety.</p>
+                        <p>
+                            At Lymfz Engineering Ltd, safety is embedded in our culture. We strictly adhere 
+                            to international health, safety, and environmental (HSE) standards across all projects.
+                        </p>
+                        <p>
+                            From design to implementation, our team identifies risks early, applies proven 
+                            control measures, and ensures compliance with both client and regulatory 
+                            requirements.
+                        </p>
+                        <p>
+                            Because we believe every successful project begins and ends with safety.
+                        </p>
                     </motion.div>
                 </div>
             </motion.div>
             <ParallaxImage 
-                imageUrl="https://hertzengineering.com/wp-content/uploads/powerline.jpg"
+                imageUrl="https://yourdomain.com/images/powerline.jpg" // replace with real photo
                 className="lg:h-[650px] lg:order-4"
             />
         </section>
     );
 };
+
 
 export default CompanyValuesSection;

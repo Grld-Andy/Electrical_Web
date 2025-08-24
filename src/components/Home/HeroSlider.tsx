@@ -5,29 +5,60 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
     {
         image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
-        title: ['Electrical Infrastructure: Feasibility', 'Studies, Engineering, Procurement,'],
-        buttonText: '',
-        buttonLink: ''
+        title: [
+            'Lymfz Engineering Ltd',
+            'Reliable Electrical Engineering Solutions',
+        ],
+        buttonText: 'About Us',
+        buttonLink: '/about'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0012.jpg',
-        title: ['High & Medium Voltage Transmission', '& Distribution (T&D) Network and', 'Substation Design'],
+        title: [
+            'High, Medium & Low Voltage',
+            'Transmission, Distribution & Wiring',
+        ],
         buttonText: 'Our Services',
         buttonLink: '/services'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20250626-WA0012.jpg',
-        title: ['LV (Low Voltage) Design', '& Electrical Installation'],
-        buttonText: 'Our Services',
-        buttonLink: '/services'
+        title: [
+            'Electrical Engineering Design &',
+            'Consultancy Services',
+        ],
+        buttonText: 'Our Projects',
+        buttonLink: '/projects'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
-        title: ['Power System', 'Modelling & Studies'],
-        buttonText: 'Our Services',
-        buttonLink: '/services'
+        title: [
+            'Solar, Automation & Fiber Optics',
+            'Smart Energy & Modern Infrastructure',
+        ],
+        buttonText: 'Our Solutions',
+        buttonLink: '/solutions'
+    },
+    {
+        image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
+        title: [
+            'Trusted by Leading Companies',
+            'AngloGold, GIZ, First Atlantic Bank & More',
+        ],
+        buttonText: 'Projects',
+        buttonLink: '/projects'
+    },
+    {
+        image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
+        title: [
+            'Safety Is Our Core Value',
+            'Delivering Quality with Zero Compromise',
+        ],
+        buttonText: '',
+        buttonLink: ''
     },
 ];
+
 
 // Smoother slide and fade variants
 const sliderVariants = {

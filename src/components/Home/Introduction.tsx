@@ -19,13 +19,18 @@ const Introduction = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="container mx-auto px-6 text-center max-w-4xl">
+      <div className="container mx-auto px-6 text-center max-w-3xl">
         <h2 className="text-3xl md:text-4xl font-black font-heading">
           <span className="text-hertz-blue">Lymfz </span>
           <span className="text-gray-900">Engineering Ltd</span>
         </h2>
         <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
-          Lymfz Engineering Ltd is committed to providing the highest quality products and services exceeding our client’s expectations. We shall continue to expand in equipment and facilities and engage in training and certification programs to further serve customers with utmost excellence and professionalism. As we carry out our mission, we shall be guided by values of integrity, reliability, commitment, and collaboration. Our commitment to service is to: Delivering Results, Exceeding Expectations
+          Founded in 2020, Lymfz Engineering Ltd is a Ghanaian electrical engineering company 
+          delivering solutions across domestic, commercial, and industrial sectors.
+        </p>
+        <p className="mt-4 text-base md:text-lg text-gray-600 leading-relaxed">
+          With integrity, reliability, and a safety-first culture, we ensure every project is 
+          delivered on time and to the highest standards.
         </p>
       </div>
     </motion.section>
