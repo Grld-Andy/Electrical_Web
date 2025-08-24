@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
+import PageHeader from '@/components/ui/PageHeader';
 
-// Data for the leadership team
-// This makes it easy to update the leadership section without changing the code.
 const leadershipTeam = [
   {
     name: 'Collins Kofi Kofitse Badu',
@@ -59,24 +58,11 @@ const profileCardVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-// Main Leadership Page Component
 const Leadership = () => {
   return (
     <div className="bg-gray-50">
-      {/* Hero Section */}
-      <div className="relative bg-cover bg-center py-40" style={{ backgroundImage: 'url(https://hertzengineering.com/wp-content/uploads/2018/12/page-title-2.jpg)' }}>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-        <motion.div
-          className="container mx-auto px-6 relative text-center text-white"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">Hertz Leadership</h1>
-        </motion.div>
-      </div>
+      <PageHeader text='Leadership'/>
 
-      {/* Introduction Section */}
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-left">
           <motion.div
@@ -108,7 +94,6 @@ const Leadership = () => {
         </div>
       </div>
 
-      {/* Leadership Team Grid Section */}
       <div className="bg-white py-24">
         <div className="container mx-auto px-6">
           <motion.div
