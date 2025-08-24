@@ -81,7 +81,7 @@ const SmootherHeroSlider = () => {
     const slideIndex = page;
 
     return (
-        <div className="relative h-screen min-h-[700px] w-full overflow-hidden">
+        <div className="relative h-screen min-h-[700px] w-full overflow-hidden bg-gray-800">
             <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                     key={page}
