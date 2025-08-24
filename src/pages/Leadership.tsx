@@ -3,53 +3,22 @@ import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 
+
 const leadershipTeam = [
   {
-    name: 'Collins Kofi Kofitse Badu',
-    title: 'Executive Vice President, Managing Director',
-    imageUrl: 'https://hertzengineering.com/wp-content/uploads/boss-collins.png',
-    email: 'collins@hertzengineering.com',
-  },
-  {
-    name: 'Hendrik Petrus Jacobus Venter',
-    title: 'Executive President, Project Director',
-    imageUrl: 'https://hertzengineering.com/wp-content/uploads/hendrik.png',
-    email: 'info.sa@hertzengineering.com',
-  },
-  {
-    name: 'Graeme Ramsay',
-    title: 'Executive Vice President, Business Development Manager',
-    imageUrl: 'https://hertzengineering.com/wp-content/uploads/raamsey.png',
-    email: 'info.sl@hertzengineering.com',
-  },
-  {
-    name: 'Gabriel Sarfo',
-    title: 'Executive Vice President, Safety and Sustainability Manager',
-    imageUrl: 'https://hertzengineering.com/wp-content/uploads/sarfo.png',
-    email: 'info.us@hertzengineering.com',
-  },
-  {
-    name: 'Bismark Acheampong',
-    title: 'Executive Vice President, Project Manager',
-    imageUrl: 'https://hertzengineering.com/wp-content/uploads/bismark.jpg',
-    email: 'info.uk@hertzengineering.com',
-  },
-  {
-    name: 'Raymond Kofi Quaicoe',
-    title: 'Executive Vice President, Chief Financial Officer',
-    imageUrl: 'https://hertzengineering.com/wp-content/uploads/ray.png',
-    email: 'info@hertzengineering.com',
+    name: 'Bra. Fii',
+    title: 'Lead Electrician',
+    imageUrl: '/images/team1.webp',
+    email: 'Bra.Fii@lymfz.com',
   },
 ];
 
-// Animation variants for the team grid
+// Animation variants
 const gridVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -61,7 +30,7 @@ const profileCardVariants = {
 const Leadership = () => {
   return (
     <div className="bg-gray-50">
-      <PageHeader text='Leadership'/>
+      <PageHeader text="Leadership" />
 
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-left">
@@ -76,7 +45,10 @@ const Leadership = () => {
               <span className="text-gray-800"> Our Power</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-10">
-              At <span className="font-semibold text-gray-800">Hertz Engineering Ltd</span>, our greatest asset is our people. Our team of dedicated professionals and contractors brings together a rich blend of expertise, culture, and experience to deliver innovative and dependable electrical engineering solutions across industries. We believe in fostering a workplace culture that champions leadership, integrity, and growth.
+              At <span className="font-semibold text-gray-800">Lymfz</span>, our greatest asset is our people. 
+              Our leadership brings together diverse expertise, innovation, and dedication to deliver reliable 
+              and forward-thinking solutions. We foster a culture that values integrity, collaboration, and growth, 
+              empowering our team to drive sustainable success across every project.
             </p>
           </motion.div>
 
@@ -88,7 +60,11 @@ const Leadership = () => {
           >
             <h2 className="text-4xl font-black text-gray-800 mb-4">Our Leadership</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Guided by a visionary leadership team, Hertz Engineering Limited continues to evolve and grow in a dynamic industry. Our leaders bring extensive experience from electrical engineering and related sectors, providing strategic direction and ensuring operational excellence at every level. Their diverse backgrounds and forward-thinking approach keep us at the forefront of innovation and sustainability.
+              Guided by a visionary leadership team, <span className="font-semibold text-gray-800">Lymfz</span> 
+              continues to evolve and grow in a competitive industry. Our leaders bring extensive experience 
+              across engineering, technology, and business management, providing strategic direction and 
+              ensuring operational excellence at every level. Their forward-thinking approach positions us 
+              at the forefront of innovation and sustainability.
             </p>
           </motion.div>
         </div>
