@@ -47,7 +47,7 @@ const CompanyValuesSection = () => {
 
             {/* Section 1: Why Choose Us (Image | Text) */}
             <ParallaxImage 
-                imageUrl="https://yourdomain.com/images/lymfz-team.jpg" // replace with real photo
+                imageUrl="./images/team1.webp"
                 className="lg:h-[650px]"
             />
             <motion.div
@@ -122,7 +122,7 @@ const CompanyValuesSection = () => {
                 </div>
             </motion.div>
             <ParallaxImage 
-                imageUrl="https://yourdomain.com/images/powerline.jpg" // replace with real photo
+                imageUrl="./images/team2.webp"
                 className="lg:h-[650px] lg:order-4"
             />
         </section>

@@ -195,7 +195,7 @@ const InfoCards: React.FC = () => {
                     variants={containerVariants}
                 >
                     {cardData.map((card, index) => (
-                        <Card key={index} card={card} isLarge={index === 0} />
+                        <Card key={index} card={card} isLarge={index == 0 || index == 3 || index == 4} />
                     ))}
                 </motion.div>
             </div>
