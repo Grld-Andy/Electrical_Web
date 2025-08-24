@@ -14,72 +14,108 @@ const serviceData: {
     services: Service[];
   };
 } = {
-  'Power Systems & Electrical Engineering': {
+  'Electrical Engineering & Power Systems': {
     icon: <Zap className="w-6 h-6" />,
     services: [
       {
-        title: 'Power System Studies',
-        description: 'In-depth analysis of power flow, short circuits, and system stability to ensure reliability and efficiency.',
+        title: 'High, Medium & Low Voltage Works',
+        description:
+          'Design, installation, and maintenance of HV/MV/LV transmission and distribution systems including industrial, commercial, and domestic wiring.',
       },
       {
-        title: 'High Voltage Electrical Design',
-        description: 'Complete design services for substations, transmission lines, and high voltage industrial applications.',
+        title: 'Electrical Engineering Design & Consultancy',
+        description:
+          'Professional engineering studies, system designs, and technical consultancy services tailored to client requirements.',
+      },
+      {
+        title: 'Instrumentation & Automation',
+        description:
+          'Integration of instrumentation, control systems, and process automation for improved efficiency and safety.',
       },
     ],
   },
-  'Construction & Installation Services': {
+  'Mechanical, Electrical & Plumbing (MEP)': {
     icon: <HardHat className="w-6 h-6" />,
     services: [
       {
-        title: 'High Voltage Construction',
-        description: 'Expert construction and commissioning of high voltage infrastructure, adhering to the strictest safety standards.',
+        title: 'MEP Engineering',
+        description:
+          'Complete MEP works covering electrical, plumbing, and mechanical installations for industrial and commercial facilities.',
       },
       {
-        title: 'Medium & Low Voltage Installation',
-        description: 'Professional installation and maintenance services for a wide range of electrical systems.',
+        title: 'Air Conditioning & Refrigeration',
+        description:
+          'Installation and servicing of cooling systems for residential, commercial, and industrial applications.',
       },
     ],
   },
-  'Testing, Compliance & Safety': {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    services: [
-      {
-        title: 'Compliance Audits',
-        description: 'Thorough audits to ensure your systems meet all local, national, and international regulatory standards.',
-      },
-      {
-        title: 'Safety System Verification',
-        description: 'Comprehensive testing and verification of safety protocols and emergency systems to protect personnel and assets.',
-      },
-    ],
-  },
-  'Specialized Solutions & Renewable': {
+  'Renewable & Sustainable Solutions': {
     icon: <Sun className="w-6 h-6" />,
     services: [
       {
-        title: 'Renewable Energy Integration',
-        description: 'Designing and implementing solutions to integrate solar, wind, and other renewable sources into the grid.',
+        title: 'Solar Power Systems',
+        description:
+          'Supply and installation of solar systems including solar pumping, hybrid systems, and grid integration solutions.',
       },
       {
-        title: 'Innovative Energy Solutions',
-        description: 'Developing custom, cutting-edge solutions to meet unique and complex energy challenges.',
+        title: 'Energy Efficiency Solutions',
+        description:
+          'Customized energy-saving solutions to reduce costs while promoting sustainability.',
       },
     ],
   },
-  'Process & Control Systems': {
+  'Networking & Security Systems': {
     icon: <Cpu className="w-6 h-6" />,
     services: [
       {
-        title: 'Process Automation Design',
-        description: 'Implementing advanced process and control systems to automate and optimize your industrial operations.',
+        title: 'Fiber Optic & Data Networks',
+        description:
+          'Installation of fiber optic infrastructure, structured cabling, and telecommunication networks.',
       },
       {
-        title: 'System Integration',
-        description: 'Seamlessly integrating new control systems with existing infrastructure to enhance performance.',
+        title: 'Electric Fencing & Security Systems',
+        description:
+          'Design and deployment of security solutions including electric fencing and access control.',
+      },
+    ],
+  },
+  'Products & Electrical Supplies': {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    services: [
+      {
+        title: 'Cables & Accessories',
+        description:
+          'Supply of high and low voltage electrical cables, instrumentation cables, and control wiring solutions.',
+      },
+      {
+        title: 'Power Protection & Distribution Equipment',
+        description:
+          'Transformers, RMUs, surge protection devices, and switchgear for reliable energy distribution.',
+      },
+      {
+        title: 'Lighting & Electrical Fittings',
+        description:
+          'Wide range of quality lighting fixtures and general electrical fittings for industrial and commercial projects.',
+      },
+    ],
+  },
+  'Health, Safety & Quality Assurance': {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    services: [
+      {
+        title: 'Safety First Approach',
+        description:
+          'Strict adherence to health, safety, and environmental standards to protect our people, clients, and communities.',
+      },
+      {
+        title: 'Quality & Timely Delivery',
+        description:
+          'Efficient project execution with guaranteed quality materials and on-time completion.',
       },
     ],
   },
 };
+
 
 const serviceCategories = Object.keys(serviceData);
 
