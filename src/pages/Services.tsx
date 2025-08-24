@@ -199,13 +199,6 @@ const ServicesPage = () => {
                 >
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
                   <p className="text-gray-600 flex-grow">{service.description}</p>
-                  <a
-                    href="#"
-                    className="text-blue-600 font-semibold mt-4 inline-flex items-center group"
-                  >
-                    Learn More
-                    <ChevronRight className="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" />
-                  </a>
                 </motion.div>
               ))}
             </AnimatePresence>

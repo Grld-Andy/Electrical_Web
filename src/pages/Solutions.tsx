@@ -155,10 +155,6 @@ const Solutions = () => {
                   <h3 className="text-gray-900 font-bold text-lg leading-tight flex-1">
                     {solution.title}
                   </h3>
-                  <div className="mt-6 flex items-center text-blue-600 font-semibold">
-                    <span>Learn More</span>
-                    <ArrowRight className="ml-2 w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
                 </div>
               </motion.a>
             ))}

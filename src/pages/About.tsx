@@ -2,29 +2,66 @@ import MemberCard from "@/components/ui/MemberCard";
 import PageHeader from "@/components/ui/PageHeader";
 import teamMembers from "@/constants/teamMembers";
 import React from "react";
+import { motion, type Variants } from "framer-motion"; // Import motion from framer-motion
 
-const AboutUs: React.FC = () => {
-  const aboutImage = "/about-image.webp";
+const About: React.FC = () => {
+  // Animation variants for sections to fade in as they appear
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
+  // Staggering animation for list/grid items
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Time delay between each child animating in
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section */}
+      {/* Hero Section - No animation needed here as it's the first thing seen */}
       <PageHeader text={"ABOUT US"} />
 
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Image */}
-          <div className="rounded-lg overflow-hidden shadow-2xl">
+          {/* Left Image - Animate from the left */}
+          <motion.div
+            className="rounded-lg overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <img
               src="./images/about.jpg"
               alt="About Lymfz Engineering"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
 
-          {/* Right Text */}
-          <div className="prose lg:prose-lg max-w-none">
+          {/* Right Text - Animate from the right */}
+          <motion.div
+            className="prose lg:prose-lg max-w-none"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Building Reliable Energy Solutions
             </h2>
@@ -39,77 +76,90 @@ const AboutUs: React.FC = () => {
               industrial works, we provide tailored services that keep systems
               reliable, sustainable, and future-ready.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Services Section */}
-      <div className="bg-gray-50 py-20">
+      <motion.div
+        className="bg-gray-50 py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
             Our Services
           </h2>
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-disc list-inside text-gray-700">
-            <li>High, Medium & Low Voltage Transmission Works</li>
-            <li>Mechanical, Electrical & Plumbing (MEP)</li>
-            <li>Electrical Engineering Design & Consultancy</li>
-            <li>Supply of Electrical Materials & Equipment</li>
-            <li>Instrumentation & Automation</li>
-            <li>Solar Power Systems</li>
-            <li>Fiber Optic Installations</li>
-            <li>Electric Fencing</li>
-            <li>Data & Telecommunication Networks</li>
-            <li>Air Conditioning & Refrigeration</li>
-          </ul>
+          <motion.ul
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-disc list-inside text-gray-700"
+            variants={containerVariants}
+          >
+            {[
+              "High, Medium & Low Voltage Transmission Works",
+              "Mechanical, Electrical & Plumbing (MEP)",
+              "Electrical Engineering Design & Consultancy",
+              "Supply of Electrical Materials & Equipment",
+              "Instrumentation & Automation",
+              "Solar Power Systems",
+              "Fiber Optic Installations",
+              "Electric Fencing",
+              "Data & Telecommunication Networks",
+              "Air Conditioning & Refrigeration",
+            ].map((service, index) => (
+              <motion.li key={index} variants={itemVariants}>
+                {service}
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
-      </div>
+      </motion.div>
 
       {/* Projects Section */}
-      {/* <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-            Recent Projects
-          </h2>
-          <ul className="space-y-4 text-gray-700">
-            <li>
-              Supply & installation of solar submersible pump
-            </li>
-            <li>
-              Delivery of 11Kv Schneider RMU (3 sets)
-            </li>
-            <li>
-              Supply of 33kv 630A Auto recloser (2 sets)
-            </li>
-            <li>
-              500m of 33kv 3-core x 35mm armoured copper cable
-            </li>
-            <li>
-              600m of 33kv 3-core x 35mm armoured copper cable & materials
-            </li>
-          </ul>
-        </div>
-      </div> */}
+      {/* This section remains commented out as in the original file */}
 
       {/* Products Section */}
-      <div className="bg-gray-50 py-20">
+      <motion.div
+        className="bg-gray-50 py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
             What We Supply
           </h2>
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-disc list-inside text-gray-700">
-            <li>Lighting & Electrical Fittings</li>
-            <li>High & Low Voltage Cables (up to 33kv)</li>
-            <li>Instrumentation & Control Cables</li>
-            <li>Power Protection & Surge Control Devices</li>
-            <li>Distribution & Automation Equipment</li>
-            <li>Transformers up to 10MVA, 33KV</li>
-            <li>RMUs (11kv & 33KV up to 1000A)</li>
-          </ul>
+          <motion.ul
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-disc list-inside text-gray-700"
+            variants={containerVariants}
+          >
+             {[
+              "Lighting & Electrical Fittings",
+              "High & Low Voltage Cables (up to 33kv)",
+              "Instrumentation & Control Cables",
+              "Power Protection & Surge Control Devices",
+              "Distribution & Automation Equipment",
+              "Transformers up to 10MVA, 33KV",
+              "RMUs (11kv & 33KV up to 1000A)",
+            ].map((product, index) => (
+              <motion.li key={index} variants={itemVariants}>
+                {product}
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
-      </div>
+      </motion.div>
 
       {/* Safety Section */}
-      <div className="py-20 bg-white">
+      <motion.div
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
             Safety First
@@ -124,12 +174,18 @@ const AboutUs: React.FC = () => {
             Because a successful project always begins and ends with safety.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Team Section */}
       <div className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={sectionVariants}
+          >
             <h2 className="text-3xl font-extrabold text-gray-900">
               Our Professional Team
             </h2>
@@ -137,17 +193,31 @@ const AboutUs: React.FC = () => {
               Skilled engineers, technicians and managers dedicated to
               delivering excellence in every project.
             </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          </motion.div>
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
             {teamMembers.map((member, index) => (
-              <MemberCard member={member} key={index} />
+              <motion.div key={index} variants={itemVariants}>
+                <MemberCard member={member} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Remarks Section */}
-      <div className="py-20 bg-white">
+      <motion.div
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
             Our Commitment
@@ -158,9 +228,9 @@ const AboutUs: React.FC = () => {
             delivers solutions that clients can depend on for years to come.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-export default AboutUs;
+export default About;

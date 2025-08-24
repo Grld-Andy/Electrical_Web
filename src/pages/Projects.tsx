@@ -6,68 +6,47 @@ import PageHeader from "@/components/ui/PageHeader";
 // --- Types ---
 type Project = {
   title: string;
+  client: string;
   imgSrc: string;
 };
 
 type ProjectData = {
-  [year in "2025" | "2024" | "2023" | "2022"]: Project[];
+  [year in "2025" | "2024" | "2023"]: Project[];
 };
 
+// --- Company Project Data ---
 const projectData: ProjectData = {
   "2025": [
     {
-      title: "Short Circuit & Coordination Study",
-      imgSrc: "https://source.unsplash.com/600x400/?electric,grid",
+      title: "Supply & Installation of Solar Submersible Pump (₵454,000)",
+      client: "Client: GIZ Technologies",
+      imgSrc: "https://source.unsplash.com/600x400/?solar,pump",
     },
   ],
   "2024": [
     {
-      title: "400V Distribution Panel Manufacturing",
-      imgSrc: "https://source.unsplash.com/600x400/?electric,panel",
+      title: "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (500m)",
+      client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+      imgSrc: "https://source.unsplash.com/600x400/?copper,cable",
     },
     {
-      title: "161KV Transmission Line Design",
-      imgSrc: "https://source.unsplash.com/600x400/?power,line",
+      title:
+        "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (600m) + Electrical Materials (₵1,265,466.05)",
+      client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+      imgSrc: "https://source.unsplash.com/600x400/?power,cables",
     },
   ],
   "2023": [
     {
-      title: "Power System Protection Analysis",
-      imgSrc: "https://source.unsplash.com/600x400/?protection,relay",
+      title: "Supply of 3 Sets of 11kV Schneider RMUs (USD 84,987.75)",
+      client: "Client: AngloGold Ashanti Obuasi (via Maalotech Engineering)",
+      imgSrc: "https://source.unsplash.com/600x400/?electrical,substation",
     },
     {
-      title: "Substation Electrical Design",
-      imgSrc: "https://source.unsplash.com/600x400/?substation,electrical",
-    },
-    {
-      title: "34.5KV Power Line Construction",
-      imgSrc: "https://source.unsplash.com/600x400/?construction,power",
-    },
-  ],
-  "2022": [
-    {
-      title: "Integrated Waste Management Facility",
-      imgSrc: "https://source.unsplash.com/600x400/?waste,management",
-    },
-    {
-      title: "Satellite Earth Station Power Systems",
-      imgSrc: "https://source.unsplash.com/600x400/?satellite,power",
-    },
-    {
-      title: "Kumasi Medical Services Infrastructure",
-      imgSrc: "https://source.unsplash.com/600x400/?hospital,engineering",
-    },
-    {
-      title: "Asante Gold Corporation Electricals",
-      imgSrc: "https://source.unsplash.com/600x400/?mining,electric",
-    },
-    {
-      title: "Adamus Resources Power Audit",
-      imgSrc: "https://source.unsplash.com/600x400/?audit,power",
-    },
-    {
-      title: "Chirano Gold Mines Substation",
-      imgSrc: "https://source.unsplash.com/600x400/?goldmine,substation",
+      title:
+        "Supply of 2 Sets of 33kV 630A Auto Reclosers (₵785,700.00)",
+      client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+      imgSrc: "https://source.unsplash.com/600x400/?electrical,grid",
     },
   ],
 };
@@ -89,13 +68,13 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }, // easeOut cubic
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
   exit: {
     opacity: 0,
     y: -30,
     scale: 0.95,
-    transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }, // easeIn cubic
+    transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
   },
 };
 
@@ -106,7 +85,7 @@ const Projects: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <PageHeader text='Our Projects'/>
+      <PageHeader text="Our Projects" />
 
       {/* Main Content Area */}
       <div className="container mx-auto px-6 py-20">
@@ -165,9 +144,10 @@ const Projects: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-white text-xl font-bold leading-tight">
+                  <h3 className="text-white text-lg font-bold leading-tight">
                     {project.title}
                   </h3>
+                  <p className="text-gray-200 text-sm mt-1">{project.client}</p>
                 </div>
               </motion.div>
             ))}
