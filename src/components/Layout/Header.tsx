@@ -133,12 +133,12 @@ const Header = () => {
                 <ul className="space-y-4">
                   {navLinks.map((link) => (
                     <li key={link.name}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="font-semibold text-lg hover:text-hertz-blue transition-colors block py-2"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
