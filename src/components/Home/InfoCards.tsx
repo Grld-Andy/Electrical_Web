@@ -21,8 +21,8 @@ interface CardProps {
 // 2. ENRICHED DATA with hover colors
 const cardData: CardData[] = [
     { 
-      title: "Company Profile For", 
-      highlight: "2025", 
+      title: "Company Profile", 
+      highlight: "", 
       description: "Get an in-depth look at our company's mission, vision, and milestones in our official 2025 profile.",
       buttonText: "Download Profile", 
       href: "https://hertzengineering.com/wp-content/uploads/Hertz-Engineering-ltd-2025-Company-compressed.pdf",

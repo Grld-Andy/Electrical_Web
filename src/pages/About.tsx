@@ -1,4 +1,5 @@
 import MemberCard from "@/components/ui/MemberCard";
+import PageHeader from "@/components/ui/PageHeader";
 import teamMembers from "@/constants/teamMembers";
 import React from "react";
 import { FaListAlt, FaClock, FaWallet } from "react-icons/fa"; // Icons for features
@@ -10,18 +11,7 @@ const AboutUs: React.FC = () => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <div
-        className="bg-cover bg-center h-[400px] flex items-center justify-center text-white"
-        style={{
-          backgroundImage: "url('/aboutbanner.jpg')",
-        }}
-      >
-        <div className="bg-black/50 bg-opacity-0 w-full h-full flex items-center justify-center">
-          <h1 className="text-5xl font-extrabold tracking-wide text-shadow-lg">
-            ABOUT US
-          </h1>
-        </div>
-      </div>
+      <PageHeader text={'ABOUT US'} />
 
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

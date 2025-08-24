@@ -6,8 +6,8 @@ const slides = [
     {
         image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
         title: ['Electrical Infrastructure: Feasibility', 'Studies, Engineering, Procurement,'],
-        buttonText: 'Our Story',
-        buttonLink: '/our-story'
+        buttonText: '',
+        buttonLink: ''
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0012.jpg',
@@ -119,13 +119,17 @@ const SmootherHeroSlider = () => {
                             {line}
                         </motion.h1>
                     ))}
-                    <motion.a
-                        href={slides[slideIndex].buttonLink}
-                        variants={textItemVariants}
-                        className="inline-block mt-8 bg-blue-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-                    >
-                        {slides[slideIndex].buttonText}
-                    </motion.a>
+                    {
+                        slides[slideIndex].buttonText && (
+                            <motion.a
+                                href={slides[slideIndex].buttonLink}
+                                variants={textItemVariants}
+                                className="inline-block mt-8 bg-blue-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                            >
+                                {slides[slideIndex].buttonText}
+                            </motion.a>
+                        )
+                    }
                 </motion.div>
             </div>
             

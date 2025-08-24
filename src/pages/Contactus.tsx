@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Globe, Linkedin, Facebook } from 'lucide-react';
+import PageHeader from '@/components/ui/PageHeader';
 
 // Reusable component for contact information cards
 interface ContactInfoCardProps {
@@ -47,20 +48,7 @@ const ContactPage = () => {
     return (
         <main>
             {/* --- Hero Section --- */}
-            <section 
-                className="h-80 bg-cover bg-center text-white flex items-center justify-center"
-                style={{ backgroundImage: `linear-gradient(rgba(0, 40, 85, 0.7), rgba(0, 40, 85, 0.7)), url('https://images.unsplash.com/photo-1581092916376-222c2a483a91?q=80&w=2940&auto=format&fit=crop')` }}
-            >
-                <motion.div 
-                    className="text-center"
-                    initial={{ opacity: 0, y: -30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h1 className="text-4xl md:text-6xl font-extrabold">Get in Touch</h1>
-                    <p className="mt-4 text-lg text-gray-200">We're here to help and answer any question you might have.</p>
-                </motion.div>
-            </section>
+            <PageHeader text={'CONTACT US'} />
 
             {/* --- Main Content Section --- */}
             <section className="py-20 md:py-28 bg-white">
