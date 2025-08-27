@@ -13,12 +13,46 @@ const navLinks = [
   { name: 'Contact Us', to: '/contact' },
 ];
 
-// Dropdown items for hover (can match your sidebar/group headers)
 const dropdownData: Record<string, string[]> = {
-  'Products, Services & Solutions': ['Services', 'Products', 'Solutions'],
-  'Our Projects': ['Ongoing Projects', 'Completed Projects'],
-  'About Us': ['Company Overview', 'Mission & Vision', 'Careers'],
+  'Home': [
+    'Engineering Projects',
+    'Design, Implementation & Consultancy',
+    'Our Projects',
+    'Company Profile',
+    'Company Brochure',
+    'Engineering Team',
+    'Safety First',
+    'Our Valued Partners',
+  ],
+  'Products, Services & Solutions': [
+    'Services',
+    'Products',
+    'Solutions',
+  ],
+  'Our Projects': [
+    'Project Showcase',
+  ],
+  'Leadership': [
+    'Led by Expertise and Integrity',
+    'The Minds Powering Progress',
+  ],
+  'About Us': [
+    'Company Overview',
+    'Our Services',
+    'What We Supply',
+    'Safety First',
+    'Our Professional Team',
+    'Our Commitment',
+  ],
+  'Contact Us': [
+    'Our Office',
+    'Phone & Email',
+    'Social Media',
+    'Send Us a Message',
+  ],
 };
+
+
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

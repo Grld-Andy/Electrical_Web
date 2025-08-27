@@ -164,7 +164,7 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
             Safety First
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed px-10">
             Safety is at the heart of everything we do. Every project is
             executed under strict health, safety, and environmental protocols.
             Our engineers and technicians are trained to minimize risks and
@@ -222,7 +222,7 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
             Our Commitment
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed px-10">
             We are committed to quality, reliability, and long-term partnership.
             By combining expertise with innovation, Lymfz Engineering Limited
             delivers solutions that clients can depend on for years to come.
