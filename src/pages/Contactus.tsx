@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Globe, Linkedin, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 
 // Reusable component for contact information cards
 interface ContactInfoCardProps {
@@ -72,15 +73,15 @@ const ContactPage = () => {
                 <p>(+233) 0249 811 204</p>
               </ContactInfoCard>
 
-                             <ContactInfoCard icon={<Mail className="text-blue-600" />} title="Email Addresses">
-                                <p>info@hertzengineering.com</p>
-                                <p>info.sa@hertzengineering.com</p>
+                             <ContactInfoCard icon={<Mail className="text-gray-600" />} title="Email Addresses">
+                                <p>info@lymfzengineering.com</p>
+                                <p>info.sa@lymfzengineering.com</p>
                             </ContactInfoCard>
                             
-                             <ContactInfoCard icon={<Globe className="text-blue-600" />} title="Social Media">
+                             <ContactInfoCard icon={<Globe className="text-gray-600" />} title="Social Media">
                                 <div className="flex items-center gap-4">
-                                    <a href="#" className="text-gray-600 hover:text-blue-600"><Linkedin /></a>
-                                    <a href="#" className="text-gray-600 hover:text-blue-600"><Facebook /></a>
+                                    <a href="#" className="text-gray-600 hover:text-blue-600"><FaLinkedinIn /></a>
+                                    <a href="#" className="text-gray-600 hover:text-blue-600"><FaFacebookF /></a>
                                 </div>
                             </ContactInfoCard>
                         </motion.div>
@@ -146,7 +147,7 @@ const ContactPage = () => {
                     allowFullScreen
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Hertz Engineering Location"
+                    title="Lymfz Engineering Location"
                 ></iframe>
             </section>
         </main>
