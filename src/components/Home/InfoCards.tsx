@@ -36,15 +36,13 @@ const cardData: CardData[] = [
     highlight: "Brochure", 
     description: "Download our detailed company brochure to explore our services, projects, and solutions in one comprehensive PDF.",
     buttonText: "Download Brochure", 
-    href: "/brochures/lymfz-brochure.pdf",
+    href: "./files/Brochure.pdf",
     icon: <FaFilePdf />,
     hoverColor: "rgba(220, 38, 38, 0.2)"
   }
 ];
 
 
-
-// 3. ANIMATION VARIANTS
 const containerVariants = {
     hidden: {},
     visible: {
