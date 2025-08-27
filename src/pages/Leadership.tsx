@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 
-
 const leadershipTeam = [
   {
     name: 'Bra. Fii',
@@ -32,48 +31,37 @@ const Leadership = () => {
     <div className="bg-gray-50">
       <PageHeader text="Leadership" />
 
+      {/* Combined Summary Section */}
       <div className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto text-left">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-black mb-4">
-              <span className="text-blue-600">Our People,</span>
-              <span className="text-gray-800"> Our Power</span>
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-10">
-              At <span className="font-semibold text-gray-800">Lymfz</span>, our greatest asset is our people. 
-              Our leadership brings together diverse expertise, innovation, and dedication to deliver reliable 
-              and forward-thinking solutions. We foster a culture that values integrity, collaboration, and growth, 
-              empowering our team to drive sustainable success across every project.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h2 className="text-4xl font-black text-gray-800 mb-4">Our Leadership</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Guided by a visionary leadership team, <span className="font-semibold text-gray-800">Lymfz</span> 
-              continues to evolve and grow in a competitive industry. Our leaders bring extensive experience 
-              across engineering, technology, and business management, providing strategic direction and 
-              ensuring operational excellence at every level. Their forward-thinking approach positions us 
-              at the forefront of innovation and sustainability.
-            </p>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-12 shadow-lg"
+        >
+          <h2 className="text-4xl font-bold mb-6">
+            <span className="text-blue-600">Led by Expertise and Integrity</span>
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            At <span className="font-semibold text-gray-800">Lymfz Ltd</span>, our strength lies in the people who power our vision. 
+            With a culture rooted in integrity, collaboration, and innovation, our leadership team blends deep expertise 
+            across engineering, technology, and business. Together, they provide the strategic direction that fuels 
+            sustainable growth, operational excellence, and forward-thinking solutions, keeping us at the forefront 
+            of progress and impact.
+          </p>
+        </motion.div>
       </div>
 
-      <div className="bg-white py-24">
-        <div className="container mx-auto px-6">
+      {/* Leadership Team Profiles */}
+      <div className="bg-white py-24 relative overflow-hidden">
+        {/* Decorative background accents */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
             variants={gridVariants}
             initial="hidden"
             whileInView="show"
@@ -82,29 +70,35 @@ const Leadership = () => {
             {leadershipTeam.map((member, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 rounded-lg shadow-md overflow-hidden text-center group"
+                className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center group relative overflow-hidden"
                 variants={profileCardVariants}
-                whileHover={{ y: -8, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                whileHover={{ y: -10, scale: 1.03 }}
+                transition={{ type: 'spring', stiffness: 250 }}
               >
-                <div className="h-64 overflow-hidden">
+                {/* Portrait */}
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-200 shadow-md mb-6">
                   <img
                     src={member.imageUrl}
                     alt={member.name}
-                    className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mt-1 mb-4">{member.title}</p>
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="inline-block text-gray-500 hover:text-blue-600 transition-colors"
-                    aria-label={`Email ${member.name}`}
-                  >
-                    <Mail size={24} />
-                  </a>
-                </div>
+
+                {/* Info */}
+                <h3 className="text-2xl font-bold text-gray-800 relative">
+                  {member.name}
+                  <span className="block h-1 w-12 bg-blue-600 mx-auto mt-1 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </h3>
+                <p className="text-blue-600 font-medium mt-2">{member.title}</p>
+
+                {/* Email Button */}
+                <a
+                  href={`mailto:${member.email}`}
+                  className="mt-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                  aria-label={`Email ${member.name}`}
+                >
+                  <Mail size={22} />
+                </a>
               </motion.div>
             ))}
           </motion.div>

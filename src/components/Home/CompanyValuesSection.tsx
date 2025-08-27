@@ -1,133 +1,156 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ShieldCheck, Zap, Award, Users, ArrowRight } from 'lucide-react';
 
-// A reusable component to create the parallax image effect
-const ParallaxImage = ({ imageUrl, className }: { imageUrl: string; className?: string }) => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ['start end', 'end start']
-    });
+const CountUp = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
+    const [count, setCount] = useState(0);
+    
+    useEffect(() => {
+        const timer = setTimeout(() => setCount(end), 300);
+        return () => clearTimeout(timer);
+    }, [end]);
+    
+    return <span>{count}{suffix}</span>;
+};
 
-    // Apply a vertical parallax transformation
-    const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
-
+const CreativeCompanyValues = () => {
     return (
-        <div ref={ref} className={`w-full h-80 lg:h-full overflow-hidden ${className}`}>
-            <motion.div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${imageUrl})`, y }}
-            />
+        <div className="bg-gradient-to-br from-blue-50 via-white to-blue-50">
+            {/* Hero Split */}
+            <div className="relative overflow-hidden">
+                <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 grid md:grid-cols-2 min-h-[70vh]">
+                    {/* Left Side */}
+                    <div className="flex items-center p-8 md:p-16 text-white relative z-10">
+                        <div className="space-y-6">
+                            <div className="inline-block px-4 py-2 bg-white/20 rounded-full border border-white/30 backdrop-blur">
+                                <span className="text-white text-sm font-medium">Since 2020</span>
+                            </div>
+                            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                                Lymfz
+                                <span className="block text-blue-200">
+                                    Engineering
+                                </span>
+                            </h1>
+                            <p className="text-xl text-blue-100 leading-relaxed">
+                                Ghanaian-owned company delivering cutting-edge electrical solutions across High, Medium, and Low Voltage systems
+                            </p>
+                        </div>
+                    </div>
+                    
+                    {/* Right Side */}
+                    <div className="relative">
+                        <img
+                            src="/images/team1.webp" 
+                            alt="Engineering Team"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            {/* Why Choose Us - Card Style */}
+            <div className="py-20 px-8">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold mb-4 text-gray-900">
+                            Why Choose <span className="text-transparent bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text">Lymfz Engineering</span>?
+                        </h2>
+                        <p className="text-gray-700 text-lg">Delivering excellence across multiple engineering disciplines</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8 mb-12">
+                        {[
+                            {
+                                icon: Zap,
+                                title: "Complete Solutions",
+                                desc: "High, Medium & Low Voltage Transmission, MEP, Instrumentation, Automation, Solar Power Systems, Fiber Optics, and Data Networks",
+                                gradient: "from-gray-300 to-gray-500"
+                            },
+                            {
+                                icon: Award,
+                                title: "Proven Track Record",
+                                desc: "Successfully delivered projects for GIZ Technologies, AngloGold Ashanti, First Atlantic Bank, Ghana Manganese Company, and Solarshop Ghana",
+                                gradient: "from-gray-400 to-gray-600"
+                            },
+                            {
+                                icon: Users,
+                                title: "Dedicated Team",
+                                desc: "Engineers, technicians, and project managers committed to quality, reliability, and timely execution",
+                                gradient: "from-gray-500 to-gray-700"
+                            }
+                        ].map((item, i) => (
+                            <motion.div 
+                                key={i}
+                                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100 hover:border-blue-200"
+                                whileHover={{ y: -5 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                            >
+                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                                    <item.icon className="w-8 h-8 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
+                                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Additional Info Section */}
+                    <div className="bg-gradient-to-r from-blue-50 to-white rounded-3xl p-8 md:p-12 border border-blue-100">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                Established Excellence Since 2020
+                            </h3>
+                            <p className="text-gray-700 leading-relaxed text-lg">
+                                With a dedicated team of engineers, technicians, and project managers, we have 
+                                successfully delivered projects for clients including GIZ Technologies, AngloGold Ashanti, 
+                                First Atlantic Bank, Ghana Manganese Company, and Solarshop Ghana. 
+                                We are committed to quality, reliability, and timely execution.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Safety Section - Light Mode Split */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white overflow-hidden">
+                <div className="grid md:grid-cols-2">
+                    <div className="relative">
+                        <img 
+                            src="/images/team2.webp"
+                            alt="Safety First"
+                            className="w-full h-full object-cover opacity-90"
+                        />
+                    </div>
+                    
+                    <div className="p-12 flex items-center">
+                        <div className="space-y-8">
+                            <div>
+                                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                    Safety Is Our
+                                    <span className="block text-blue-200">Utmost Priority</span>
+                                </h2>
+                                <div className="text-blue-100 text-lg leading-relaxed space-y-4">
+                                    <p>
+                                        At Lymfz Engineering Ltd, safety is embedded in our culture. We strictly adhere 
+                                        to international health, safety, and environmental (HSE) standards across all projects.
+                                    </p>
+                                    <p>
+                                        From design to implementation, our team identifies risks early, applies proven 
+                                        control measures, and ensures compliance with both client and regulatory requirements.
+                                    </p>
+                                    <p className="text-white font-medium">
+                                        Because we believe every successful project begins and ends with safety.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
-// Reusable animation variants for text content
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
-
-const CompanyValuesSection = () => {
-    return (
-        <section className="grid grid-cols-1 lg:grid-cols-2">
-
-            {/* Section 1: Why Choose Us (Image | Text) */}
-            <ParallaxImage 
-                imageUrl="./images/team1.webp"
-                className="lg:h-[650px]"
-            />
-            <motion.div
-                className="flex items-center justify-center p-8 md:p-16 lg:p-24 bg-white"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
-            >
-                <div>
-                    <motion.h2 
-                        className="text-3xl md:text-4xl font-bold text-gray-700 mb-6 border-l-4 border-gray-700 pl-4"
-                        variants={itemVariants}
-                    >
-                        Why Choose Lymfz Engineering
-                    </motion.h2>
-
-                    <motion.p 
-                        className="text-base text-gray-700 leading-relaxed"
-                        variants={itemVariants}
-                    >
-                        Established in 2020, Lymfz Engineering Ltd is a Ghanaian-owned company delivering 
-                        cutting-edge solutions in High, Medium, and Low Voltage Transmission, MEP, 
-                        Instrumentation, Automation, Solar Power Systems, Fiber Optics, and Data Networks.
-                    </motion.p>
-
-                    <motion.p 
-                        className="mt-4 text-base text-gray-700 leading-relaxed"
-                        variants={itemVariants}
-                    >
-                        With a dedicated team of engineers, technicians, and project managers, we have 
-                        successfully delivered projects for clients including GIZ Technologies, AngloGold Ashanti, 
-                        First Atlantic Bank, Ghana Manganese Company, and Solarshop Ghana. 
-                        We are committed to quality, reliability, and timely execution.
-                    </motion.p>
-                </div>
-            </motion.div>
-
-            {/* Section 2: Safety (Text | Image) */}
-            <motion.div
-                className="flex items-center justify-center p-8 md:p-16 lg:p-24 bg-[#003366] text-white lg:order-3"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
-            >
-                <div>
-                    <motion.h2 
-                        className="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-white pl-4"
-                        variants={itemVariants}
-                    >
-                        Safety Is Our Utmost Priority
-                    </motion.h2>
-
-                    <motion.div 
-                        className="text-gray-200 leading-relaxed space-y-4"
-                        variants={itemVariants}
-                    >
-                        <p>
-                            At Lymfz Engineering Ltd, safety is embedded in our culture. We strictly adhere 
-                            to international health, safety, and environmental (HSE) standards across all projects.
-                        </p>
-                        <p>
-                            From design to implementation, our team identifies risks early, applies proven 
-                            control measures, and ensures compliance with both client and regulatory 
-                            requirements.
-                        </p>
-                        <p>
-                            Because we believe every successful project begins and ends with safety.
-                        </p>
-                    </motion.div>
-                </div>
-            </motion.div>
-            <ParallaxImage 
-                imageUrl="./images/team2.webp"
-                className="lg:h-[650px] lg:order-4"
-            />
-        </section>
-    );
-};
-
-
-export default CompanyValuesSection;
+export default CreativeCompanyValues;

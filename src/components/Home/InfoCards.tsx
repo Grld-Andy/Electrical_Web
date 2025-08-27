@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
-import { FaBuilding, FaAward, FaCogs, FaTools, FaShoppingBag, FaFilePdf, FaArrowRight } from 'react-icons/fa';
+import { FaBuilding, FaFilePdf, FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LineBackgroundPattern } from '../ui/BackgroundPattern';
 
 // 1. UPDATED TYPE DEFINITIONS
 interface CardData {
@@ -55,13 +56,6 @@ const cardVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-// 4. BACKGROUND PATTERN (No changes needed)
-const BackgroundPattern = () => (
-    <svg className="absolute inset-0 h-full w-full stroke-slate-200/80 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)]" aria-hidden="true">
-      <defs><pattern id="light-pattern" width="60" height="60" x="50%" y="-1" patternUnits="userSpaceOnUse"><path d="M.5 200V.5H200" fill="none" /></pattern></defs>
-      <rect width="100%" height="100%" strokeWidth="0" fill="url(#light-pattern)" />
-    </svg>
-);
 
 // 5. THE NEW CARD COMPONENT with dynamic shadow and unique hover colors
 const Card: React.FC<CardProps> = ({ card, isLarge }) => {
@@ -134,7 +128,7 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
 const InfoCards: React.FC = () => {
     return (
         <section className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
-            <BackgroundPattern />
+            <LineBackgroundPattern />
             <div className="relative container mx-auto px-6 z-10">
                  <motion.div 
                     className="text-center mb-12 md:mb-16 max-w-3xl mx-auto"
