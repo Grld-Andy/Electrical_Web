@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaMapMarkerAlt, FaLinkedinIn, FaFacebookF, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+// Main navigation links
 const navLinks = [
   { name: 'Home', to: '/' },
   { name: 'Products, Services & Solutions', to: '/services' },
@@ -11,6 +12,13 @@ const navLinks = [
   { name: 'About Us', to: '/about' },
   { name: 'Contact Us', to: '/contact' },
 ];
+
+// Dropdown items for hover (can match your sidebar/group headers)
+const dropdownData: Record<string, string[]> = {
+  'Products, Services & Solutions': ['Services', 'Products', 'Solutions'],
+  'Our Projects': ['Ongoing Projects', 'Completed Projects'],
+  'About Us': ['Company Overview', 'Mission & Vision', 'Careers'],
+};
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,8 +37,8 @@ const Header = () => {
           <Link to="/" title="Lymfz Engineering Limited">
             <img src="./logo.png" alt="Lymfz Engineering Limited" className="h-16" />
           </Link>
+
           <div className="flex items-center space-x-4">
-            {/* Location */}
             <a
               href="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
               target="_blank"
@@ -39,8 +47,6 @@ const Header = () => {
             >
               <FaMapMarkerAlt />
             </a>
-
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/company/lymfz"
               target="_blank"
@@ -49,8 +55,6 @@ const Header = () => {
             >
               <FaLinkedinIn />
             </a>
-
-            {/* Facebook */}
             <a
               href="https://www.facebook.com/lymfz"
               target="_blank"
@@ -59,29 +63,51 @@ const Header = () => {
             >
               <FaFacebookF />
             </a>
-
-            {/* Email */}
-            <a
-              href="mailto:info@lymfz.com"
-              className="hover:text-hertz-blue transition-colors"
-            >
+            <a href="mailto:info@lymfz.com" className="hover:text-hertz-blue transition-colors">
               <FaEnvelope />
             </a>
           </div>
         </div>
+
         <div className="container mx-auto px-4">
           <div className="border-t border-white/20"></div>
         </div>
-        <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8">
+
+        {/* Desktop Navbar */}
+        <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8 relative">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.to}
-              className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </Link>
+            <div key={link.name} className="relative group">
+              <Link
+                to={link.to}
+                className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative"
+              >
+                {link.name}
+                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </Link>
+
+              {/* Dropdown on hover */}
+              {dropdownData[link.name] && (
+                <motion.div
+                  className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
+                  <ul className="py-2">
+                    {dropdownData[link.name].map((item) => (
+                      <li key={item}>
+                        <Link
+                          to={`${link.to}#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-hertz-blue"
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </div>
           ))}
         </nav>
       </div>
