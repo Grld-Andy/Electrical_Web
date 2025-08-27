@@ -49,7 +49,7 @@ const About: React.FC = () => {
           >
             <img
               src="./images/about.jpg"
-              alt="About Lymfz Engineering"
+              alt="About Lymfz Engineering Limited"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -66,7 +66,7 @@ const About: React.FC = () => {
               Building Reliable Energy Solutions
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Lymfz Engineering Ltd specializes in delivering safe, efficient
+              Lymfz Engineering Limited specializes in delivering safe, efficient
               and innovative electrical solutions. Our team of skilled engineers
               and technicians combines technical expertise with modern tools to
               execute projects on time and to the highest standards.
@@ -224,7 +224,7 @@ const About: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             We are committed to quality, reliability, and long-term partnership.
-            By combining expertise with innovation, Lymfz Engineering Ltd
+            By combining expertise with innovation, Lymfz Engineering Limited
             delivers solutions that clients can depend on for years to come.
           </p>
         </div>

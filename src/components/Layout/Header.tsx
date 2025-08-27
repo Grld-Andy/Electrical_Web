@@ -27,8 +27,8 @@ const Header = () => {
       {/* Desktop Header */}
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-          <Link to="/" title="Lymfz Engineering Ltd">
-            <img src="./logo.png" alt="Lymfz Engineering Ltd" className="h-16" />
+          <Link to="/" title="Lymfz Engineering Limited">
+            <img src="./logo.png" alt="Lymfz Engineering Limited" className="h-16" />
           </Link>
           <div className="flex items-center space-x-4">
             {/* Location */}

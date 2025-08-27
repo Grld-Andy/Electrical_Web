@@ -44,7 +44,7 @@ const Leadership = () => {
             <span className="text-blue-600">Led by Expertise and Integrity</span>
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            At <span className="font-semibold text-gray-800">Lymfz Ltd</span>, our strength lies in the people who power our vision. 
+            At <span className="font-semibold text-gray-800">Lymfz Engineering Limited</span>, our strength lies in the people who power our vision. 
             With a culture rooted in integrity, collaboration, and innovation, our leadership team blends deep expertise 
             across engineering, technology, and business. Together, they provide the strategic direction that fuels 
             sustainable growth, operational excellence, and forward-thinking solutions, keeping us at the forefront 

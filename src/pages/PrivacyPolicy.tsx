@@ -21,7 +21,7 @@ const PrivacyPolicy: React.FC = () => {
             <span className="text-gray-800">Protecting Your Privacy</span>{" "}
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            LYMFZ Engineering Ltd is committed to protecting your privacy and
+            Lymfz Engineering Limited is committed to protecting your privacy and
             safeguarding personal and business information in compliance with
             Ghanaian data protection regulations. This Privacy Policy outlines
             how we collect, use, and safeguard data when you engage with us.
@@ -33,7 +33,7 @@ const PrivacyPolicy: React.FC = () => {
           {[
             {
               title: "1. Introduction",
-              body: `LYMFZ Engineering Ltd ("we", "our") is an Electrical Engineering
+              body: `Lymfz Engineering Limited ("we", "our") is an Electrical Engineering
               company registered in Ghana under the Companies Code 1963 (Act 179).
               This Privacy Policy explains how we handle your information when
               providing services, executing projects, or engaging in
@@ -70,7 +70,7 @@ const PrivacyPolicy: React.FC = () => {
             },
             {
               title: "5. Data Security",
-              body: `Safety and security are core values at LYMFZ Engineering Ltd. We
+              body: `Safety and security are core values at Lymfz Engineering Limited. We
               employ strict technical and organizational safeguards to protect
               against unauthorized access, misuse, or loss.`,
             },
@@ -131,7 +131,7 @@ const PrivacyPolicy: React.FC = () => {
               {section.contact && (
                 <div className="mt-4 text-gray-700">
                   <p>
-                    <strong>LYMFZ Engineering Ltd</strong>
+                    <strong>Lymfz Engineering Limited</strong>
                   </p>
                   <p>5 Good Street, Amasaman, Accra, Ghana</p>
                   <p>

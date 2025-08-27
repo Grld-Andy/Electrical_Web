@@ -26,7 +26,7 @@ const cardData: CardData[] = [
     { 
       title: "Company", 
       highlight: "Profile", 
-      description: "Learn more about Lymfz Engineering Ltd, our mission, vision, and track record of delivering quality electrical solutions since 2020.",
+      description: "Learn more about Lymfz Engineering Limited, our mission, vision, and track record of delivering quality electrical solutions since 2020.",
       buttonText: "View Profile", 
       href: "#",
       icon: <FaBuilding />,

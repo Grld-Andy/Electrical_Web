@@ -22,10 +22,10 @@ const Introduction = () => {
       <div className="container mx-auto px-6 text-center max-w-3xl">
         <h2 className="text-3xl md:text-4xl font-black font-heading">
           <span className="text-hertz-blue">Lymfz </span>
-          <span className="text-gray-900">Engineering Ltd</span>
+          <span className="text-gray-900">Engineering Limited</span>
         </h2>
         <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
-          Founded in 2020, Lymfz Engineering Ltd is a Ghanaian electrical engineering company 
+          Founded in 2020, Lymfz Engineering Limited is a Ghanaian electrical engineering company 
           delivering solutions across domestic, commercial, and industrial sectors.
         </p>
         <p className="mt-4 text-base md:text-lg text-gray-600 leading-relaxed">

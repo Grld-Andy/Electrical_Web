@@ -133,7 +133,7 @@ const CreativeCompanyValues = () => {
                                 </h2>
                                 <div className="text-blue-100 text-lg leading-relaxed space-y-4">
                                     <p>
-                                        At Lymfz Engineering Ltd, safety is embedded in our culture. We strictly adhere 
+                                        At Lymfz Engineering Limited, safety is embedded in our culture. We strictly adhere 
                                         to international health, safety, and environmental (HSE) standards across all projects.
                                     </p>
                                     <p>

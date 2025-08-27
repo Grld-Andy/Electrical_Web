@@ -6,7 +6,7 @@ const slides = [
     {
         image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
         title: [
-            'Lymfz Engineering Ltd',
+            'Lymfz Engineering Limited',
             'Reliable Electrical Engineering Solutions',
         ],
         buttonText: 'About Us',

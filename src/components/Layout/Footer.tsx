@@ -99,7 +99,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-6 text-center text-sm text-gray-500">
           Copyright {new Date().getFullYear()} © All Right Reserved Design by Lymfz
-          Engineering Ltd
+          Engineering Limited
         </div>
       </div>
     </footer>

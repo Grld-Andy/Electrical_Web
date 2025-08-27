@@ -35,7 +35,7 @@ const Newsletter = () => {
                     </motion.div>
                     
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Stay Ahead with Lymfz Engineering
+                        Stay Ahead with Lymfz Engineering Limited
                     </h2>
                     <p className="text-gray-300 md:text-lg mb-8">
                         Subscribe to our newsletter for the latest industry insights, project updates, and company news.

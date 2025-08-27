@@ -20,7 +20,7 @@ const projects = [
     {
         category: "Infrastructure",
         title: "161KV Transmission Powerline",
-        client: "Lycopodium Ghana Ltd",
+        client: "Lycopodium Ghana Limited",
         image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
     },
     {
