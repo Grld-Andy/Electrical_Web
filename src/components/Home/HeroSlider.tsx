@@ -37,7 +37,7 @@ const slides = [
             'Smart Energy & Modern Infrastructure',
         ],
         buttonText: 'Our Solutions',
-        buttonLink: '/solutions'
+        buttonLink: '/services'
     },
     {
         image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',

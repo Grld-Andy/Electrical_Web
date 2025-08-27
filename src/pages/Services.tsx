@@ -1,204 +1,168 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
+import { Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 
-type Service = {
-  title: string;
-  description: string;
-};
-
-const serviceData: {
-  [category: string]: {
-    icon: React.ReactNode;
-    services: Service[];
-  };
-} = {
+// --- Services Data ---
+type Service = { title: string; description: string };
+const serviceData = {
   'Electrical Engineering & Power Systems': {
     icon: <Zap className="w-6 h-6" />,
     services: [
-      {
-        title: 'High, Medium & Low Voltage Works',
-        description:
-          'Design, installation, and maintenance of HV/MV/LV transmission and distribution systems including industrial, commercial, and domestic wiring.',
-      },
-      {
-        title: 'Electrical Engineering Design & Consultancy',
-        description:
-          'Professional engineering studies, system designs, and technical consultancy services tailored to client requirements.',
-      },
-      {
-        title: 'Instrumentation & Automation',
-        description:
-          'Integration of instrumentation, control systems, and process automation for improved efficiency and safety.',
-      },
+      { title: 'High, Medium & Low Voltage Works', description: 'Design, installation, and maintenance of HV/MV/LV systems.' },
+      { title: 'Electrical Engineering Design & Consultancy', description: 'Professional engineering studies, system designs, and consultancy.' },
+      { title: 'Instrumentation & Automation', description: 'Integration of instrumentation, control systems, and automation.' },
     ],
   },
   'Mechanical, Electrical & Plumbing (MEP)': {
     icon: <HardHat className="w-6 h-6" />,
     services: [
-      {
-        title: 'MEP Engineering',
-        description:
-          'Complete MEP works covering electrical, plumbing, and mechanical installations for industrial and commercial facilities.',
-      },
-      {
-        title: 'Air Conditioning & Refrigeration',
-        description:
-          'Installation and servicing of cooling systems for residential, commercial, and industrial applications.',
-      },
+      { title: 'MEP Engineering', description: 'Complete MEP works covering electrical, plumbing, and mechanical installations.' },
+      { title: 'Air Conditioning & Refrigeration', description: 'Installation and servicing of cooling systems for all applications.' },
     ],
   },
   'Renewable & Sustainable Solutions': {
     icon: <Sun className="w-6 h-6" />,
     services: [
-      {
-        title: 'Solar Power Systems',
-        description:
-          'Supply and installation of solar systems including solar pumping, hybrid systems, and grid integration solutions.',
-      },
-      {
-        title: 'Energy Efficiency Solutions',
-        description:
-          'Customized energy-saving solutions to reduce costs while promoting sustainability.',
-      },
+      { title: 'Solar Power Systems', description: 'Supply and installation of solar systems including pumping and grid integration.' },
+      { title: 'Energy Efficiency Solutions', description: 'Customized energy-saving solutions for reduced costs and sustainability.' },
     ],
   },
   'Networking & Security Systems': {
     icon: <Cpu className="w-6 h-6" />,
     services: [
-      {
-        title: 'Fiber Optic & Data Networks',
-        description:
-          'Installation of fiber optic infrastructure, structured cabling, and telecommunication networks.',
-      },
-      {
-        title: 'Electric Fencing & Security Systems',
-        description:
-          'Design and deployment of security solutions including electric fencing and access control.',
-      },
+      { title: 'Fiber Optic & Data Networks', description: 'Installation of fiber optic infrastructure, structured cabling, and networks.' },
+      { title: 'Electric Fencing & Security Systems', description: 'Design and deployment of security solutions including fencing and access control.' },
     ],
   },
   'Products & Electrical Supplies': {
     icon: <ShieldCheck className="w-6 h-6" />,
     services: [
+      { title: 'Cables & Accessories', description: 'High and low voltage electrical cables and control wiring solutions.' },
+      { title: 'Power Protection & Distribution Equipment', description: 'Transformers, RMUs, surge protection, and switchgear.' },
+      { title: 'Lighting & Electrical Fittings', description: 'Quality lighting fixtures and electrical fittings for projects.' },
+    ],
+  },
+};
+
+// --- Solutions Data ---
+const solutions = [
+  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy', href: '#' },
+  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design', href: '#' },
+  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/LV.jpg', title: 'LV (Low Voltage) Design & Electrical Installation', href: '#' },
+  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Power System Modelling & Studies', href: '#' },
+  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Power System Protection Services', href: '#' },
+  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Electrical Instrumentation, SCADA & Automation', href: '#' },
+];
+
+// --- Combined Grouped Data ---
+type Item = { title: string; description?: string; imgSrc?: string; href?: string };
+type Group = { name: string; items: Item[] };
+type Category = { icon: React.ReactNode; groups: Group[] };
+
+const combinedData: { [category: string]: Category } = {
+  Services: {
+    icon: <Zap className="w-6 h-6" />,
+    groups: Object.entries(serviceData).map(([groupName, group]) => ({
+      name: groupName,
+      items: group.services.map(s => ({ title: s.title, description: s.description })),
+    })),
+  },
+  Products: {
+    icon: <ShieldCheck className="w-6 h-6" />,
+    groups: [
       {
-        title: 'Cables & Accessories',
-        description:
-          'Supply of high and low voltage electrical cables, instrumentation cables, and control wiring solutions.',
-      },
-      {
-        title: 'Power Protection & Distribution Equipment',
-        description:
-          'Transformers, RMUs, surge protection devices, and switchgear for reliable energy distribution.',
-      },
-      {
-        title: 'Lighting & Electrical Fittings',
-        description:
-          'Wide range of quality lighting fixtures and general electrical fittings for industrial and commercial projects.',
+        name: 'Products & Electrical Supplies',
+        items: serviceData['Products & Electrical Supplies'].services.map(p => ({ title: p.title, description: p.description })),
       },
     ],
   },
-  'Health, Safety & Quality Assurance': {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    services: [
+  Solutions: {
+    icon: <Cpu className="w-6 h-6" />,
+    groups: [
       {
-        title: 'Safety First Approach',
-        description:
-          'Strict adherence to health, safety, and environmental standards to protect our people, clients, and communities.',
-      },
-      {
-        title: 'Quality & Timely Delivery',
-        description:
-          'Efficient project execution with guaranteed quality materials and on-time completion.',
+        name: 'Our Solutions',
+        items: solutions.map(s => ({ title: s.title, imgSrc: s.imgSrc, href: s.href })),
       },
     ],
   },
 };
 
-
-const serviceCategories = Object.keys(serviceData);
-
-const ServicesPage = () => {
-  const [activeCategory, setActiveCategory] = useState(serviceCategories[0]);
-
-  const activeServices = serviceData[activeCategory]?.services || [];
+const ProductsAndServicesPage = () => {
+  const [activeCategory, setActiveCategory] = useState('Services');
+  const [activeGroupIndex, setActiveGroupIndex] = useState(0);
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
   const contentVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-      },
-    },
-    exit: {
-      opacity: 0,
-      x: -50,
-      transition: {
-        duration: 0.3,
-        ease: [0.42, 0, 1, 1] as [number, number, number, number],
-      },
-    },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as const } },
+    exit: { opacity: 0, x: -50, transition: { duration: 0.3, ease: [0.42, 0, 1, 1] as const } },
   };
 
-
+  const activeGroups = combinedData[activeCategory].groups;
+  const activeItems = activeGroups[activeGroupIndex].items;
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <main className="">
-        {/* Hero Section */}
-        <PageHeader text={'PRODUCTS AND SERVICES'} />
-
-        {/* Layout */}
-        <div className="mt-10 flex flex-col md:flex-row md:space-x-10 px-16">
+      <main>
+        <PageHeader text="PRODUCTS, SERVICES AND SOLUTIONS" />
+        <div className="py-10 flex flex-col md:flex-row md:space-x-10 px-16">
           {/* Sidebar */}
           <aside className="md:w-1/4 mb-10 md:mb-0">
-            <div className="bg-white border-slate-200 sticky top-20">
-              <ul className="">
-                {serviceCategories.map((category) => {
-                  const isActive = activeCategory === category;
-                  return (
-                    <li key={category}>
-                      <button
-                        onClick={() => setActiveCategory(category)}
-                        className={`w-full rounded-sm cursor-pointer flex items-center gap-3 px-4 py-3 transition-colors duration-300 text-left ${
-                          isActive
-                            ? 'bg-[#155DFC]/30 text-black font-semibold shadow-inner'
-                            : 'hover:bg-slate-100 text-gray-700'
-                        }`}
-                      >
-                        <span>{serviceData[category].icon}</span>
-                        <span className="text-sm">{category}</span>
-                      </button>
-                    </li>
-                  );
-                })}
+            <div className="bg-white shadow-md rounded-md border-slate-200 sticky top-20">
+              <ul>
+                {Object.keys(combinedData).map((category, catIdx) => (
+                  <li key={category} className={`${catIdx !== 0 ? 'border-t border-gray-200' : ''}`}>
+                    <button
+                      onClick={() => setExpandedCategory(expandedCategory === category ? null : category)}
+                      className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-100 font-semibold"
+                    >
+                      {combinedData[category].icon}
+                      <span>{category}</span>
+                    </button>
+
+                    {expandedCategory === category && (
+                      <ul className="pl-8">
+                        {combinedData[category].groups.map((group, idx) => (
+                          <li
+                            key={group.name}
+                            className={`py-2 cursor-pointer ${
+                              activeCategory === category && activeGroupIndex === idx
+                                ? 'text-black font-bold'
+                                : 'text-gray-600 hover:text-black'
+                            }`}
+                            onClick={() => {
+                              setActiveCategory(category);
+                              setActiveGroupIndex(idx);
+                            }}
+                          >
+                            {group.name}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           </aside>
 
-          {/* Services Grid */}
-          <div className="md:w-3/4 grid grid-cols-1 h-min sm:grid-cols-2 gap-6">
+          {/* Content Area */}
+          <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <AnimatePresence mode="wait">
-              {activeServices.map((service, index) => (
+              {activeItems.map((item, index) => (
                 <motion.div
-                  key={service.title}
+                  key={item.title}
                   variants={contentVariants}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{
-                    scale: 1.03,
-                    boxShadow: '0px 10px 30px rgba(0,0,0,0.08)',
-                  }}
                   className="bg-white rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
                 >
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 flex-grow">{service.description}</p>
+                  {item.imgSrc && <img src={item.imgSrc} alt={item.title} className="h-48 w-full object-cover rounded mb-4" />}
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
+                  {item.description && <p className="text-gray-600 flex-grow">{item.description}</p>}
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -209,4 +173,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default ProductsAndServicesPage;

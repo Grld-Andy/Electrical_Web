@@ -32,7 +32,7 @@ const Leadership = () => {
       <PageHeader text="Leadership" />
 
       {/* Combined Summary Section */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-10 md:px-30 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ const Leadership = () => {
           className="text-center bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-12 shadow-lg"
         >
           <h2 className="text-4xl font-bold mb-6">
-            <span className="text-blue-600">Led by Expertise and Integrity</span>
+            <span className="text-black">Led by Expertise and Integrity</span>
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
             At <span className="font-semibold text-gray-800">Lymfz Engineering Limited</span>, our strength lies in the people who power our vision. 
@@ -53,8 +53,18 @@ const Leadership = () => {
         </motion.div>
       </div>
 
+
       {/* Leadership Team Profiles */}
       <div className="bg-white py-24 relative overflow-hidden">
+        
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          The Minds Powering Progress
+        </h2>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          With expertise and vision, our leadership drives quality and innovation.
+        </p>
+      </div>
         {/* Decorative background accents */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
