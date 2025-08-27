@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 
-// --- Services Data ---
-type Service = { title: string; description: string };
 const serviceData = {
   'Electrical Engineering & Power Systems': {
     icon: <Zap className="w-6 h-6" />,
@@ -115,7 +113,7 @@ const ProductsAndServicesPage = () => {
                   <li key={category} className={`${catIdx !== 0 ? 'border-t border-gray-200' : ''}`}>
                     <button
                       onClick={() => setExpandedCategory(expandedCategory === category ? null : category)}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-100 font-semibold"
+                      className="w-full cursor-pointer flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-100 font-semibold"
                     >
                       {combinedData[category].icon}
                       <span>{category}</span>
@@ -128,7 +126,7 @@ const ProductsAndServicesPage = () => {
                             key={group.name}
                             className={`py-2 cursor-pointer ${
                               activeCategory === category && activeGroupIndex === idx
-                                ? 'text-black font-bold'
+                                ? 'text-blue-500 font-bold'
                                 : 'text-gray-600 hover:text-black'
                             }`}
                             onClick={() => {
