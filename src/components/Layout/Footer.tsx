@@ -1,14 +1,17 @@
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const hideNewsletter = location.pathname === "/" || location.pathname === "/home";
+
   return (
     <footer className="bg-gray-100 text-gray-700 w-full py-12 px-10 sm:px-16 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* ISO Certification Info (Replaced Company Info) */}
-          <div className="col-span-1 md:col-span-2">
+          {/* ISO Certification Info */}
+          {/* <div className="col-span-1 md:col-span-2">
             <h6 className="text-lg font-semibold mb-4 text-gray-700">ISO Certified</h6>
             <div className="flex items-start gap-4 flex-col">
               <div className="w-full">
@@ -24,7 +27,7 @@ const Footer = () => {
                 <p>ISO 45001:2018 - Occupational Health & Safety Management System</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div></div>
 
@@ -46,20 +49,22 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="mb-12">
-          <h3 className="text-lg font-bold mb-4 text-gray-700">Subscribe for Newsletter</h3>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="flex-grow px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition-colors whitespace-nowrap">
-              Subscribe Now
-            </button>
+        {/* Newsletter (hidden on "/" and "/home") */}
+        {!hideNewsletter && (
+          <div className="mb-12">
+            <h3 className="text-lg font-bold mb-4 text-gray-700">Subscribe for Newsletter</h3>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="flex-grow px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition-colors whitespace-nowrap">
+                Subscribe Now
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Divider */}
         <div className="border-t border-gray-300 my-6"></div>
