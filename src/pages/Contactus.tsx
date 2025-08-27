@@ -72,19 +72,17 @@ const ContactPage = () => {
               <ContactInfoCard icon={<Phone />} title="Phone Number">
                 <p>(+233) 0249 811 204</p>
               </ContactInfoCard>
-
-                             <ContactInfoCard icon={<Mail className="text-gray-600" />} title="Email Addresses">
-                                <p>info@lymfzengineering.com</p>
-                                <p>info.sa@lymfzengineering.com</p>
-                            </ContactInfoCard>
-                            
-                             <ContactInfoCard icon={<Globe className="text-gray-600" />} title="Social Media">
-                                <div className="flex items-center gap-4">
-                                    <a href="#" className="text-gray-600 hover:text-blue-600"><FaLinkedinIn /></a>
-                                    <a href="#" className="text-gray-600 hover:text-blue-600"><FaFacebookF /></a>
-                                </div>
-                            </ContactInfoCard>
-                        </motion.div>
+                <ContactInfoCard icon={<Mail className="text-gray-600" />} title="Email Addresses">
+                  <p>info@lymfzengineering.com</p>
+                  <p>info.sa@lymfzengineering.com</p>
+                </ContactInfoCard>
+                <ContactInfoCard icon={<Globe className="text-gray-600" />} title="Social Media">
+                  <div className="flex items-center gap-4">
+                      <a href="#" className="text-gray-600 hover:text-blue-600"><FaLinkedinIn /></a>
+                      <a href="#" className="text-gray-600 hover:text-blue-600"><FaFacebookF /></a>
+                  </div>
+                </ContactInfoCard>
+            </motion.div>
 
             {/* Right Column: Contact Form */}
             <motion.div 
