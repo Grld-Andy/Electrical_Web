@@ -116,7 +116,7 @@ const Header = () => {
                 className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative"
               >
                 {link.name}
-                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
               </Link>
 
               {/* Dropdown on hover */}
