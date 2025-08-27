@@ -27,54 +27,18 @@ const cardData: CardData[] = [
       highlight: "Profile", 
       description: "Learn more about Lymfz Engineering Ltd, our mission, vision, and track record of delivering quality electrical solutions since 2020.",
       buttonText: "View Profile", 
-      href: "#", // replace with actual PDF or about page
+      href: "#",
       icon: <FaBuilding />,
-      hoverColor: "rgba(0, 111, 255, 0.2)" // Blue
-    },
-    { 
-      title: "Trusted", 
-      highlight: "Clients", 
-      description: "We are proud to have worked with organizations such as AngloGold Ashanti, GIZ Technologies, First Atlantic Bank, and Ghana Manganese Company.",
-      buttonText: "See Clients", 
-      href: "#", 
-      icon: <FaAward />,
-      hoverColor: "rgba(252, 211, 77, 0.2)" // Gold
-    },
-    { 
-      title: "Our", 
-      highlight: "Services", 
-      description: "From High & Low Voltage Transmission, MEP, and Consultancy to Solar Systems, Automation, Fiber Optics, and Data Networks, we deliver end-to-end solutions.",
-      buttonText: "View Services", 
-      href: "/services",
-      icon: <FaTools />,
-      hoverColor: "rgba(239, 68, 68, 0.2)" // Red
-    },
-    { 
-      title: "Key", 
-      highlight: "Projects", 
-      description: "Supplying 11kV RMUs, 33kV auto-reclosers, armored cables, and solar installations, completed successfully for leading clients across Ghana.",
-      buttonText: "See Projects", 
-      href: "/projects",
-      icon: <FaCogs />,
-      hoverColor: "rgba(5, 150, 105, 0.2)" // Green
-    },
-    { 
-      title: "Quality", 
-      highlight: "Products", 
-      description: "High-voltage & low-voltage cables, distribution equipment, surge protection, transformers, RMUs, and other electrical materials and supplies.",
-      buttonText: "Browse Products", 
-      href: "/products",
-      icon: <FaShoppingBag />,
-      hoverColor: "rgba(139, 92, 246, 0.2)" // Purple
+      hoverColor: "rgba(0, 111, 255, 0.2)"
     },
   { 
     title: "Company", 
     highlight: "Brochure", 
     description: "Download our detailed company brochure to explore our services, projects, and solutions in one comprehensive PDF.",
     buttonText: "Download Brochure", 
-    href: "/brochures/lymfz-brochure.pdf", // replace with actual file path or external link
+    href: "/brochures/lymfz-brochure.pdf",
     icon: <FaFilePdf />,
-    hoverColor: "rgba(220, 38, 38, 0.2)" // Deep Red
+    hoverColor: "rgba(220, 38, 38, 0.2)"
   }
 ];
 
