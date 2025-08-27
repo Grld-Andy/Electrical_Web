@@ -88,13 +88,12 @@ const Partners: React.FC = () => {
                     </p>
                 </div>
 
-                {/* The animated grid of logos */}
                 <motion.div 
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+                    className="flex gap-6 flex-wrap justify-center"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of the grid is in view
+                    viewport={{ once: true, amount: 0.2 }}
                 >
                     {partnerLogos.map((logo, index) => (
                         <motion.a 

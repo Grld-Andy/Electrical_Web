@@ -19,13 +19,10 @@ const CompanyValues = () => {
             
             {/* Hero Section with Overlay */}
             <div className="relative overflow-hidden">
-                <div className="relative grid md:grid-cols-2 min-h-[70vh]">
+                <div className="relative max-h-[70vh]">
                     
-                    {/* Left Side - Clean background */}
-                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 hidden md:block"></div>
-
                     {/* Right Side with Overlay */}
-                    <div className="relative">
+                    <div>
                         <img
                             src="/images/team1.webp"
                             alt="Engineering Team"

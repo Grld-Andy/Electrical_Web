@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 // Expanded and structured project data for 6 items
 const projects = [
     {
-        status: "Ongoing",
+        status: "",
         category: "Grid Studies",
         title: "Arc Flash & Coordination Studies",
         client: "AGA KMS Redevelopment 2025",

@@ -45,12 +45,12 @@ const serviceData = {
 
 // --- Solutions Data ---
 const solutions = [
-  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy', href: '#' },
-  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design', href: '#' },
+  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy', href: '#' },
+  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design', href: '#' },
   { imgSrc: 'https://hertzengineering.com/wp-content/uploads/LV.jpg', title: 'LV (Low Voltage) Design & Electrical Installation', href: '#' },
-  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Power System Modelling & Studies', href: '#' },
-  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Power System Protection Services', href: '#' },
-  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/pole.jpg', title: 'Electrical Instrumentation, SCADA & Automation', href: '#' },
+  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Power System Modelling & Studies', href: '#' },
+  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Power System Protection Services', href: '#' },
+  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Electrical Instrumentation, SCADA & Automation', href: '#' },
 ];
 
 // --- Combined Grouped Data ---
@@ -159,7 +159,7 @@ const ProductsAndServicesPage = () => {
                   className="bg-white rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
                 >
                   {item.imgSrc && <img src={item.imgSrc} alt={item.title} className="h-48 w-full object-cover rounded mb-4" />}
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
                   {item.description && <p className="text-gray-600 flex-grow">{item.description}</p>}
                 </motion.div>
               ))}
