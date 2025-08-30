@@ -29,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
         </motion.div>
 
         {/* Sections */}
-        <div className="space-y-">
+        <div className="space-y-8">
           {[
             {
               title: "1. Introduction",
@@ -82,7 +82,7 @@ const PrivacyPolicy: React.FC = () => {
             },
             {
               title: "7. Your Rights",
-              body: `In line with Ghana’s Data Protection Act, you have the right to:`,
+              body: `In line with Ghana's Data Protection Act, you have the right to:`,
               list: [
                 "Access the personal data we hold about you.",
                 "Request correction of inaccurate information.",

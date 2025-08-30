@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaMapMarkerAlt, FaLinkedinIn, FaFacebookF, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -130,7 +130,7 @@ const Header = () => {
         </Link>
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="text-white text-3xl"
+          className="text-white text-3xl cursor-pointer"
           aria-label="Open menu"
         >
           <FaBars />
@@ -159,7 +159,7 @@ const Header = () => {
                 <span className="text-white font-bold text-xl">Menu</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white text-3xl"
+                  className="text-white text-3xl cursor-pointer"
                   aria-label="Close menu"
                 >
                   <FaTimes />
