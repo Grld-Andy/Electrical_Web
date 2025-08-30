@@ -6,35 +6,18 @@ import { Link } from 'react-router-dom';
 // Main navigation links
 const navLinks = [
   { name: 'Home', to: '/' },
+  { name: 'About Us', to: '/about' },
   { name: 'Products, Services & Solutions', to: '/services' },
   { name: 'Our Projects', to: '/projects' },
   { name: 'Leadership', to: '/leadership' },
-  { name: 'About Us', to: '/about' },
   { name: 'Contact Us', to: '/contact' },
 ];
 
 const dropdownData: Record<string, string[]> = {
-  'Home': [
-    'Engineering Projects',
-    'Design, Implementation & Consultancy',
-    'Our Projects',
-    'Company Profile',
-    'Company Brochure',
-    'Engineering Team',
-    'Safety First',
-    'Our Valued Partners',
-  ],
   'Products, Services & Solutions': [
     'Services',
     'Products',
     'Solutions',
-  ],
-  'Our Projects': [
-    'Project Showcase',
-  ],
-  'Leadership': [
-    'Led by Expertise and Integrity',
-    'The Minds Powering Progress',
   ],
   'About Us': [
     'Company Overview',
@@ -43,13 +26,7 @@ const dropdownData: Record<string, string[]> = {
     'Safety First',
     'Our Professional Team',
     'Our Commitment',
-  ],
-  'Contact Us': [
-    'Our Office',
-    'Phone & Email',
-    'Social Media',
-    'Send Us a Message',
-  ],
+  ]
 };
 
 

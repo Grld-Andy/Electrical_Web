@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-gray-100 text-gray-700 w-full py-12 px-10 sm:px-16 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* ISO Certification Info */}
           {/* <div className="col-span-1 md:col-span-2">
             <h6 className="text-lg font-semibold mb-4 text-gray-700">ISO Certified</h6>
@@ -29,18 +29,17 @@ const Footer = () => {
             </div>
           </div> */}
 
-          <div></div>
-
           {/* Quick Links */}
-          <div>
+          <div className="col-span-1">
             <h3 className="text-lg font-bold mb-4 text-gray-700">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {["Home", "Projects", "Services", "About Us"].map((link) => (
                 <li key={link}>
                   <Link
                     to={`/${link.toLowerCase().replace(/us/g, "")}`}
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
                   >
+                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
                     {link}
                   </Link>
                 </li>

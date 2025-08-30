@@ -61,7 +61,7 @@ type Category = { icon: React.ReactNode; groups: Group[] };
 const combinedData: { [category: string]: Category } = {
   Services: {
     icon: <Zap className="w-6 h-6" />,
-    groups: Object.entries(serviceData).map(([groupName, group]) => ({
+    groups: Object.entries(serviceData).slice(0,4).map(([groupName, group]) => ({
       name: groupName,
       items: group.services.map(s => ({ title: s.title, description: s.description })),
     })),
