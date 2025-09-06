@@ -1,10 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FaMapMarkerAlt, 
-  FaLinkedinIn, 
-  FaFacebookF, 
-  FaEnvelope, 
   FaBars, 
   FaTimes,
   FaCheck,
@@ -63,7 +59,7 @@ const dropdownData = {
         ],
         image: 'https://images.unsplash.com/photo-1554486855-385312cec35a?q=80&w=2070&auto=format&fit=crop'
       },
-       {
+      {
         name: 'Specialized Solutions & Renewable',
         subItems: [
           'Solar Power Integration',
@@ -78,10 +74,33 @@ const dropdownData = {
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const [activeCategory, setActiveCategory] = useState({});
 
-  const handleCategoryHover = (navItem, categoryName) => {
+  // Active dropdown (About Us or Products, Services & Solutions)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  // Active category for detailed dropdowns
+  const [activeCategory, setActiveCategory] = useState<{ [key: string]: string }>({});
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (name: string, dropdown: any) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenDropdown(name);
+
+    if (dropdown?.type === 'detailed') {
+      setActiveCategory(prev => ({
+        ...prev,
+        [name]: prev[name] || dropdown.categories[0].name,
+      }));
+    }
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 300); // delay before closing
+  };
+
+  const handleCategoryHover = (navItem: string, categoryName: string) => {
     setActiveCategory(prev => ({ ...prev, [navItem]: categoryName }));
   };
 
@@ -93,38 +112,41 @@ const Header = () => {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 text-white">
+      {/* Desktop Header */}
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <Link to="/" title="Lymfz Engineering Limited">
             <img src="./logo.png" alt="Lymfz Engineering Limited" className="h-16" />
           </Link>
-          <div className="flex items-center space-x-4">
-          </div>
         </div>
 
         <div className="container mx-auto px-4">
           <div className="border-t border-white/20"></div>
         </div>
 
+        {/* Navbar */}
         <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8 relative">
           {navLinks.map((link) => {
             const dropdown = dropdownData[link.name];
             return (
-              <div key={link.name} className="relative group"
-                // Initialize active category on hover for detailed dropdowns
-                onMouseEnter={() => dropdown?.type === 'detailed' && handleCategoryHover(link.name, dropdown.categories[0].name)}
+              <div
+                key={link.name}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(link.name, dropdown)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   to={link.to}
                   className="font-semibold tracking-wide hover:text-blue-400 transition-colors relative"
                 >
                   {link.name}
-                  <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                  <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-blue-400 scale-x-0 hover:scale-x-100 transition-transform duration-200"></span>
                 </Link>
 
-                {dropdown && (
-                  <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-auto bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 -translate-y-5">
+                {dropdown && openDropdown === link.name && (
+                  <div className="absolute mt-4 left-1/2 -translate-x-1/2 w-auto bg-white shadow-lg rounded-md transition-all duration-300 z-50 transform">
                     
+                    {/* Simple Dropdown */}
                     {dropdown.type === 'simple' && (
                       <ul className="py-2 w-56">
                         {dropdown.items.map((item) => (
@@ -136,53 +158,56 @@ const Header = () => {
                         ))}
                       </ul>
                     )}
-                    
-                    {dropdown.type === 'detailed' && (
-                        <div className="flex rounded-md overflow-hidden" style={{ minWidth: '800px' }}>
-                           <div className="bg-blue-600 text-white w-80 p-5 flex flex-col space-y-1">
-                             {dropdown.categories.map(cat => (
-                               <a
-                                 key={cat.name}
-                                 href="#"
-                                 onMouseEnter={() => handleCategoryHover(link.name, cat.name)}
-                                 className={`relative w-full text-left p-3 rounded-md transition-colors text-sm font-semibold ${activeCategory[link.name] === cat.name ? 'bg-blue-700' : 'hover:bg-blue-500/80'}`}
-                               >
-                                 {cat.name}
-                                 {activeCategory[link.name] === cat.name && (
-                                   <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-[10px] border-l-white"></div>
-                                 )}
-                               </a>
-                             ))}
-                           </div>
-                           
-                           <div className="p-6 bg-white flex-1">
-                              {dropdown.categories.find(c => c.name === activeCategory[link.name]) && (
-                                <>
-                                  <ul className="grid grid-cols-2 gap-x-6 gap-y-4 text-gray-800 text-sm">
-                                    {dropdown.categories.find(c => c.name === activeCategory[link.name]).subItems.map(item => (
-                                      <li key={item} className="flex items-start space-x-3">
-                                        <div className="flex-shrink-0 w-5 h-5 mt-0.5 bg-blue-600 text-white flex items-center justify-center rounded-sm">
-                                            <FaCheck size={12}/>
-                                        </div>
-                                        <span>{item}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                  {dropdown.categories.find(c => c.name === activeCategory[link.name]).image && (
-                                      <div className="mt-6 h-40 w-full overflow-hidden rounded-md">
-                                        <img 
-                                          src={dropdown.categories.find(c => c.name === activeCategory[link.name]).image} 
-                                          alt={activeCategory[link.name]} 
-                                          className="w-full h-full object-cover" 
-                                        />
-                                      </div>
-                                  )}
-                                </>
-                              )}
-                           </div>
-                        </div>
-                    )}
 
+                    {/* Detailed Dropdown */}
+                    {dropdown.type === 'detailed' && (
+                      <div className="flex rounded-md overflow-hidden" style={{ minWidth: '800px' }}>
+                        {/* Left sidebar */}
+                        <div className="bg-blue-600 text-white w-80 p-5 flex flex-col space-y-1">
+                          {dropdown.categories.map(cat => (
+                            <button
+                              key={cat.name}
+                              onMouseEnter={() => handleCategoryHover(link.name, cat.name)}
+                              className={`relative text-left p-3 rounded-md transition-colors text-sm font-semibold ${
+                                activeCategory[link.name] === cat.name ? 'bg-blue-700' : 'hover:bg-blue-500/80'
+                              }`}
+                            >
+                              {cat.name}
+                              {activeCategory[link.name] === cat.name && (
+                                <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-[10px] border-l-white"></div>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Right content */}
+                        <div className="p-6 bg-white flex-1">
+                          {dropdown.categories.find(c => c.name === activeCategory[link.name]) && (
+                            <>
+                              <ul className="grid grid-cols-2 gap-x-6 gap-y-4 text-gray-800 text-sm">
+                                {dropdown.categories.find(c => c.name === activeCategory[link.name]).subItems.map(item => (
+                                  <li key={item} className="flex items-start space-x-3">
+                                    <div className="flex-shrink-0 w-5 h-5 mt-0.5 bg-blue-600 text-white flex items-center justify-center rounded-sm">
+                                      <FaCheck size={12}/>
+                                    </div>
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              {dropdown.categories.find(c => c.name === activeCategory[link.name]).image && (
+                                <div className="mt-6 h-40 w-full overflow-hidden rounded-md">
+                                  <img
+                                    src={dropdown.categories.find(c => c.name === activeCategory[link.name]).image}
+                                    alt={activeCategory[link.name]}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                              )}
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -191,7 +216,8 @@ const Header = () => {
         </nav>
       </div>
 
-       <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
+      {/* Mobile Header */}
+      <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
         <Link to="/" title="Lymfz Engineering Limited">
           <img src="/logo.png" alt="Lymfz Engineering Limited" className="h-12" />
         </Link>
