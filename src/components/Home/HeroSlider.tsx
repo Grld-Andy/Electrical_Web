@@ -5,6 +5,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // Slides with natural titles matching the page content
 const slides = [
   {
+    image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
+    title: [
+      'About Lymfz Engineering Limited',
+      'Reliable Electrical Solutions',
+    ],
+    buttonText: 'About Us',
+    buttonLink: '/about',
+  },
+  {
     image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0012.jpg',
     title: [
       'High, Medium & Low Voltage',
@@ -21,15 +30,6 @@ const slides = [
     ],
     buttonText: 'Our Projects',
     buttonLink: '/projects',
-  },
-  {
-    image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
-    title: [
-      'About Lymfz Engineering Limited',
-      'Reliable Electrical Solutions',
-    ],
-    buttonText: 'About Us',
-    buttonLink: '/about',
   },
   {
     image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
