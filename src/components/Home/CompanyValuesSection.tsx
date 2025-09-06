@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Award, Users } from 'lucide-react';
+import WhyChooseUs from './WhyChooseUs';
 
 const CountUp = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
     const [count, setCount] = useState(0);
@@ -43,63 +44,7 @@ const CompanyValues = () => {
             </div>
 
             {/* Why Choose Us - Card Style */}
-            <div className="py-20 px-8">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-3 gap-8 mb-12">
-                        {[
-                            {
-                                icon: Zap,
-                                title: "Complete, End-to-End Solutions",
-                                desc: "We handle everything from power systems to automation and networks, giving you a single trusted partner instead of juggling multiple contractors.",
-                                gradient: "from-gray-300 to-gray-500"
-                            },
-                            {
-                                icon: Award,
-                                title: "Proven Industry Trust",
-                                desc: "Leading companies choose us because we consistently deliver results that meet global standards.",
-                                gradient: "from-gray-400 to-gray-600"
-                            },
-                            {
-                                icon: Users,
-                                title: "A Team That Delivers",
-                                desc: "Our engineers and project managers are committed to reliability and precision, ensuring every project is completed on time and to the highest quality.",
-                                gradient: "from-gray-500 to-gray-700"
-                            }
-
-                        ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100 hover:border-blue-200"
-                                whileHover={{ y: -5 }}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                            >
-                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                                    <item.icon className="w-8 h-8 text-white" />
-                                </div>
-                                <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
-                                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Additional Info Section */}
-                    <div className="bg-gradient-to-r from-blue-50 to-white rounded-3xl p-8 md:p-12 border border-blue-100">
-                        <div className="max-w-4xl mx-auto text-center">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                                Established Excellence Since 2020
-                            </h3>
-                            <p className="text-gray-700 leading-relaxed text-lg">
-                                With a dedicated team of engineers, technicians, and project managers, we have
-                                successfully delivered projects for clients including GIZ Technologies, AngloGold Ashanti,
-                                First Atlantic Bank, Ghana Manganese Company, and Solarshop Ghana.
-                                We are committed to quality, reliability, and timely execution.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <WhyChooseUs/>
 
             {/* Safety Section */}
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white overflow-hidden">
