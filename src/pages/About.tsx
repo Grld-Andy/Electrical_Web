@@ -1,199 +1,173 @@
-import PageHeader from "@/components/ui/PageHeader";
 import React from "react";
+import type { ReactNode } from "react";
+import PageHeader from "@/components/ui/PageHeader";
 import { motion, type Variants } from "framer-motion";
+import {
+  FaBullseye,
+  FaRocket,
+  FaHandshake,
+  FaBriefcase,
+  FaBroadcastTower,
+  FaHardHat,
+  FaLightbulb,
+  FaTools,
+} from "react-icons/fa";
+
+interface FeatureCardProps {
+  icon: ReactNode;
+  title: string;
+  children: ReactNode;
+}
+
+// FeatureCard component
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children }) => (
+  <motion.div
+    className="bg-white p-6 rounded-md flex flex-col items-center text-center"
+    variants={{
+      hidden: { opacity: 0, y: 10 },
+      visible: { opacity: 1, y: 0 },
+    }}
+  >
+    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mb-4">
+      {icon}
+    </div>
+    <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
+    <p className="text-gray-600">{children}</p>
+  </motion.div>
+);
 
 const About: React.FC = () => {
   const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeInOut" },
+      transition: { duration: 0.6, staggerChildren: 0.2, ease: "easeInOut" },
     },
   };
 
-  return (
-    <div className="bg-white text-gray-800">
-      <PageHeader text={"ABOUT US"} />
+  const buttonClasses =
+    "bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow hover:bg-blue-700 transition-all duration-300";
 
-      {/* Our Story */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  const marketSegments = [
+    { icon: <FaHardHat size={28} />, name: "Petrochemical Industry" },
+    { icon: <FaTools size={28} />, name: "Commercial & Industrial Energy Solutions" },
+    { icon: <FaLightbulb size={28} />, name: "Power Generation" },
+    { icon: <FaBriefcase size={28} />, name: "Industrial Sector" },
+    { icon: <FaRocket size={28} />, name: "Renewable Energy Solutions" },
+    { icon: <FaBullseye size={28} />, name: "Mining Industry" },
+    { icon: <FaBroadcastTower size={28} />, name: "Agricultural Sector" },
+    { icon: <FaHandshake size={28} />, name: "Marine Industry" },
+  ];
+
+  return (
+    <div className="bg-gray-50 text-gray-800">
+      <PageHeader text="ABOUT US" />
+
+      {/* Our Story Section */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            className="rounded-lg overflow-hidden shadow-2xl"
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
+            <p className="text-gray-600 mb-4">
+              Lymfz Engineering Limited specializes in delivering safe, efficient, and innovative electrical solutions.
+            </p>
+            <p className="text-gray-600 mb-4">
+              Our team of engineers and technicians combines technical expertise with modern tools to execute projects on time and to the highest standards. From residential and commercial installations to complex industrial works, we provide tailored services that keep systems reliable, sustainable, and future-ready.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="rounded-md overflow-hidden shadow-lg"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <img
-              src="./images/about.jpg"
-              alt="About Lymfz Engineering Limited"
+              src="/images/about.jpg"
+              alt="About Lymfz Engineering Limited team at work"
               className="w-full h-full object-cover"
             />
-          </motion.div>
-
-          <motion.div
-            className="prose lg:prose-lg max-w-none"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Lymfz Engineering Limited specializes in delivering safe,
-              efficient, and innovative electrical solutions. Our team of
-              engineers and technicians combines technical expertise with modern
-              tools to execute projects on time and to the highest standards.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              From residential and commercial installations to complex
-              industrial works, we provide tailored services that keep systems
-              reliable, sustainable, and future-ready.
-            </p>
           </motion.div>
         </div>
       </div>
 
       {/* Vision, Mission & Values */}
       <motion.div
-        className="bg-gray-50 py-20"
+        className="bg-white py-20"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-8">
-            Vision, Mission & Values
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            <strong>Vision:</strong> To be a leader in innovative and sustainable
-            engineering solutions across Africa.
-          </p>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            <strong>Mission:</strong> Delivering reliable, safe, and
-            cost-effective engineering services that empower businesses and
-            communities.
-          </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            <strong>Values:</strong> Safety, Integrity, Innovation, Excellence,
-            and Partnership.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
+          <FeatureCard icon={<FaRocket size={24} />} title="Our Vision">
+            To be a leader in innovative and sustainable engineering solutions across Africa.
+          </FeatureCard>
+          <FeatureCard icon={<FaBullseye size={24} />} title="Our Mission">
+            Delivering reliable, safe, and cost-effective engineering services that empower businesses and communities.
+          </FeatureCard>
+          <FeatureCard icon={<FaHandshake size={24} />} title="Our Values">
+            Safety, Integrity, Innovation, Excellence, and Partnership.
+          </FeatureCard>
         </div>
       </motion.div>
 
-      {/* Market Segment */}
+      {/* Market Segment Section */}
       <motion.div
-        className="py-20 bg-white"
+        className="py-20 bg-gray-50"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-12">
-            Market Segment
-          </h2>
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700 text-lg">
-            {[
-              "Oil & Gas",
-              "Mining & Industrial",
-              "Energy & Power Distribution",
-              "Telecommunications",
-              "Construction & Real Estate",
-              "Government & Public Infrastructure",
-            ].map((segment, index) => (
-              <li key={index}>{segment}</li>
-            ))}
-          </ul>
-        </div>
-      </motion.div>
-
-      {/* Technology & Expertise */}
-      <motion.div
-        className="bg-gray-50 py-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
-            Technology & Expertise
-          </h2>
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700 text-lg">
-            {[
-              "High, Medium & Low Voltage Transmission Works",
-              "Electrical Engineering Design & Consultancy",
-              "Mechanical, Electrical & Plumbing (MEP)",
-              "Instrumentation & Automation",
-              "Solar Power Systems",
-              "Fiber Optic Installations",
-              "SCADA Systems & Industrial Automation",
-              "Air Conditioning & Refrigeration",
-            ].map((expertise, index) => (
-              <li key={index}>{expertise}</li>
-            ))}
-          </ul>
-        </div>
-      </motion.div>
-
-      {/* Career */}
-      <motion.div
-        className="py-20 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Career</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            We believe in nurturing talent and creating opportunities for growth.
-            At Lymfz Engineering Limited, careers are built on continuous
-            learning, collaboration, and innovation.
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Market Segment</h2>
+          <p className="text-gray-600 mb-10">
+            Empowering Industries Through Expertise and Innovation. Lymfz Engineering Limited provides innovative and reliable electrical engineering solutions to various industries. Our expertise ensures efficiency, safety, and sustainability in every project we undertake. While we specialize in the following key market segments, our services are not limited to these areas. We are always ready to adapt to evolving industry needs.
           </p>
-          <p className="text-lg text-gray-700 mt-4">
-            Interested in joining us?{" "}
-            <span className="text-blue-600 cursor-pointer hover:underline">
-              Send your CV
-            </span>
-            .
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Press */}
-      <motion.div
-        className="bg-gray-50 py-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Press</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Stay updated with our latest news, media mentions, and announcements.  
-            Lymfz Engineering Limited is committed to transparency and sharing our
-            journey as we expand and innovate.  
-          </p>
-          <div className="mt-8 space-y-4">
-            {[
-              "Lymfz Engineering launches new solar initiative (2024)",
-              "Partnership signed with leading telecom provider",
-              "Awarded ISO certification for safety and quality",
-            ].map((news, index) => (
-              <div
-                key={index}
-                className="p-4 bg-white shadow rounded-md text-gray-800 hover:shadow-md transition"
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {marketSegments.map((segment) => (
+              <motion.div
+                key={segment.name}
+                className="bg-white p-6 rounded-md shadow flex flex-col items-center text-center transition-transform hover:-translate-y-1 hover:shadow-lg"
+                variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               >
-                {news}
-              </div>
+                <div className="text-blue-600 mb-3">{segment.icon}</div>
+                <span className="text-lg font-semibold text-gray-800">{segment.name}</span>
+              </motion.div>
             ))}
           </div>
+        </div>
+      </motion.div>
+
+      {/* Career Section */}
+      <motion.div
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionVariants}
+      >
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Join Our Team</h2>
+          <p className="text-gray-600 mb-6">
+            We believe in nurturing talent and creating opportunities for growth. At Lymfz Engineering Limited, careers are built on continuous learning, collaboration, and innovation.
+          </p>
+          <motion.a
+            href="mailto:careers@lymfz.com"
+            className={buttonClasses}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Send Your CV
+          </motion.a>
         </div>
       </motion.div>
     </div>
