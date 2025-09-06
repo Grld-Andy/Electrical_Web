@@ -16,7 +16,22 @@ const navLinks = [
   { name: 'Contact Us', to: '/contact' },
 ];
 
-const dropdownData = {
+type SimpleDropdown = {
+  type: 'simple';
+  items: { name: string; to: string }[];
+};
+
+type DetailedDropdown = {
+  type: 'detailed';
+  categories: { name: string; subItems: string[]; image?: string }[];
+};
+
+type DropdownData = {
+  'About Us': SimpleDropdown;
+  'Products, Services & Solutions': DetailedDropdown;
+};
+
+const dropdownData: DropdownData = {
   'About Us': {
     type: 'simple',
     items: [
@@ -112,7 +127,7 @@ const Header = () => {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 text-white">
-      {/* Desktop Header */}
+            const dropdown = dropdownData[link.name as keyof DropdownData];
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <Link to="/" title="Lymfz Engineering Limited">
@@ -127,7 +142,7 @@ const Header = () => {
         {/* Navbar */}
         <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8 relative">
           {navLinks.map((link) => {
-            const dropdown = dropdownData[link.name];
+            const dropdown = (dropdownData as Record<string, SimpleDropdown | DetailedDropdown>)[link.name];
             return (
               <div
                 key={link.name}
@@ -149,7 +164,7 @@ const Header = () => {
                     {/* Simple Dropdown */}
                     {dropdown.type === 'simple' && (
                       <ul className="py-2 w-56">
-                        {dropdown.items.map((item) => (
+                        {dropdown.items.map((item: { name: string; to: string }) => (
                           <li key={item.name}>
                             <Link to={item.to} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
                               {item.name}
@@ -164,7 +179,7 @@ const Header = () => {
                       <div className="flex rounded-md overflow-hidden" style={{ minWidth: '800px' }}>
                         {/* Left sidebar */}
                         <div className="bg-blue-600 text-white w-80 p-5 flex flex-col space-y-1">
-                          {dropdown.categories.map(cat => (
+                          {dropdown.categories.map((cat: { name: string; subItems: string[]; image?: string }) => (
                             <button
                               key={cat.name}
                               onMouseEnter={() => handleCategoryHover(link.name, cat.name)}
@@ -182,10 +197,13 @@ const Header = () => {
 
                         {/* Right content */}
                         <div className="p-6 bg-white flex-1">
-                          {dropdown.categories.find(c => c.name === activeCategory[link.name]) && (
+                          {dropdown.categories.find((c: { name: string; subItems: string[]; image?: string }) => c.name === activeCategory[link.name]) && (
                             <>
                               <ul className="grid grid-cols-2 gap-x-6 gap-y-4 text-gray-800 text-sm">
-                                {dropdown.categories.find(c => c.name === activeCategory[link.name]).subItems.map(item => (
+                                {(dropdown.categories.find(
+                                  (c: { name: string; subItems: string[]; image?: string }) =>
+                                     c.name === activeCategory[link.name]
+                                )?.subItems ?? []).map((item: string) => (
                                   <li key={item} className="flex items-start space-x-3">
                                     <div className="flex-shrink-0 w-5 h-5 mt-0.5 bg-blue-600 text-white flex items-center justify-center rounded-sm">
                                       <FaCheck size={12}/>
@@ -194,10 +212,10 @@ const Header = () => {
                                   </li>
                                 ))}
                               </ul>
-                              {dropdown.categories.find(c => c.name === activeCategory[link.name]).image && (
+                              {dropdown.categories.find((c: { name: string; subItems: string[]; image?: string }) => c.name === activeCategory[link.name])?.image && (
                                 <div className="mt-6 h-40 w-full overflow-hidden rounded-md">
                                   <img
-                                    src={dropdown.categories.find(c => c.name === activeCategory[link.name]).image}
+                                    src={dropdown.categories.find((c: { name: string; subItems: string[]; image?: string }) => c.name === activeCategory[link.name])?.image}
                                     alt={activeCategory[link.name]}
                                     className="w-full h-full object-cover"
                                   />
