@@ -31,65 +31,78 @@ type DropdownData = {
   'Products, Services & Solutions': DetailedDropdown;
 };
 
-const dropdownData: DropdownData = {
-  'About Us': {
-    type: 'simple',
-    items: [
-      { name: 'Our Story', to: '/about#our-story' },
-      { name: 'Vision, Mission & Values', to: '/about#vision' },
-      { name: 'Market Segment', to: '/about#market-segment' },
-      { name: 'Technology & Expertise', to: '/about#technology' },
-      { name: 'Career', to: '/about#career' },
-      { name: 'Press', to: '/about#press' },
-    ],
-  },
+const dropdownData = {
   'Products, Services & Solutions': {
     type: 'detailed',
     categories: [
       {
-        name: 'Power Systems & Electrical Engineering',
+        name: 'Electrical Engineering & Power Systems',
         subItems: [
-          'Power System Studies & Analysis',
-          'HV & LV Electrical Engineering & Design',
-          'Electrical Commissioning & System Studies',
-          'Electrical Infrastructural Commissioning',
-          'Lighting Protection Analysis',
-          'Low Voltage Distribution Panel & MCC Manufacturing',
+          'High, Medium & Low Voltage Works',
+          'Electrical Engineering Design & Consultancy',
+          'Instrumentation & Automation',
         ],
-        image: 'https://images.unsplash.com/photo-1581092921462-205273468266?q=80&w=2070&auto=format&fit=crop'
       },
       {
-        name: 'Construction & Installation Services',
+        name: 'Mechanical, Electrical & Plumbing (MEP)',
         subItems: [
-          'Substation Construction',
-          'Cable Laying and Termination',
-          'Panel Installation',
-          'Site Management',
+          'MEP Engineering',
+          'Air Conditioning & Refrigeration',
         ],
-        image: 'https://images.unsplash.com/photo-1535726920984-54c336b372b6?q=80&w=1974&auto=format&fit=crop'
       },
       {
-        name: 'Testing, Compliance & Safety',
+        name: 'Renewable & Sustainable Solutions',
         subItems: [
-          'Safety Audits & Compliance',
-          'System Integrity Testing',
-          'Protective Device Coordination',
-          'Commissioning Verification',
+          'Solar Power Systems',
+          'Energy Efficiency Solutions',
         ],
-        image: 'https://images.unsplash.com/photo-1554486855-385312cec35a?q=80&w=2070&auto=format&fit=crop'
       },
       {
-        name: 'Specialized Solutions & Renewable',
+        name: 'Networking & Security Systems',
         subItems: [
-          'Solar Power Integration',
-          'Energy Storage Solutions',
-          'Grid Modernization',
+          'Fiber Optic & Data Networks',
+          'Electric Fencing & Security Systems',
         ],
-        image: 'https://images.unsplash.com/photo-1624397523399-9c6699f89eac?q=80&w=2070&auto=format&fit=crop'
       },
-    ]
+      {
+        name: 'Products & Electrical Supplies',
+        subItems: [
+          'Cables & Accessories',
+          'Power Protection & Distribution Equipment',
+          'Lighting & Electrical Fittings',
+        ],
+      },
+      {
+        name: 'Our Solutions',
+        subItems: [
+          'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
+          'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design',
+          'LV (Low Voltage) Design & Electrical Installation',
+          'Power System Modelling & Studies',
+          'Power System Protection Services',
+          'Electrical Instrumentation, SCADA & Automation',
+        ],
+        images: [
+          'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop',
+          'https://hertzengineering.com/wp-content/uploads/LV.jpg',
+          'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop',
+        ],
+        hrefs: [
+          '#',
+          '#',
+          '#',
+          '#',
+          '#',
+          '#',
+        ],
+      },
+    ],
   },
 };
+
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -192,7 +205,7 @@ const Header = () => {
                             >
                               {cat.name}
                               {activeCategory[link.name] === cat.name && (
-                                <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-[10px] border-l-white"></div>
+                                <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-[10px] border-l-blue-700"></div>
                               )}
                             </button>
                           ))}
