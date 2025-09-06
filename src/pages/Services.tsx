@@ -156,7 +156,7 @@ const ProductsAndServicesPage = () => {
                   animate="visible"
                   exit="exit"
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
+                  className="bg-white h-min rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
                 >
                   {item.imgSrc && <img src={item.imgSrc} alt={item.title} className="h-48 w-full object-cover rounded mb-4" />}
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
