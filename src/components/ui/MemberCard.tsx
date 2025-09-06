@@ -13,7 +13,7 @@ interface Props{
 const MemberCard: React.FC<Props> = ({ member }) => {
   return (
     <div 
-      className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
+      className="group h-full bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
     >
       <div className="relative h-72 overflow-hidden">
         <img 

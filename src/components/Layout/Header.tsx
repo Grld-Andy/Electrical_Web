@@ -35,8 +35,12 @@ const dropdownData: DropdownData = {
   'About Us': {
     type: 'simple',
     items: [
-      { name: 'Company Overview', to: '/about#overview' },
-      { name: 'Our Services', to: '/about#services' },
+      { name: 'Our Story', to: '/about#our-story' },
+      { name: 'Vision, Mission & Values', to: '/about#vision' },
+      { name: 'Market Segment', to: '/about#market-segment' },
+      { name: 'Technology & Expertise', to: '/about#technology' },
+      { name: 'Career', to: '/about#career' },
+      { name: 'Press', to: '/about#press' },
     ],
   },
   'Products, Services & Solutions': {
@@ -127,7 +131,6 @@ const Header = () => {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 text-white">
-            const dropdown = dropdownData[link.name as keyof DropdownData];
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <Link to="/" title="Lymfz Engineering Limited">
