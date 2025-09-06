@@ -61,7 +61,7 @@ const ContactPage = () => {
               className="lg:col-span-2 space-y-10"
               variants={containerVariants}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
               <ContactInfoCard icon={<MapPin />} title="Our Office">
@@ -89,7 +89,7 @@ const ContactPage = () => {
               className="lg:col-span-3 bg-gray-50 p-8 rounded-xl shadow-lg"
               variants={containerVariants}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
               <h2 className="text-3xl font-bold text-gray-800 mb-2">Send Us a Message</h2>

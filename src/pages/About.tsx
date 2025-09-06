@@ -2,10 +2,9 @@ import MemberCard from "@/components/ui/MemberCard";
 import PageHeader from "@/components/ui/PageHeader";
 import teamMembers from "@/constants/teamMembers";
 import React from "react";
-import { motion, type Variants } from "framer-motion"; // Import motion from framer-motion
+import { motion, type Variants } from "framer-motion";
 
 const About: React.FC = () => {
-  // Animation variants for sections to fade in as they appear
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -15,13 +14,12 @@ const About: React.FC = () => {
     },
   };
 
-  // Staggering animation for list/grid items
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Time delay between each child animating in
+        staggerChildren: 0.2,
       },
     },
   };
@@ -33,17 +31,14 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section - No animation needed here as it's the first thing seen */}
       <PageHeader text={"ABOUT US"} />
 
-      {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Image - Animate from the left */}
           <motion.div
             className="rounded-lg overflow-hidden shadow-2xl"
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
@@ -54,7 +49,6 @@ const About: React.FC = () => {
             />
           </motion.div>
 
-          {/* Right Text - Animate from the right */}
           <motion.div
             className="prose lg:prose-lg max-w-none"
             initial={{ opacity: 0, x: 100 }}
@@ -115,11 +109,6 @@ const About: React.FC = () => {
           </motion.ul>
         </div>
       </motion.div>
-
-      {/* Projects Section */}
-      {/* This section remains commented out as in the original file */}
-
-      {/* Products Section */}
       <motion.div
         className="bg-gray-50 py-20"
         initial="hidden"

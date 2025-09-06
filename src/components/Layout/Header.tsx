@@ -1,9 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaMapMarkerAlt, FaLinkedinIn, FaFacebookF, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { 
+  FaMapMarkerAlt, 
+  FaLinkedinIn, 
+  FaFacebookF, 
+  FaEnvelope, 
+  FaBars, 
+  FaTimes,
+  FaCheck,
+} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-// Main navigation links
 const navLinks = [
   { name: 'Home', to: '/' },
   { name: 'About Us', to: '/about' },
@@ -13,26 +20,70 @@ const navLinks = [
   { name: 'Contact Us', to: '/contact' },
 ];
 
-const dropdownData: Record<string, string[]> = {
-  'Products, Services & Solutions': [
-    'Services',
-    'Products',
-    'Solutions',
-  ],
-  'About Us': [
-    'Company Overview',
-    'Our Services',
-    'What We Supply',
-    'Safety First',
-    'Our Professional Team',
-    'Our Commitment',
-  ]
+const dropdownData = {
+  'About Us': {
+    type: 'simple',
+    items: [
+      { name: 'Company Overview', to: '/about#overview' },
+      { name: 'Our Services', to: '/about#services' },
+    ],
+  },
+  'Products, Services & Solutions': {
+    type: 'detailed',
+    categories: [
+      {
+        name: 'Power Systems & Electrical Engineering',
+        subItems: [
+          'Power System Studies & Analysis',
+          'HV & LV Electrical Engineering & Design',
+          'Electrical Commissioning & System Studies',
+          'Electrical Infrastructural Commissioning',
+          'Lighting Protection Analysis',
+          'Low Voltage Distribution Panel & MCC Manufacturing',
+        ],
+        image: 'https://images.unsplash.com/photo-1581092921462-205273468266?q=80&w=2070&auto=format&fit=crop'
+      },
+      {
+        name: 'Construction & Installation Services',
+        subItems: [
+          'Substation Construction',
+          'Cable Laying and Termination',
+          'Panel Installation',
+          'Site Management',
+        ],
+        image: 'https://images.unsplash.com/photo-1535726920984-54c336b372b6?q=80&w=1974&auto=format&fit=crop'
+      },
+      {
+        name: 'Testing, Compliance & Safety',
+        subItems: [
+          'Safety Audits & Compliance',
+          'System Integrity Testing',
+          'Protective Device Coordination',
+          'Commissioning Verification',
+        ],
+        image: 'https://images.unsplash.com/photo-1554486855-385312cec35a?q=80&w=2070&auto=format&fit=crop'
+      },
+       {
+        name: 'Specialized Solutions & Renewable',
+        subItems: [
+          'Solar Power Integration',
+          'Energy Storage Solutions',
+          'Grid Modernization',
+        ],
+        image: 'https://images.unsplash.com/photo-1624397523399-9c6699f89eac?q=80&w=2070&auto=format&fit=crop'
+      },
+    ]
+  },
 };
-
-
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const [activeCategory, setActiveCategory] = useState({});
+
+  const handleCategoryHover = (navItem, categoryName) => {
+    setActiveCategory(prev => ({ ...prev, [navItem]: categoryName }));
+  };
 
   const mobileMenuVariants = {
     hidden: { x: '-100%' },
@@ -42,41 +93,12 @@ const Header = () => {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 text-white">
-      {/* Desktop Header */}
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <Link to="/" title="Lymfz Engineering Limited">
             <img src="./logo.png" alt="Lymfz Engineering Limited" className="h-16" />
           </Link>
-
           <div className="flex items-center space-x-4">
-            <a
-              href="https://www.google.com/maps?q=5+Good+Street,+Amasaman,+Accra,+Ghana"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-hertz-blue transition-colors"
-            >
-              <FaMapMarkerAlt />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/lymfz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-hertz-blue transition-colors"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href="https://www.facebook.com/lymfz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-hertz-blue transition-colors"
-            >
-              <FaFacebookF />
-            </a>
-            <a href="mailto:info@lymfz.com" className="hover:text-hertz-blue transition-colors">
-              <FaEnvelope />
-            </a>
           </div>
         </div>
 
@@ -84,47 +106,92 @@ const Header = () => {
           <div className="border-t border-white/20"></div>
         </div>
 
-        {/* Desktop Navbar */}
         <nav className="container mx-auto px-4 py-4 flex justify-center space-x-8 relative">
-          {navLinks.map((link) => (
-            <div key={link.name} className="relative group">
-              <Link
-                to={link.to}
-                className="font-semibold tracking-wide hover:text-hertz-blue transition-colors relative"
+          {navLinks.map((link) => {
+            const dropdown = dropdownData[link.name];
+            return (
+              <div key={link.name} className="relative group"
+                // Initialize active category on hover for detailed dropdowns
+                onMouseEnter={() => dropdown?.type === 'detailed' && handleCategoryHover(link.name, dropdown.categories[0].name)}
               >
-                {link.name}
-                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-              </Link>
-
-              {/* Dropdown on hover */}
-              {dropdownData[link.name] && (
-                <motion.div
-                  className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+                <Link
+                  to={link.to}
+                  className="font-semibold tracking-wide hover:text-blue-400 transition-colors relative"
                 >
-                  <ul className="py-2">
-                    {dropdownData[link.name].map((item) => (
-                      <li key={item}>
-                        <Link
-                          to={`${link.to}#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-hertz-blue"
-                        >
-                          {item}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </div>
-          ))}
+                  {link.name}
+                  <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                </Link>
+
+                {dropdown && (
+                  <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-auto bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 -translate-y-5">
+                    
+                    {dropdown.type === 'simple' && (
+                      <ul className="py-2 w-56">
+                        {dropdown.items.map((item) => (
+                          <li key={item.name}>
+                            <Link to={item.to} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                              {item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    
+                    {dropdown.type === 'detailed' && (
+                        <div className="flex rounded-md overflow-hidden" style={{ minWidth: '800px' }}>
+                           <div className="bg-blue-600 text-white w-80 p-5 flex flex-col space-y-1">
+                             {dropdown.categories.map(cat => (
+                               <a
+                                 key={cat.name}
+                                 href="#"
+                                 onMouseEnter={() => handleCategoryHover(link.name, cat.name)}
+                                 className={`relative w-full text-left p-3 rounded-md transition-colors text-sm font-semibold ${activeCategory[link.name] === cat.name ? 'bg-blue-700' : 'hover:bg-blue-500/80'}`}
+                               >
+                                 {cat.name}
+                                 {activeCategory[link.name] === cat.name && (
+                                   <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-[10px] border-l-white"></div>
+                                 )}
+                               </a>
+                             ))}
+                           </div>
+                           
+                           <div className="p-6 bg-white flex-1">
+                              {dropdown.categories.find(c => c.name === activeCategory[link.name]) && (
+                                <>
+                                  <ul className="grid grid-cols-2 gap-x-6 gap-y-4 text-gray-800 text-sm">
+                                    {dropdown.categories.find(c => c.name === activeCategory[link.name]).subItems.map(item => (
+                                      <li key={item} className="flex items-start space-x-3">
+                                        <div className="flex-shrink-0 w-5 h-5 mt-0.5 bg-blue-600 text-white flex items-center justify-center rounded-sm">
+                                            <FaCheck size={12}/>
+                                        </div>
+                                        <span>{item}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                  {dropdown.categories.find(c => c.name === activeCategory[link.name]).image && (
+                                      <div className="mt-6 h-40 w-full overflow-hidden rounded-md">
+                                        <img 
+                                          src={dropdown.categories.find(c => c.name === activeCategory[link.name]).image} 
+                                          alt={activeCategory[link.name]} 
+                                          className="w-full h-full object-cover" 
+                                        />
+                                      </div>
+                                  )}
+                                </>
+                              )}
+                           </div>
+                        </div>
+                    )}
+
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
       </div>
 
-      {/* Mobile Header */}
-      <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
+       <div className="lg:hidden p-4 flex justify-between items-center bg-gray-900/50">
         <Link to="/" title="Lymfz Engineering Limited">
           <img src="/logo.png" alt="Lymfz Engineering Limited" className="h-12" />
         </Link>
@@ -136,8 +203,6 @@ const Header = () => {
           <FaBars />
         </button>
       </div>
-
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
@@ -171,7 +236,8 @@ const Header = () => {
                     <li key={link.name}>
                       <Link
                         to={link.to}
-                        className="font-semibold text-lg hover:text-hertz-blue transition-colors block py-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="font-semibold text-lg hover:text-blue-400 transition-colors block py-2"
                       >
                         {link.name}
                       </Link>
