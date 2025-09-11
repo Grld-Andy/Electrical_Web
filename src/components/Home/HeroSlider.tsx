@@ -14,15 +14,6 @@ const slides = [
     buttonLink: '/about',
   },
   {
-    image: '/images/my/hero2.jpg',
-    title: [
-      'High, Medium & Low Voltage',
-      'Power Systems & Distribution',
-    ],
-    buttonText: 'Our Services',
-    buttonLink: '/services',
-  },
-  {
     image: '/images/my/solutions/solutions1.jpg',
     title: [
       'Electrical Infrastructure',
