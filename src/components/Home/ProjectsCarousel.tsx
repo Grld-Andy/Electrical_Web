@@ -11,43 +11,44 @@ import 'swiper/css/navigation';
 // Expanded and structured project data for 6 items
 const projects = [
     {
-        status: "",
-        category: "Grid Studies",
-        title: "Arc Flash & Coordination Studies",
-        client: "AGA KMS Redevelopment 2025",
-        image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
-    },
-    {
-        category: "Infrastructure",
-        title: "161KV Transmission Powerline",
-        client: "Lycopodium Ghana Limited",
-        image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
-    },
-    {
-        category: "Low Voltage",
-        title: "400V Distribution Installation",
-        client: "Cardinal Namdini Mining Limite",
-        image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
-    },
-    {
-        category: "Medium Voltage",
-        title: "34.5KV Distribution & Testing",
-        client: "Cardinal Namdini Mining Limited",
-        image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
-    },
-    {
-        category: "Consultancy",
-        title: "System Modelling & Analysis",
-        client: "National Power Authority",
-        image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
-    },
-    {
+        status: "2025",
         category: "Installation",
-        title: "LV Electrical Installation",
-        client: "Commercial Real Estate Group",
-        image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop"
+        title: "Supply & Installation of Solar Submersible Pump",
+        client: "GIZ Technologies",
+        image:
+        "https://www.worldpumps.com/media/0tdif5ol/b41349fe-ecd0-479b-b64e-54c1fd902f9e.jpg",
+    },
+    {
+        status: "2024",
+        category: "Supply",
+        title: "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (500m)",
+        client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+        image: "./images/my/projects/copper.jpg",
+    },
+    {
+        status: "2024",
+        category: "Supply",
+        title:
+        "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (600m) + Electrical Materials",
+        client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+        image: "./images/my/projects/copperCable.jpg",
+    },
+    {
+        status: "2023",
+        category: "Supply",
+        title: "Supply of 3 Sets of 11kV Schneider RMUs",
+        client: "AngloGold Ashanti Obuasi (via Maalotech Engineering)",
+        image: "./images/my/projects/SchneiderRMU.jpg",
+    },
+    {
+        status: "2023",
+        category: "Supply",
+        title: "Supply of 2 Sets of 33kV 630A Auto Reclosers",
+        client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+        image: "./images/my/projects/autoRecloser.jpg",
     },
 ];
+
 
 const ModernProjectsCarousel = () => {
     return (

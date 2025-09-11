@@ -14,9 +14,9 @@ const Home: React.FC = () => {
       <HeroSlider />
       <Introduction />
       <InfoCards />
+      <ProjectsCarousel />
       <CompanyValuesSection />
       <Partners />
-      <ProjectsCarousel />
       <Newsletter />
     </div>
   );
