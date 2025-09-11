@@ -14,12 +14,21 @@ const slides = [
     buttonLink: '/about',
   },
   {
+    image: '/images/my/hero2.jpg',
+    title: [
+      'High, Medium & Low Voltage',
+      'Power Systems & Distribution',
+    ],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
+  {
     image: '/images/my/solutions/solutions1.jpg',
     title: [
       'Electrical Infrastructure',
       'Feasibility, Engineering, Procurement & Construction',
     ],
-    buttonText: 'Our Solutions',
+    buttonText: 'Our Services',
     buttonLink: '/solutions',
   },
   {
@@ -28,7 +37,7 @@ const slides = [
       'High & Medium Voltage Networks',
       'Transmission, Distribution & Substation Design',
     ],
-    buttonText: 'Our Solutions',
+    buttonText: 'Our Services',
     buttonLink: '/solutions',
   },
   {
@@ -37,7 +46,7 @@ const slides = [
       'Low Voltage Systems',
       'Design & Electrical Installations',
     ],
-    buttonText: 'Our Solutions',
+    buttonText: 'Our Services',
     buttonLink: '/solutions',
   },
   {
@@ -46,7 +55,7 @@ const slides = [
       'Power System Modelling & Studies',
       'Analysis, Simulation & Optimization',
     ],
-    buttonText: 'Our Solutions',
+    buttonText: 'Our Services',
     buttonLink: '/solutions',
   },
   {
@@ -55,7 +64,7 @@ const slides = [
       'Power System Protection',
       'Coordination, Arc Flash & Safety Studies',
     ],
-    buttonText: 'Our Solutions',
+    buttonText: 'Our Services',
     buttonLink: '/solutions',
   },
   {
@@ -64,7 +73,7 @@ const slides = [
       'Instrumentation, SCADA & Automation',
       'Smart Electrical & Industrial Solutions',
     ],
-    buttonText: 'Our Solutions',
+    buttonText: 'Our Services',
     buttonLink: '/solutions',
   },
   {
