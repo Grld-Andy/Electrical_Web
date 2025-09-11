@@ -29,7 +29,7 @@ const slides = [
       'Feasibility, Engineering, Procurement & Construction',
     ],
     buttonText: 'Our Services',
-    buttonLink: '/solutions',
+    buttonLink: '/services',
   },
   {
     image: '/images/my/solutions/solutions2.jpg',
@@ -38,7 +38,7 @@ const slides = [
       'Transmission, Distribution & Substation Design',
     ],
     buttonText: 'Our Services',
-    buttonLink: '/solutions',
+    buttonLink: '/services',
   },
   {
     image: '/images/my/solutions/solutions3.jpg',
@@ -47,7 +47,7 @@ const slides = [
       'Design & Electrical Installations',
     ],
     buttonText: 'Our Services',
-    buttonLink: '/solutions',
+    buttonLink: '/services',
   },
   {
     image: '/images/my/solutions/solutions4.jpg',
@@ -56,7 +56,7 @@ const slides = [
       'Analysis, Simulation & Optimization',
     ],
     buttonText: 'Our Services',
-    buttonLink: '/solutions',
+    buttonLink: '/services',
   },
   {
     image: '/images/my/solutions/solutions5.jpg',
@@ -65,7 +65,7 @@ const slides = [
       'Coordination, Arc Flash & Safety Studies',
     ],
     buttonText: 'Our Services',
-    buttonLink: '/solutions',
+    buttonLink: '/services',
   },
   {
     image: '/images/my/solutions/solutions6.jpg',
@@ -74,7 +74,7 @@ const slides = [
       'Smart Electrical & Industrial Solutions',
     ],
     buttonText: 'Our Services',
-    buttonLink: '/solutions',
+    buttonLink: '/services',
   },
   {
     image: '/images/my/heroLast.jpg',
