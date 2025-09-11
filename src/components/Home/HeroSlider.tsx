@@ -32,6 +32,60 @@ const slides = [
     buttonLink: '/projects',
   },
   {
+    image: '/images/my/solutions1.jpg',
+    title: [
+      'Electrical Infrastructure',
+      'Feasibility, Engineering, Procurement & Construction',
+    ],
+    buttonText: 'Our Solutions',
+    buttonLink: '/solutions',
+  },
+  {
+    image: '/images/my/solutions2.jpg',
+    title: [
+      'High & Medium Voltage Networks',
+      'Transmission, Distribution & Substation Design',
+    ],
+    buttonText: 'Our Solutions',
+    buttonLink: '/solutions',
+  },
+  {
+    image: '/images/my/solutions3.jpg',
+    title: [
+      'Low Voltage Systems',
+      'Design & Electrical Installations',
+    ],
+    buttonText: 'Our Solutions',
+    buttonLink: '/solutions',
+  },
+  {
+    image: '/images/my/solutions4.jpg',
+    title: [
+      'Power System Modelling & Studies',
+      'Analysis, Simulation & Optimization',
+    ],
+    buttonText: 'Our Solutions',
+    buttonLink: '/solutions',
+  },
+  {
+    image: '/images/my/solutions5.jpg',
+    title: [
+      'Power System Protection',
+      'Coordination, Arc Flash & Safety Studies',
+    ],
+    buttonText: 'Our Solutions',
+    buttonLink: '/solutions',
+  },
+  {
+    image: '/images/my/solutions6.jpg',
+    title: [
+      'Instrumentation, SCADA & Automation',
+      'Smart Electrical & Industrial Solutions',
+    ],
+    buttonText: 'Our Solutions',
+    buttonLink: '/solutions',
+  },
+  {
     image: '/images/my/heroLast.jpg',
     title: [
       'Get in Touch with Us',
