@@ -23,19 +23,10 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions1.jpg',
-    title: [
-      'Electrical Infrastructure',
-      'Feasibility, Engineering, Procurement & Construction',
-    ],
-    buttonText: 'Our Services',
-    buttonLink: '/services',
-  },
-  {
     image: '/images/my/solutions/solutions2.jpg',
     title: [
-      'High & Medium Voltage Networks',
-      'Transmission, Distribution & Substation Design',
+      'Electrical Engineering & Power Systems',
+      'HV, MV, LV Works, Design & Consultancy',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
@@ -43,26 +34,17 @@ const slides = [
   {
     image: '/images/my/solutions/solutions3.jpg',
     title: [
-      'Low Voltage Systems',
-      'Design & Electrical Installations',
+      'Mechanical, Electrical & Plumbing (MEP)',
+      'Engineering, Air Conditioning & Refrigeration',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions4.jpg',
+    image: '/images/my/solutions/solutions1.jpg',
     title: [
-      'Power System Modelling & Studies',
-      'Analysis, Simulation & Optimization',
-    ],
-    buttonText: 'Our Services',
-    buttonLink: '/services',
-  },
-  {
-    image: '/images/my/solutions/solutions5.jpg',
-    title: [
-      'Power System Protection',
-      'Coordination, Arc Flash & Safety Studies',
+      'Renewable & Sustainable Solutions',
+      'Solar, Efficiency & Green Energy Systems',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
@@ -70,12 +52,22 @@ const slides = [
   {
     image: '/images/my/solutions/solutions6.jpg',
     title: [
-      'Instrumentation, SCADA & Automation',
-      'Smart Electrical & Industrial Solutions',
+      'Networking & Security Systems',
+      'Fiber Optics, Data, Fencing & Security',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
+  {
+    image: '/images/my/solutions/solutions5.jpg',
+    title: [
+      'Products & Electrical Supplies',
+      'Cables, Distribution Equipment & Fittings',
+    ],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
+
   {
     image: '/images/my/heroLast.jpg',
     title: [
@@ -86,6 +78,7 @@ const slides = [
     buttonLink: '/contact',
   },
 ];
+
 
 // Animation variants
 const sliderVariants = {
