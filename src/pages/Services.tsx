@@ -45,13 +45,40 @@ const serviceData = {
 
 // --- Solutions Data ---
 const solutions = [
-  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy', href: '#' },
-  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design', href: '#' },
-  { imgSrc: 'https://hertzengineering.com/wp-content/uploads/LV.jpg', title: 'LV (Low Voltage) Design & Electrical Installation', href: '#' },
-  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Power System Modelling & Studies', href: '#' },
-  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Power System Protection Services', href: '#' },
-  { imgSrc: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2940&auto=format&fit=crop', title: 'Electrical Instrumentation, SCADA & Automation', href: '#' },
+  {
+    imgSrc: '/images/my/solutions/solutions1.jpg',
+    title:
+      'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
+    href: '/services',
+  },
+  {
+    imgSrc: '/images/my/solutions/solutions2.jpg',
+    title:
+      'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design',
+    href: '/services',
+  },
+  {
+    imgSrc: '/images/my/solutions/solutions3.jpg',
+    title: 'LV (Low Voltage) Design & Electrical Installation',
+    href: '/services',
+  },
+  {
+    imgSrc: '/images/my/solutions/solutions4.jpg',
+    title: 'Power System Modelling & Studies',
+    href: '/services',
+  },
+  {
+    imgSrc: '/images/my/solutions/solutions5.jpg',
+    title: 'Power System Protection Services',
+    href: '/services',
+  },
+  {
+    imgSrc: '/images/my/solutions/solutions6.jpg',
+    title: 'Electrical Instrumentation, SCADA & Automation',
+    href: '/services',
+  },
 ];
+
 
 // --- Combined Grouped Data ---
 type Item = { title: string; description?: string; imgSrc?: string; href?: string };
