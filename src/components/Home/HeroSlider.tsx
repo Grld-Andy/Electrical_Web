@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // Slides with natural titles matching the page content
 const slides = [
   {
-    image: 'https://hertzengineering.com/wp-content/uploads/high-voltage-power-lines-fiery-sunrise-scaled.jpg',
+    image: '/images/my/hero1.jpg',
     title: [
       'About Lymfz Engineering Limited',
       'Reliable Electrical Solutions',
@@ -14,7 +14,7 @@ const slides = [
     buttonLink: '/about',
   },
   {
-    image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0012.jpg',
+    image: '/images/my/hero2.jpg',
     title: [
       'High, Medium & Low Voltage',
       'Power Systems & Distribution',
@@ -23,7 +23,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: 'https://hertzengineering.com/wp-content/uploads/IMG-20250626-WA0012.jpg',
+    image: '/images/my/hero3.jpg',
     title: [
       'Engineering Projects',
       'Design, Implementation & Consultancy',
@@ -32,7 +32,7 @@ const slides = [
     buttonLink: '/projects',
   },
   {
-    image: 'https://hertzengineering.com/wp-content/uploads/IMG-20241227-WA0059.jpg',
+    image: '/images/my/heroLast.jpg',
     title: [
       'Get in Touch with Us',
       'Consultation, Support & Enquiries',

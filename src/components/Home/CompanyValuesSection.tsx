@@ -25,9 +25,9 @@ const CompanyValues = () => {
                     {/* Right Side with Overlay */}
                     <div>
                         <img
-                            src="/images/team1.webp"
+                            src="/images/my/home/whyChooseUs.jpg"
                             alt="Engineering Team"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-center object-cover max-h-[70vh] opacity-90"
                         />
                         <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-center p-8">
                             <div className="max-w-xl text-white space-y-6">
@@ -51,9 +51,9 @@ const CompanyValues = () => {
                 <div className="grid md:grid-cols-2">
                     <div className="relative">
                         <img
-                            src="/images/team2.webp"
+                            src="/images/my/home/safetyFirst.jpg"
                             alt="Safety First"
-                            className="w-full h-full object-cover opacity-90"
+                            className="w-full h-full max-h-[81vh] object-cover opacity-90"
                         />
                     </div>
 
