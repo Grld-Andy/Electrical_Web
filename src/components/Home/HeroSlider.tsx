@@ -23,16 +23,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/hero3.jpg',
-    title: [
-      'Engineering Projects',
-      'Design, Implementation & Consultancy',
-    ],
-    buttonText: 'Our Projects',
-    buttonLink: '/projects',
-  },
-  {
-    image: '/images/my/solutions1.jpg',
+    image: '/images/my/solutions/solutions1.jpg',
     title: [
       'Electrical Infrastructure',
       'Feasibility, Engineering, Procurement & Construction',
@@ -41,7 +32,7 @@ const slides = [
     buttonLink: '/solutions',
   },
   {
-    image: '/images/my/solutions2.jpg',
+    image: '/images/my/solutions/solutions2.jpg',
     title: [
       'High & Medium Voltage Networks',
       'Transmission, Distribution & Substation Design',
@@ -50,7 +41,7 @@ const slides = [
     buttonLink: '/solutions',
   },
   {
-    image: '/images/my/solutions3.jpg',
+    image: '/images/my/solutions/solutions3.jpg',
     title: [
       'Low Voltage Systems',
       'Design & Electrical Installations',
@@ -59,7 +50,7 @@ const slides = [
     buttonLink: '/solutions',
   },
   {
-    image: '/images/my/solutions4.jpg',
+    image: '/images/my/solutions/solutions4.jpg',
     title: [
       'Power System Modelling & Studies',
       'Analysis, Simulation & Optimization',
@@ -68,7 +59,7 @@ const slides = [
     buttonLink: '/solutions',
   },
   {
-    image: '/images/my/solutions5.jpg',
+    image: '/images/my/solutions/solutions5.jpg',
     title: [
       'Power System Protection',
       'Coordination, Arc Flash & Safety Studies',
@@ -77,7 +68,7 @@ const slides = [
     buttonLink: '/solutions',
   },
   {
-    image: '/images/my/solutions6.jpg',
+    image: '/images/my/solutions/solutions6.jpg',
     title: [
       'Instrumentation, SCADA & Automation',
       'Smart Electrical & Industrial Solutions',
