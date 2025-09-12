@@ -70,8 +70,8 @@ const slides = [
   {
     image: '/images/my/home/hero8.jpg',
     title: [
-      'Products & Electrical Supplies',
-      'Cables, Distribution Equipment & Fittings',
+      'Power Infrastructure Setup',
+      'Transmission & Distribution Poles',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
@@ -79,8 +79,8 @@ const slides = [
   {
     image: '/images/my/home/hero9.jpg',
     title: [
-      'Products & Electrical Supplies',
-      'Cables, Distribution Equipment & Fittings',
+      'Expert Installation & Maintenance',
+      'Safe & Reliable Electrical Works',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
