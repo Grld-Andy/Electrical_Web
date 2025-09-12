@@ -23,7 +23,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions2.jpg',
+    image: '/images/my/home/hero3.jpg',
     title: [
       'Electrical Engineering & Power Systems',
       'HV, MV, LV Works, Design & Consultancy',
@@ -32,7 +32,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions3.jpg',
+    image: '/images/my/home/hero4.jpg',
     title: [
       'Mechanical, Electrical & Plumbing (MEP)',
       'Engineering, Air Conditioning & Refrigeration',
@@ -41,7 +41,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions1.jpg',
+    image: '/images/my/home/hero5.jpg',
     title: [
       'Renewable & Sustainable Solutions',
       'Solar, Efficiency & Green Energy Systems',
@@ -50,7 +50,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions6.jpg',
+    image: '/images/my/home/hero6.jpg',
     title: [
       'Networking & Security Systems',
       'Fiber Optics, Data, Fencing & Security',
@@ -59,7 +59,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/solutions/solutions5.jpg',
+    image: '/images/my/home/hero7.jpg',
     title: [
       'Products & Electrical Supplies',
       'Cables, Distribution Equipment & Fittings',
@@ -67,9 +67,17 @@ const slides = [
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
-
   {
-    image: '/images/my/heroLast.jpg',
+    image: '/images/my/home/hero8.jpg',
+    title: [
+      'Products & Electrical Supplies',
+      'Cables, Distribution Equipment & Fittings',
+    ],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
+  {
+    image: '/images/my/home/hero9.jpg',
     title: [
       'Get in Touch with Us',
       'Consultation, Support & Enquiries',
