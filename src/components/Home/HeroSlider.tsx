@@ -79,6 +79,15 @@ const slides = [
   {
     image: '/images/my/home/hero9.jpg',
     title: [
+      'Products & Electrical Supplies',
+      'Cables, Distribution Equipment & Fittings',
+    ],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
+  {
+    image: '/images/my/home/heroC.jpg',
+    title: [
       'Get in Touch with Us',
       'Consultation, Support & Enquiries',
     ],
