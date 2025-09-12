@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // Slides with natural titles matching the page content
 const slides = [
   {
-    image: '/images/my/hero1.jpg',
+    image: '/images/my/home/hero1.jpg',
     title: [
       'About Lymfz Engineering Limited',
       'Reliable Electrical Solutions',
@@ -14,7 +14,7 @@ const slides = [
     buttonLink: '/about',
   },
   {
-    image: '/images/my/hero10.jpg',
+    image: '/images/my/home/hero10.jpg',
     title: [
       'High, Medium & Low Voltage',
       'Power Systems & Distribution',
