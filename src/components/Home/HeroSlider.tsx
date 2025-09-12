@@ -32,7 +32,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero4.jpg',
+    image: '/images/my/home/hero6.jpg',
     title: [
       'Mechanical, Electrical & Plumbing (MEP)',
       'Engineering, Air Conditioning & Refrigeration',
@@ -50,7 +50,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero6.jpg',
+    image: '/images/my/home/hero4.jpg',
     title: [
       'Networking & Security Systems',
       'Fiber Optics, Data, Fencing & Security',
