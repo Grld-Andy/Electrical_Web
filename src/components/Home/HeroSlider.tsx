@@ -23,7 +23,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero3.jpg',
+    image: '/images/my/home/hero11.jpg',
     title: [
       'Electrical Engineering & Power Systems',
       'HV, MV, LV Works, Design & Consultancy',
