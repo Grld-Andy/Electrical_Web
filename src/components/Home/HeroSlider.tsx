@@ -170,7 +170,7 @@ const SmootherHeroSlider = () => {
       <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
         <button
           onClick={() => paginate(-1)}
-          className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          className="w-12 h-12 bg-white/20 cursor-pointer backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors"
           aria-label="Previous Slide"
         >
           <ChevronLeft className="w-6 h-6" />
@@ -179,7 +179,7 @@ const SmootherHeroSlider = () => {
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
         <button
           onClick={() => paginate(1)}
-          className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          className="w-12 h-12 bg-white/20 cursor-pointer backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors"
           aria-label="Next Slide"
         >
           <ChevronRight className="w-6 h-6" />
@@ -192,7 +192,7 @@ const SmootherHeroSlider = () => {
           <button
             key={i}
             onClick={() => setPage([i, i > slideIndex ? 1 : -1])}
-            className={`w-3 h-3 rounded-full transition-colors ${
+            className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
               i === slideIndex ? 'bg-white' : 'bg-white/50 hover:bg-white/75'
             }`}
             aria-label={`Go to slide ${i + 1}`}
