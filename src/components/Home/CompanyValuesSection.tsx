@@ -51,7 +51,7 @@ const CompanyValues = () => {
                 <div className="grid md:grid-cols-2">
                     <div className="relative">
                         <img
-                            src="/images/my/home/safetyFirst.jpg"
+                            src="/images/my/home/hero6.jpg"
                             alt="Safety First"
                             className="w-full h-full max-h-[81vh] object-cover opacity-90"
                         />

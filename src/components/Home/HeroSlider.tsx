@@ -14,7 +14,7 @@ const slides = [
     buttonLink: '/about',
   },
   {
-    image: '/images/my/hero2.jpg',
+    image: '/images/my/hero10.jpg',
     title: [
       'High, Medium & Low Voltage',
       'Power Systems & Distribution',
@@ -32,7 +32,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero6.jpg',
+    image: '/images/my/home/whyChooseUs.jpg',
     title: [
       'Mechanical, Electrical & Plumbing (MEP)',
       'Engineering, Air Conditioning & Refrigeration',
@@ -85,15 +85,15 @@ const slides = [
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
-  {
-    image: '/images/my/home/heroC.jpg',
-    title: [
-      'Get in Touch with Us',
-      'Consultation, Support & Enquiries',
-    ],
-    buttonText: 'Contact Us',
-    buttonLink: '/contact',
-  },
+  // {
+  //   image: '/images/my/home/heroC.jpg',
+  //   title: [
+  //     'Get in Touch with Us',
+  //     'Consultation, Support & Enquiries',
+  //   ],
+  //   buttonText: 'Contact Us',
+  //   buttonLink: '/contact',
+  // },
 ];
 
 
