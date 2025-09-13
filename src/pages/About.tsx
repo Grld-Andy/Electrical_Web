@@ -108,7 +108,8 @@ const About: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
           <FeatureCard icon={<FaRocket size={24} />} title="Our Vision">
-            Our vision is to drive sustainable, quality growth by creating an inspiring workplace for employees, building strong partnerships with customers and suppliers, maximizing long-term value for shareholders with responsibility, and becoming the top choice in electrical contracting through superior materials and skilled engineers.          </FeatureCard>
+            Our vision is to achieve sustainable growth by empowering employees, fostering strong partnerships, delivering long-term value, and being the leading choice in electrical contracting with quality materials and skilled engineers.
+          </FeatureCard>
           <FeatureCard icon={<FaBullseye size={24} />} title="Our Mission">
             Delivering reliable, safe, and cost-effective engineering services that empower businesses and communities.
           </FeatureCard>
