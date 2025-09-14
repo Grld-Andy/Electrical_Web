@@ -23,26 +23,26 @@ const careers: Career[] = [
     title: "Electrical Project Engineer",
     location: "Accra, Ghana",
     type: "Full-Time",
-    desc: "We’re looking for an experienced Electrical Engineer to manage and execute industrial and commercial electrical projects. The ideal candidate has strong knowledge in LV/MV systems, site supervision, and safety compliance.",
+    desc: "Manage and execute industrial and commercial electrical projects. Strong knowledge in LV/MV systems, site supervision, and safety compliance required.",
   },
   {
     title: "Site Technician",
     location: "Takoradi, Ghana",
     type: "Contract",
-    desc: "Assist engineers with onsite installations, cabling, and maintenance. A great opportunity for hands-on learners with basic electrical skills and field readiness.",
+    desc: "Assist engineers with onsite installations, cabling, and maintenance. Great opportunity for hands-on learners with electrical skills and field readiness.",
   },
   {
     title: "Graduate Intern – Electrical Engineering",
     location: "Accra (Onsite)",
     type: "Internship",
-    desc: "Fresh graduates with an Electrical or Electronics Engineering degree are welcome to apply. You’ll gain practical experience across project design, panel building, and testing.",
+    desc: "Fresh graduates in Electrical or Electronics Engineering are welcome. Gain practical experience in project design, panel building, and testing.",
   },
 ];
 
 const buttonClasses =
-  "inline-block bg-blue-600 text-white px-6 py-3 rounded-md shadow hover:bg-blue-700 transition";
+  "bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow hover:bg-blue-700 transition-all duration-300";
 
-const CareerSection: React.FC = () => {
+const Careers: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -51,36 +51,38 @@ const CareerSection: React.FC = () => {
 
   return (
     <motion.div
-      className="py-20 bg-gray-50"
+      className="bg-gray-50 py-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      id="career"
       variants={sectionVariants}
+      id="career"
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          Join Our Team
+          Careers at Lymfz
         </h2>
-        <p className="text-gray-600 mb-10 text-center">
-          At Lymfz Engineering Limited, we build careers, not just solutions. We
-          foster growth, collaboration, and technical excellence through
-          impactful projects in power, automation, and infrastructure.
+        <p className="text-gray-600 mb-10 text-center max-w-2xl mx-auto">
+          At Lymfz Engineering Limited, we believe in nurturing talent and
+          building lasting careers. Explore our current opportunities and find
+          your place in a team driven by innovation, safety, and collaboration.
         </p>
 
-        {/* Accordion */}
+        {/* Accordion List */}
         <div className="space-y-4">
           {careers.map((career, index) => (
             <div
               key={career.title}
-              className="border rounded-md bg-white shadow-sm"
+              className="bg-white border rounded-md shadow-sm"
             >
-              {/* Accordion Header */}
+              {/* Header */}
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex justify-between items-center px-4 py-3 text-left font-semibold text-gray-800 hover:bg-gray-100"
+                className="w-full flex justify-between items-center px-6 py-4 text-left"
               >
-                {career.title}
+                <span className="text-lg font-semibold text-gray-800">
+                  {career.title}
+                </span>
                 {openIndex === index ? (
                   <FaChevronUp className="text-blue-600" />
                 ) : (
@@ -88,7 +90,7 @@ const CareerSection: React.FC = () => {
                 )}
               </button>
 
-              {/* Accordion Content */}
+              {/* Content */}
               <motion.div
                 initial={false}
                 animate={
@@ -99,12 +101,14 @@ const CareerSection: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="px-4 py-3 text-gray-700 text-sm">
+                <div className="px-6 pb-4 text-gray-600 text-md">
                   <p>
-                    <strong>Location:</strong> {career.location}
+                    <strong className="text-gray-800 text-md">Location:</strong>{" "}
+                    {career.location}
                   </p>
                   <p>
-                    <strong>Type:</strong> {career.type}
+                    <strong className="text-gray-800 text-md">Type:</strong>{" "}
+                    {career.type}
                   </p>
                   <p className="mt-2">{career.desc}</p>
                   <a
@@ -119,7 +123,7 @@ const CareerSection: React.FC = () => {
           ))}
         </div>
 
-        {/* General CV Email Button */}
+        {/* General Apply Button */}
         <div className="text-center mt-10">
           <motion.a
             href="mailto:careers@lymfz.com"
@@ -135,4 +139,4 @@ const CareerSection: React.FC = () => {
   );
 };
 
-export default CareerSection;
+export default Careers;

@@ -75,7 +75,7 @@ const TechnicalExpertise: React.FC = () => {
               <span className="text-lg font-semibold text-gray-800">
                 {area.name}
               </span>
-              <p className="text-sm text-gray-600 mt-3">{area.desc}</p>
+              <p className="text-md text-gray-600 mt-3">{area.desc}</p>
             </motion.div>
           ))}
         </div>
