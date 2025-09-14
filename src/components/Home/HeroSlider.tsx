@@ -48,59 +48,62 @@ const slides = [
   },
   {
     image: '/images/my/home/whyChooseUs.jpg',
-    title: [
-      'Electrical Instrumentation',
-      'SCADA & Automation',
-    ],
+    title: ['Electrical Instrumentation', 'SCADA & Automation'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero4.jpg',
-    title: ['Mechanical, Electrical',' & Plumbing (MEP)'],
+    title: ['Mechanical, Electrical', ' & Plumbing (MEP)'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero7.jpg',
-    title: ['Renewable &','Sustainable Solutions'],
+    title: ['Renewable &', 'Sustainable Solutions'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero8.jpg',
-    title: ['Networking &','Security Systems'],
+    title: ['Networking &', 'Security Systems'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero9.jpg',
-    title: ['Products &','Electrical Supplies'],
+    title: ['Products &', 'Electrical Supplies'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/heroC.jpg',
-    title: [
-      'Get in Touch with Us',
-      'Consultation, Support & Enquiries',
-    ],
+    title: ['Get in Touch with Us', 'Consultation, Support & Enquiries'],
     buttonText: 'Contact Us',
     buttonLink: '/contact',
   },
 ];
 
-
 // Animation variants
 const sliderVariants = {
-  enter: (direction: number) => ({ x: direction > 0 ? '100%' : '-100%', opacity: 0 }),
+  enter: (direction: number) => ({
+    x: direction > 0 ? '100%' : '-100%',
+    opacity: 0,
+  }),
   center: { zIndex: 1, x: 0, opacity: 1 },
-  exit: { zIndex: 0, opacity: 0 },
+  exit: (direction: number) => ({
+    zIndex: 0,
+    x: direction < 0 ? '100%' : '-100%',
+    opacity: 0,
+  }),
 };
 
 const textContainerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.5 } },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.5 },
+  },
 };
 
 const textItemVariants = {
@@ -108,11 +111,19 @@ const textItemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
 };
 
+// Swipe helper
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) =>
+  Math.abs(offset) * velocity;
+
 const SmootherHeroSlider = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const paginate = (newDirection: number) => {
-    setPage([(page + newDirection + slides.length) % slides.length, newDirection]);
+    setPage([
+      (page + newDirection + slides.length) % slides.length,
+      newDirection,
+    ]);
   };
 
   useEffect(() => {
@@ -134,12 +145,28 @@ const SmootherHeroSlider = () => {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ x: { type: 'tween', ease: 'easeInOut', duration: 1 }, opacity: { duration: 0.5 } }}
+          transition={{
+            x: { type: 'spring', stiffness: 300, damping: 30 },
+            opacity: { duration: 0.5 },
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = swipePower(offset.x, velocity.x);
+
+            if (swipe < -swipeConfidenceThreshold) {
+              paginate(1); // swipe left → next
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1); // swipe right → prev
+            }
+          }}
         >
           <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
+      {/* Slide Content */}
       <div className="relative z-10 flex flex-col justify-center h-full container mx-auto px-6 text-white">
         <motion.div
           key={slideIndex}
@@ -196,7 +223,9 @@ const SmootherHeroSlider = () => {
             key={i}
             onClick={() => setPage([i, i > slideIndex ? 1 : -1])}
             className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
-              i === slideIndex ? 'bg-white' : 'bg-white/50 hover:bg-white/75'
+              i === slideIndex
+                ? 'bg-white'
+                : 'bg-white/50 hover:bg-white/75'
             }`}
             aria-label={`Go to slide ${i + 1}`}
           />
