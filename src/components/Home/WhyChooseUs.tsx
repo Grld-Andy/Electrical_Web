@@ -54,19 +54,31 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Additional Info Section */}
-                <div className="bg-white rounded-md p-8 md:p-12 border border-gray-200">
+                <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-10 md:p-14 shadow-lg border border-blue-200">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                            Established Excellence Since 2020
+                        <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                        Established Excellence Since 2020
                         </h3>
-                        <p className="text-gray-700 leading-relaxed text-lg">
-                            With a dedicated team of engineers, technicians, and project managers, we have
-                            successfully delivered projects for clients including GIZ Technologies, AngloGold Ashanti,
-                            First Atlantic Bank, Ghana Manganese Company, and Solarshop Ghana.
-                            We are committed to quality, reliability, and timely execution.
+                        <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                        With a dedicated team of engineers, technicians, and project managers, we
+                        have successfully delivered projects for top-tier clients across Ghana and
+                        beyond.
+                        </p>
+                        <div className="grid grid-cols-3 justify-center gap-x-6 gap-y-3 text-blue-600 font-semibold text-lg">
+                            <span>GIZ Technologies</span>
+                            <span>AngloGold Ashanti</span>
+                            <span>First Atlantic Bank</span>
+                            <span>Ghana Manganese Company</span>
+                            <span>Tullow Oil</span>
+                            <span>Solarshop Ghana</span>
+                        </div>
+                        <p className="text-gray-800 font-medium mt-8 text-lg">
+                        Committed to <span className="underline text-black">quality</span>,{" "}
+                        <span className="underline text-black">reliability</span>, and{" "}
+                        <span className="underline text-black">timely execution</span>.
                         </p>
                     </div>
-                </div>
+                    </div>
             </div>
         </div>
     );
