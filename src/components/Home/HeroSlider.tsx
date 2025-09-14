@@ -8,7 +8,7 @@ const slides = [
   {
     image: '/images/my/home/hero1.jpg',
     title: [
-      'About Lymfz Engineering Limited(EPCM)',
+      'Lymfz Engineering Limited(EPCM)',
       'Reliable Electrical Solutions',
     ],
     buttonText: 'About Us',
