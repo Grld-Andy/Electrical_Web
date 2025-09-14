@@ -13,6 +13,7 @@ import {
   FaTools,
 } from "react-icons/fa";
 import MarketSegment from "@/components/About/MarketSegment";
+import TechnicalExpertise from "@/components/About/TechnicalExpertise";
 
 interface FeatureCardProps {
   icon: ReactNode;
@@ -117,6 +118,9 @@ const About: React.FC = () => {
 
       {/* Market Segment Section */}
       <MarketSegment/>
+
+      {/* Technical Expertise */}
+      <TechnicalExpertise/>
 
       {/* Career Section */}
       <motion.div
