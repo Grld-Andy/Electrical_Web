@@ -12,9 +12,36 @@ const serviceData = {
   'Electrical Engineering & Power Systems': {
     icon: <Zap className="w-6 h-6" />,
     services: [
-      { title: 'High, Medium & Low Voltage Works', description: 'Design, installation, and maintenance of HV/MV/LV systems.' },
-      // { title: 'Electrical Engineering Design & Consultancy', description: 'Professional engineering studies, system designs, and consultancy.' },
-      { title: 'Instrumentation & Automation', description: 'Integration of instrumentation, control systems, and automation.' },
+      {
+        title: 'Electrical Infrastructure',
+        description:
+          'Feasibility studies, engineering, procurement, construction, and consultancy for electrical infrastructure.',
+      },
+      {
+        title: 'Transmission & Distribution Networks',
+        description:
+          'Design and installation of high voltage, medium voltage, and low voltage substation and distribution systems.',
+      },
+      {
+        title: 'LV (Low Voltage) Systems',
+        description:
+          'Low voltage electrical design, installation, and maintenance solutions.',
+      },
+      {
+        title: 'Power System Modelling & Studies',
+        description:
+          'Comprehensive modeling, analysis, and studies for reliable and efficient power systems.',
+      },
+      {
+        title: 'Power System Protection',
+        description:
+          'Protection system design, implementation, and maintenance to safeguard electrical networks.',
+      },
+      {
+        title: 'Instrumentation, SCADA & Automation',
+        description:
+          'Electrical instrumentation, SCADA integration, and automation services for modern power systems.',
+      },
     ],
   },
   'Mechanical, Electrical & Plumbing (MEP)': {
@@ -48,42 +75,6 @@ const serviceData = {
   },
 };
 
-// --- Solutions Data ---
-const solutions = [
-  {
-    imgSrc: '/images/my/solutions/solutions1.jpg',
-    title:
-      'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
-    href: '/services',
-  },
-  {
-    imgSrc: '/images/my/solutions/solutions2.jpg',
-    title:
-      'High, Medium Voltage Transmission & Low Voltage Distribution Network Substation Design and Installation',
-    href: '/services',
-  },
-  {
-    imgSrc: '/images/my/solutions/solutions3.jpg',
-    title: 'LV (Low Voltage) Design & Electrical Installation',
-    href: '/services',
-  },
-  {
-    imgSrc: '/images/my/solutions/solutions4.jpg',
-    title: 'Power System Modelling & Studies',
-    href: '/services',
-  },
-  {
-    imgSrc: '/images/my/solutions/solutions5.jpg',
-    title: 'Power System Protection Services',
-    href: '/services',
-  },
-  {
-    imgSrc: '/images/my/solutions/solutions6.jpg',
-    title: 'Electrical Instrumentation, SCADA & Automation',
-    href: '/services',
-  },
-];
-
 
 // --- Combined Grouped Data ---
 type Item = { title: string; description?: string; imgSrc?: string; href?: string };
@@ -106,16 +97,7 @@ const combinedData: { [category: string]: Category } = {
         items: serviceData['Products & Electrical Supplies'].services.map(p => ({ title: p.title, description: p.description })),
       },
     ],
-  },
-  Solutions: {
-    icon: <Cpu className="w-6 h-6" />,
-    groups: [
-      {
-        name: 'Our Solutions',
-        items: solutions.map(s => ({ title: s.title, imgSrc: s.imgSrc, href: s.href })),
-      },
-    ],
-  },
+  }
 };
 
 const ProductsAndServicesPage = () => {
