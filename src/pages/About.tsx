@@ -111,7 +111,7 @@ const About: React.FC = () => {
             Our vision is to achieve sustainable growth by empowering employees, fostering strong partnerships, delivering long-term value, and being the leading choice in electrical contracting with quality materials and skilled engineers.
           </FeatureCard>
           <FeatureCard icon={<FaBullseye size={24} />} title="Our Mission">
-            Delivering reliable, safe, and cost-effective engineering services that empower businesses and communities.
+            Lymfz Engineering Ltd strives to be the top customer choice by delivering safe, timely projects and building lasting relationships through continuous investment in people, systems, and facilities.
           </FeatureCard>
           <FeatureCard icon={<FaHandshake size={24} />} title="Our Values">
             Safety, Integrity, Innovation, Excellence, and Partnership.
