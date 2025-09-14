@@ -16,14 +16,14 @@ const projects = [
         title: "Supply & Installation of Solar Submersible Pump",
         client: "GIZ Technologies",
         image:
-        "https://www.worldpumps.com/media/0tdif5ol/b41349fe-ecd0-479b-b64e-54c1fd902f9e.jpg",
+        "./images/my/projects/solar.png",
     },
     {
         status: "2024",
         category: "Supply",
         title: "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (500m)",
         client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
-        image: "./images/my/projects/copper.jpg",
+        image: "./images/my/projects/copper.png",
     },
     {
         status: "2024",
@@ -31,21 +31,21 @@ const projects = [
         title:
         "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (600m) + Electrical Materials",
         client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
-        image: "./images/my/projects/copperCable.jpg",
+        image: "./images/my/projects/copperCable.png",
     },
     {
         status: "2023",
         category: "Supply",
         title: "Supply of 3 Sets of 11kV Schneider RMUs",
         client: "AngloGold Ashanti Obuasi (via Maalotech Engineering)",
-        image: "./images/my/projects/SchneiderRMU.jpg",
+        image: "./images/my/projects/SchneiderRMU.png",
     },
     {
         status: "2023",
         category: "Supply",
         title: "Supply of 2 Sets of 33kV 630A Auto Reclosers",
         client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
-        image: "./images/my/projects/autoRecloser.jpg",
+        image: "./images/my/projects/autoRecloser.png",
     },
 ];
 
