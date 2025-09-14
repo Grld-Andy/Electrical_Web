@@ -49,8 +49,7 @@ const dropdownData: DropdownData = {
         name: 'Electrical Engineering & Power Systems',
         subItems: [
           'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
-          'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design',
-          'LV (Low Voltage) Design & Electrical Installation',
+          'High & Medium Voltage Transmission & Low Voltage Distribution (T&D) Network and Substation Design Installation',
           'Power System Modelling & Studies',
           'Power System Protection Services',
           'Electrical Instrumentation, SCADA & Automation',
@@ -60,7 +59,7 @@ const dropdownData: DropdownData = {
         name: 'Mechanical, Electrical & Plumbing (MEP)',
         subItems: [
           'MEP Engineering',
-          'Air Conditioning & Refrigeration',
+          'Air Conditioning',
         ],
       },
       {

@@ -19,8 +19,8 @@ const slides = [
   {
     image: '/images/my/home/hero10.jpg',
     title: [
-      'High, Medium & Low Voltage',
-      'Power Systems & Distribution',
+      'Electrical Infrastructure',
+      'Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
@@ -28,66 +28,57 @@ const slides = [
   {
     image: '/images/my/home/hero11.jpg',
     title: [
-      'Electrical Engineering & Power Systems',
-      'HV, MV, LV Works, Design & Consultancy',
-    ],
-    buttonText: 'Our Services',
-    buttonLink: '/services',
-  },
-  {
-    image: '/images/my/home/whyChooseUs.jpg',
-    title: [
-      'Mechanical, Electrical & Plumbing (MEP)',
-      'Engineering, Air Conditioning ',
+      'High & Medium Voltage Transmission',
+      'Low Voltage Distribution (T&D) Network and Substation Design Installation',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero5.jpg',
+    title: ['Power System Modelling & Studies'],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
+  {
+    image: '/images/my/home/hero6.jpg',
+    title: ['Power System Protection Services'],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
+  {
+    image: '/images/my/home/whyChooseUs.jpg',
     title: [
-      'Renewable & Sustainable Solutions',
-      'Solar, Efficiency & Green Energy Systems',
+      'Electrical Instrumentation',
+      'SCADA & Automation',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero4.jpg',
-    title: [
-      'Networking & Security Systems',
-      'Fiber Optics, Data, Fencing & Security',
-    ],
+    title: ['Mechanical, Electrical & Plumbing (MEP)'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero7.jpg',
-    title: [
-      'Products & Electrical Supplies',
-      'Cables, Distribution Equipment & Fittings',
-    ],
+    title: ['Renewable & Sustainable Solutions'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
     image: '/images/my/home/hero8.jpg',
-    title: [
-      'Power Infrastructure Setup',
-      '(High and Meduim Voltage) & distribution(low voltage) networks',
-    ],
+    title: ['Networking & Security Systems'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
-  // {
-  //   image: '/images/my/home/hero9.jpg',
-  //   title: [
-  //     'Expert Installation & Maintenance',
-  //     'Safe & Reliable Electrical Works',
-  //   ],
-  //   buttonText: 'Our Services',
-  //   buttonLink: '/services',
-  // },
+  {
+    image: '/images/my/home/hero9.jpg',
+    title: ['Products & Electrical Supplies'],
+    buttonText: 'Our Services',
+    buttonLink: '/services',
+  },
   {
     image: '/images/my/home/heroC.jpg',
     title: [
@@ -145,7 +136,7 @@ const SmootherHeroSlider = () => {
           exit="exit"
           transition={{ x: { type: 'tween', ease: 'easeInOut', duration: 1 }, opacity: { duration: 0.5 } }}
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
