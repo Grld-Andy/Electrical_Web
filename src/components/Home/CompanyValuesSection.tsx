@@ -25,7 +25,7 @@ const CompanyValues = () => {
                     {/* Right Side with Overlay */}
                     <div>
                         <img
-                            src="/images/my/home/whyChooseUs.jpg"
+                            src="/images/my/whyChooseUs.jpg"
                             alt="Engineering Team"
                             className="w-full h-full object-center object-cover max-h-[70vh] opacity-90"
                         />
