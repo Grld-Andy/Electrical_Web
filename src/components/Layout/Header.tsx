@@ -48,9 +48,12 @@ const dropdownData: DropdownData = {
       {
         name: 'Electrical Engineering & Power Systems',
         subItems: [
-          'High, Medium & Low Voltage Works',
-          'Electrical Engineering Design & Consultancy',
-          'Instrumentation & Automation',
+          'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
+          'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design',
+          'LV (Low Voltage) Design & Electrical Installation',
+          'Power System Modelling & Studies',
+          'Power System Protection Services',
+          'Electrical Instrumentation, SCADA & Automation',
         ],
       },
       {
@@ -81,18 +84,7 @@ const dropdownData: DropdownData = {
           'Power Protection & Distribution Equipment',
           'Lighting & Electrical Fittings',
         ],
-      },
-      {
-        name: 'Our Solutions',
-        subItems: [
-          'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
-          'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design',
-          'LV (Low Voltage) Design & Electrical Installation',
-          'Power System Modelling & Studies',
-          'Power System Protection Services',
-          'Electrical Instrumentation, SCADA & Automation',
-        ]
-      },
+      }
     ],
   },
 };
