@@ -74,7 +74,7 @@ const slides = [
     image: '/images/my/home/hero8.jpg',
     title: [
       'Power Infrastructure Setup',
-      '(High and Meduim Voltage) & distribution(low voltage) networks',
+      '(High and Meduim Voltage) & distribution(low voltage) networks',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',

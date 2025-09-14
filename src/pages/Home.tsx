@@ -7,11 +7,6 @@ import Newsletter from '../components/Home/Newsletter';
 import type React from 'react';
 import CompanyValuesSection from '../components/Home/CompanyValuesSection';
 
-
-// TODO: scroll on click
-// button throws error
-// (Energy auditing)
-
 const Home: React.FC = () => {
   return (
     <div className="bg-white text-gray-800 font-sans">
