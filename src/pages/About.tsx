@@ -23,7 +23,6 @@ interface FeatureCardProps {
 // add pictures to market segment
 // technology and expertise
 // job ads, graduate trainee, nss
-// remove press
 
 // FeatureCard component
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children }) => (
@@ -71,7 +70,7 @@ const About: React.FC = () => {
       <PageHeader text="ABOUT US" />
 
       {/* Our Story Section */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div id="our-story" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -111,6 +110,7 @@ const About: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
+        id="mission"
       >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
           <FeatureCard icon={<FaRocket size={24} />} title="Our Vision">
@@ -132,6 +132,7 @@ const About: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={sectionVariants}
+        id="market-segment"
       >
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Market Segment</h2>
@@ -158,6 +159,7 @@ const About: React.FC = () => {
         className="py-20 bg-white"
         initial="hidden"
         whileInView="visible"
+        id="career"
         viewport={{ once: true }}
         variants={sectionVariants}
       >

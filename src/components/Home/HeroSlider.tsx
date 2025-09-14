@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Slides with matching images
+const MotionLink = motion(Link);
 
 const slides = [
   {
@@ -165,13 +167,13 @@ const SmootherHeroSlider = () => {
             </motion.h1>
           ))}
           {slides[slideIndex].buttonText && (
-            <motion.a
-              href={slides[slideIndex].buttonLink}
+            <MotionLink
+              to={slides[slideIndex].buttonLink}
               variants={textItemVariants}
               className="inline-block mt-8 bg-blue-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
             >
               {slides[slideIndex].buttonText}
-            </motion.a>
+            </MotionLink>
           )}
         </motion.div>
       </div>

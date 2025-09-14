@@ -5,7 +5,7 @@ import {
   FaTimes,
   FaCheck,
 } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', to: '/' },
@@ -36,11 +36,10 @@ const dropdownData: DropdownData = {
     type: 'simple',
     items: [
       { name: 'Our Story', to: '/about#our-story' },
-      { name: 'Vision, Mission & Values', to: '/about#vision' },
+      { name: 'Vision, Mission & Values', to: '/about#mission' },
       { name: 'Market Segment', to: '/about#market-segment' },
       { name: 'Technology & Expertise', to: '/about#technology' },
-      { name: 'Career', to: '/about#career' },
-      { name: 'Press', to: '/about#press' },
+      { name: 'Career', to: '/about#career' }
     ],
   },
   'Products, Services & Solutions': {
@@ -100,6 +99,8 @@ const dropdownData: DropdownData = {
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Active dropdown (About Us or Products, Services & Solutions)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -119,6 +120,29 @@ const Header = () => {
       }));
     }
   };
+
+  const scrollOrNavigate = (link: string) => {
+    const [pathname, hash] = link.split("#")
+    console.log('clicked here: ', pathname, hash)
+    if(location.pathname.includes(pathname)){
+      if(hash){
+        const el = document.getElementById(hash)
+        if(el){
+          el.scrollIntoView({behavior: 'smooth', block: 'start'})
+        }
+      }
+    }else{
+      navigate(pathname + (hash ? `#${hash}` : ""))
+      if(hash){
+        setTimeout(() => {
+          const el = document.getElementById(hash)
+          if(el){
+            el.scrollIntoView({behavior: 'smooth', block: 'start'})
+          }
+        })
+      }
+    }
+  }
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
@@ -176,9 +200,9 @@ const Header = () => {
                       <ul className="py-2 w-56">
                         {dropdown.items.map((item: { name: string; to: string }) => (
                           <li key={item.name}>
-                            <Link to={item.to} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                            <div onClick={() => scrollOrNavigate(item.to)} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">
                               {item.name}
-                            </Link>
+                            </div>
                           </li>
                         ))}
                       </ul>
