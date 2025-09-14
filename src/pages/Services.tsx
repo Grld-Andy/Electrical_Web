@@ -3,27 +3,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 
+// combine services and solutions
+// electical with solutions
+// update navbar link
+// place solutions in electical engineering subsection
+
 const serviceData = {
   'Electrical Engineering & Power Systems': {
     icon: <Zap className="w-6 h-6" />,
     services: [
       { title: 'High, Medium & Low Voltage Works', description: 'Design, installation, and maintenance of HV/MV/LV systems.' },
-      { title: 'Electrical Engineering Design & Consultancy', description: 'Professional engineering studies, system designs, and consultancy.' },
+      // { title: 'Electrical Engineering Design & Consultancy', description: 'Professional engineering studies, system designs, and consultancy.' },
       { title: 'Instrumentation & Automation', description: 'Integration of instrumentation, control systems, and automation.' },
     ],
   },
   'Mechanical, Electrical & Plumbing (MEP)': {
     icon: <HardHat className="w-6 h-6" />,
     services: [
-      { title: 'MEP Engineering', description: 'Complete MEP works covering electrical, plumbing, and mechanical installations.' },
-      { title: 'Air Conditioning & Refrigeration', description: 'Installation and servicing of cooling systems for all applications.' },
+      // { title: 'MEP Engineering', description: 'Complete MEP works covering electrical, plumbing, and mechanical installations.' },
+      { title: 'Air Conditioning', description: 'Installation and servicing of cooling systems for all applications.' },
     ],
   },
   'Renewable & Sustainable Solutions': {
     icon: <Sun className="w-6 h-6" />,
     services: [
       { title: 'Solar Power Systems', description: 'Supply and installation of solar systems including pumping and grid integration.' },
-      { title: 'Energy Efficiency Solutions', description: 'Customized energy-saving solutions for reduced costs and sustainability.' },
+      { title: 'Energy Efficiency Solutions (Energy Auditing)', description: 'Customized energy-saving solutions for reduced costs and sustainability.' },
     ],
   },
   'Networking & Security Systems': {
@@ -54,7 +59,7 @@ const solutions = [
   {
     imgSrc: '/images/my/solutions/solutions2.jpg',
     title:
-      'High & Medium Voltage Transmission & Distribution (T&D) Network and Substation Design',
+      'High, Medium Voltage Transmission & Low Voltage Distribution Network Substation Design and Installation',
     href: '/services',
   },
   {

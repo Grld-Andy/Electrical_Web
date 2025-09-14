@@ -19,6 +19,12 @@ interface FeatureCardProps {
   children: ReactNode;
 }
 
+// TODO: change our story picture, 
+// add pictures to market segment
+// technology and expertise
+// job ads, graduate trainee, nss
+// remove press
+
 // FeatureCard component
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, children }) => (
   <motion.div

@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import PageHeader from "@/components/ui/PageHeader";
 
+// use images in brochure
+// add clients
+
 // --- Types ---
 type Project = {
   title: string;

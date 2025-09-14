@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Slides with natural titles matching the page content
+// Slides with matching images
+
 const slides = [
   {
     image: '/images/my/home/hero1.jpg',
@@ -35,7 +36,7 @@ const slides = [
     image: '/images/my/home/whyChooseUs.jpg',
     title: [
       'Mechanical, Electrical & Plumbing (MEP)',
-      'Engineering, Air Conditioning & Refrigeration',
+      'Engineering, Air Conditioning ',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
@@ -76,15 +77,15 @@ const slides = [
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
-  {
-    image: '/images/my/home/hero9.jpg',
-    title: [
-      'Expert Installation & Maintenance',
-      'Safe & Reliable Electrical Works',
-    ],
-    buttonText: 'Our Services',
-    buttonLink: '/services',
-  },
+  // {
+  //   image: '/images/my/home/hero9.jpg',
+  //   title: [
+  //     'Expert Installation & Maintenance',
+  //     'Safe & Reliable Electrical Works',
+  //   ],
+  //   buttonText: 'Our Services',
+  //   buttonLink: '/services',
+  // },
   {
     image: '/images/my/home/heroC.jpg',
     title: [
