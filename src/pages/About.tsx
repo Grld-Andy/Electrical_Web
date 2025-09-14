@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import MarketSegment from "@/components/About/MarketSegment";
 import TechnicalExpertise from "@/components/About/TechnicalExpertise";
+import Careers from "@/components/About/Careers";
 
 interface FeatureCardProps {
   icon: ReactNode;
@@ -123,29 +124,8 @@ const About: React.FC = () => {
       <TechnicalExpertise/>
 
       {/* Career Section */}
-      <motion.div
-        className="py-20 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        id="career"
-        viewport={{ once: true }}
-        variants={sectionVariants}
-      >
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Join Our Team</h2>
-          <p className="text-gray-600 mb-6">
-            We believe in nurturing talent and creating opportunities for growth. At Lymfz Engineering Limited, careers are built on continuous learning, collaboration, and innovation.
-          </p>
-          <motion.a
-            href="mailto:careers@lymfz.com"
-            className={buttonClasses}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Send Your CV
-          </motion.a>
-        </div>
-      </motion.div>
+      <Careers/>
+      
     </div>
   );
 };
