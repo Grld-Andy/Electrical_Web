@@ -13,34 +13,29 @@ const serviceData = {
     icon: <Zap className="w-6 h-6" />,
     services: [
       {
-        title: 'Electrical Infrastructure',
+        title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
         description:
-          'Feasibility studies, engineering, procurement, construction, and consultancy for electrical infrastructure.',
+          'Comprehensive EPC and consultancy services covering feasibility studies, design, procurement, and construction of electrical infrastructure.',
       },
       {
-        title: 'Transmission & Distribution Networks',
+        title: 'High & Medium Voltage Transmission & Low Voltage Distribution (T&D) Network and Substation Design Installation',
         description:
-          'Design and installation of high voltage, medium voltage, and low voltage substation and distribution systems.',
-      },
-      {
-        title: 'LV (Low Voltage) Systems',
-        description:
-          'Low voltage electrical design, installation, and maintenance solutions.',
+          'Design and installation of transmission, distribution networks, and substations across HV, MV, and LV levels.',
       },
       {
         title: 'Power System Modelling & Studies',
         description:
-          'Comprehensive modeling, analysis, and studies for reliable and efficient power systems.',
+          'Advanced modeling, simulations, and studies to optimize the reliability, efficiency, and stability of power systems.',
       },
       {
-        title: 'Power System Protection',
+        title: 'Power System Protection Services',
         description:
-          'Protection system design, implementation, and maintenance to safeguard electrical networks.',
+          'Specialized design and implementation of protection schemes to safeguard electrical networks and equipment.',
       },
       {
-        title: 'Instrumentation, SCADA & Automation',
+        title: 'Electrical Instrumentation, SCADA & Automation',
         description:
-          'Electrical instrumentation, SCADA integration, and automation services for modern power systems.',
+          'Integration of instrumentation systems, SCADA solutions, and automation for smart and efficient operations.',
       },
     ],
   },
