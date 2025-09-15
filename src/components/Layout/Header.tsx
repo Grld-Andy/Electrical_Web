@@ -312,24 +312,27 @@ const Header = () => {
 
                     return (
                       <li key={link.name}>
-                        <div
-                          className="flex items-center justify-between cursor-pointer py-2"
-                          onClick={() => {
-                            if (dropdown) {
-                              setOpenDropdown(isOpen ? null : link.name);
-                            } else {
+                        <div className="flex items-center justify-between py-2">
+                          {/* Main Link Text (always navigates, even if dropdown exists) */}
+                          <Link
+                            to={link.to}
+                            onClick={() => {
                               scrollOrNavigate(link.to);
-                              setMobileMenuOpen(false);
-                            }
-                          }}
-                        >
-                          <Link to={link.to} className="font-semibold text-lg hover:text-blue-400 transition-colors">
+                              setMobileMenuOpen(false); // close sidebar on navigation
+                            }}
+                            className="font-semibold text-lg hover:text-blue-400 transition-colors"
+                          >
                             {link.name}
                           </Link>
+
+                          {/* Dropdown Toggle Button (only toggles open/close, not navigation) */}
                           {dropdown && (
-                            <span className="text-white ml-2">
+                            <button
+                              onClick={() => setOpenDropdown(isOpen ? null : link.name)}
+                              className="ml-2 flex cursor-pointer text-white focus:outline-none border w-[30px] h-[30px] flex items-center justify-center text-lg"
+                            >
                               {isOpen ? "-" : "+"}
-                            </span>
+                            </button>
                           )}
                         </div>
 
@@ -343,7 +346,7 @@ const Header = () => {
                                   key={item.name}
                                   onClick={() => {
                                     scrollOrNavigate(item.to);
-                                    setMobileMenuOpen(false);
+                                    setMobileMenuOpen(false); // close sidebar after navigation
                                   }}
                                   className="block cursor-pointer px-2 py-1 text-gray-300 text-sm hover:text-blue-400"
                                 >
@@ -355,9 +358,17 @@ const Header = () => {
                             {dropdown.type === "detailed" &&
                               dropdown.categories.map((cat) => (
                                 <div key={cat.name} className="mb-3">
-                                  <Link to="services" className="text-gray-300 text-sm hover:text-blue-400">
+                                  <Link
+                                    to="services"
+                                    onClick={() => {
+                                      scrollOrNavigate("services");
+                                      setMobileMenuOpen(false); // close sidebar after navigation
+                                    }}
+                                    className="text-gray-300 text-sm hover:text-blue-400"
+                                  >
                                     {cat.name}
                                   </Link>
+                                  {/* If you want sub-items uncomment & handle */}
                                   {/* <ul className="ml-3 mt-1 space-y-1">
                                     {cat.subItems.map((sub) => (
                                       <li
