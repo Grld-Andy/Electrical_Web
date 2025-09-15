@@ -26,7 +26,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero11.jpg',
+    image: '/images/my/home/hero4.jpg',
     title: [
       'High, Medium Voltage Transmission and',
       'LV (Low Voltage) Distribution Network Substation Design & Installation',
@@ -41,19 +41,19 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero6.jpg',
+    image: '/images/my/home/whyChooseUs.jpg',
     title: ['Power System ', 'Protection Services'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/whyChooseUs.jpg',
+    image: '/images/my/home/hero11.jpg',
     title: ['Electrical Instrumentation', 'SCADA & Automation'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero4.jpg',
+    image: '/images/my/home/hero6.jpg',
     title: ['Mechanical, Electrical', ' & Plumbing (MEP)'],
     buttonText: 'Our Services',
     buttonLink: '/services',

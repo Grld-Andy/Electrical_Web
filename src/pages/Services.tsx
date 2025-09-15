@@ -37,7 +37,6 @@ const serviceData = {
   'Mechanical, Electrical & Plumbing (MEP)': {
     icon: <HardHat className="w-6 h-6" />,
     services: [
-      // { title: 'MEP Engineering', description: 'Complete MEP works covering electrical, plumbing, and mechanical installations.' },
       { title: 'Air Conditioning', description: 'Installation and servicing of cooling systems for all applications.' },
     ],
   },
@@ -65,7 +64,6 @@ const serviceData = {
   },
 };
 
-
 // --- Combined Grouped Data ---
 type Item = { title: string; description?: string; imgSrc?: string; href?: string };
 type Group = { name: string; items: Item[] };
@@ -74,7 +72,7 @@ type Category = { icon: React.ReactNode; groups: Group[] };
 const combinedData: { [category: string]: Category } = {
   "Services and Solutions": {
     icon: <Zap className="w-6 h-6" />,
-    groups: Object.entries(serviceData).slice(0,4).map(([groupName, group]) => ({
+    groups: Object.entries(serviceData).slice(0, 4).map(([groupName, group]) => ({
       name: groupName,
       items: group.services.map(s => ({ title: s.title, description: s.description })),
     })),
@@ -84,7 +82,11 @@ const combinedData: { [category: string]: Category } = {
     groups: [
       {
         name: 'Electrical Products and Equipment Supplies',
-        items: serviceData['Electrical Products and Equipment Supplies'].services.map(p => ({ title: p.title, description: p.description })),
+        items: serviceData['Electrical Products and Equipment Supplies'].services.map(p => ({
+          title: p.title,
+          description: p.description,
+          imgSrc: `/images/my/products/${p.title}.jpg`, // example path
+        })),
       },
     ],
   }
@@ -162,9 +164,19 @@ const ProductsAndServicesPage = () => {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white h-min rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
                 >
-                  {item.imgSrc && <img src={item.imgSrc} alt={item.title} className="h-48 w-full object-cover rounded mb-4" />}
+                  {/* Only show images for Products */}
+                  {activeCategory === "Products" && item.imgSrc && (
+                    <img
+                      src={item.imgSrc}
+                      alt={item.title}
+                      className="h-48 w-full object-cover rounded-lg mb-4"
+                    />
+                  )}
+
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
-                  {item.description && <p className="text-gray-600 flex-grow">{item.description}</p>}
+                  {item.description && (
+                    <p className="text-gray-600 flex-grow">{item.description}</p>
+                  )}
                 </motion.div>
               ))}
             </AnimatePresence>
