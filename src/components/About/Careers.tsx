@@ -124,7 +124,7 @@ const Careers: React.FC = () => {
             </div>
           )) : 
           <div>
-            <h1>No vacancies available.</h1>
+            <h1 className="text-gray-600 mb-10 text-center text-lg font-semibold max-w-2xl mx-auto">No vacancies available.</h1>
           </div>
           }
         </div>
