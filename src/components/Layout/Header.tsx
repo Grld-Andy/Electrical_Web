@@ -302,17 +302,83 @@ const Header = () => {
               </div>
               <nav>
                 <ul className="space-y-4">
-                  {navLinks.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        to={link.to}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="font-semibold text-lg hover:text-blue-400 transition-colors block py-2"
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
+                  {navLinks.map((link) => {
+                    const dropdown =
+                      (dropdownData as Record<string, SimpleDropdown | DetailedDropdown>)[
+                        link.name
+                      ];
+
+                    const isOpen = openDropdown === link.name;
+
+                    return (
+                      <li key={link.name}>
+                        <div
+                          className="flex items-center justify-between cursor-pointer py-2"
+                          onClick={() => {
+                            if (dropdown) {
+                              setOpenDropdown(isOpen ? null : link.name);
+                            } else {
+                              scrollOrNavigate(link.to);
+                              setMobileMenuOpen(false);
+                            }
+                          }}
+                        >
+                          <span className="font-semibold text-lg hover:text-blue-400 transition-colors">
+                            {link.name}
+                          </span>
+                          {dropdown && (
+                            <span className="text-white ml-2">
+                              {isOpen ? "-" : "+"}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Dropdown Content */}
+                        {dropdown && isOpen && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {/* Simple Dropdown */}
+                            {dropdown.type === "simple" &&
+                              dropdown.items.map((item) => (
+                                <div
+                                  key={item.name}
+                                  onClick={() => {
+                                    scrollOrNavigate(item.to);
+                                    setMobileMenuOpen(false);
+                                  }}
+                                  className="block cursor-pointer px-2 py-1 text-gray-300 text-sm hover:text-blue-400"
+                                >
+                                  {item.name}
+                                </div>
+                              ))}
+
+                            {/* Detailed Dropdown */}
+                            {dropdown.type === "detailed" &&
+                              dropdown.categories.map((cat) => (
+                                <div key={cat.name} className="mb-3">
+                                  <Link to="services" className="text-gray-300 text-sm hover:text-blue-400">
+                                    {cat.name}
+                                  </Link>
+                                  {/* <ul className="ml-3 mt-1 space-y-1">
+                                    {cat.subItems.map((sub) => (
+                                      <li
+                                        key={sub}
+                                        onClick={() => {
+                                          scrollOrNavigate(link.to);
+                                          setMobileMenuOpen(false);
+                                        }}
+                                        className="text-gray-300 hover:text-blue-400 text-sm cursor-pointer"
+                                      >
+                                        {sub}
+                                      </li>
+                                    ))}
+                                  </ul> */}
+                                </div>
+                              ))}
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
             </motion.div>
