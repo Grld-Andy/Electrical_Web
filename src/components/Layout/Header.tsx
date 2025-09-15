@@ -325,7 +325,6 @@ const Header = () => {
                             {link.name}
                           </Link>
 
-                          {/* Dropdown Toggle Button (only toggles open/close, not navigation) */}
                           {dropdown && (
                             <button
                               onClick={() => setOpenDropdown(isOpen ? null : link.name)}
