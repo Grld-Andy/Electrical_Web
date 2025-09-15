@@ -35,7 +35,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero5.jpg',
+    image: '/images/market/renewable.jpg',
     title: ['Power System ', 'Modelling & Studies'],
     buttonText: 'Our Services',
     buttonLink: '/services',
