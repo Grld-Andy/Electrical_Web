@@ -91,7 +91,7 @@ const Footer = () => {
             <Link to="#" className="text-gray-600 hover:text-blue-600">
               <FaTwitter size={18} />
             </Link>
-            <Link to="#" className="text-gray-600 hover:text-blue-600">
+            <Link to="https://www.linkedin.com/in/lymfz-engineering-ltd-4a6853384?trk=contact-info" className="text-gray-600 hover:text-blue-600">
               <FaLinkedin size={18} />
             </Link>
             <Link to="#" className="text-gray-600 hover:text-blue-600">
