@@ -59,7 +59,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/market/renewable.jpg',
+    image: '/images/my/home/homeSolar.jpg',
     title: ['Renewable &', 'Sustainable Solutions'],
     buttonText: 'Our Services',
     buttonLink: '/services',
