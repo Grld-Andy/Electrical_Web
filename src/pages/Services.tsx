@@ -76,7 +76,10 @@ const combinedData: { [category: string]: Category } = {
       .slice(0, 4)
       .map(([groupName, group]) => ({
         name: groupName,
-        items: group.services.map(s => ({ title: s.title, description: s.description })),
+        items: group.services.map(s => ({
+          title: s.title,
+          description: 'description' in s ? s.description : undefined,
+        })),
       })),
   },
   Products: {
