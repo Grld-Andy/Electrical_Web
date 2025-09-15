@@ -38,7 +38,7 @@ const dropdownData: DropdownData = {
       { name: 'Our Story', to: '/about#our-story' },
       { name: 'Vision, Mission & Values', to: '/about#mission' },
       { name: 'Market Segment', to: '/about#market-segment' },
-      { name: 'Technology & Expertise', to: '/about#technology' },
+      { name: 'Technology & Expertise', to: '/about#technical-expertise' },
       { name: 'Career', to: '/about#career' }
     ],
   },
