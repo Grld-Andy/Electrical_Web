@@ -66,7 +66,7 @@ const dropdownData: DropdownData = {
         name: 'Renewable & Sustainable Solutions',
         subItems: [
           'Solar Power Systems',
-          'Energy Efficiency Solutions',
+          'Energy Effeciency Solutions(energy auditing)',
         ],
       },
       {
