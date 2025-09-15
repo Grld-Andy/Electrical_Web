@@ -62,7 +62,7 @@ const Clients = () => {
         </p>
 
         {/* Client Logos in Cards */}
-        <div className="flex flex-wrap justify-center align-center gap-6">
+        <div className="md:flex md:flex-wrap grid grid-cols-2 justify-center align-center gap-6">
           {clients.map((client, idx) => (
             <motion.a
               key={idx}
