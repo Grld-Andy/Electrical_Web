@@ -31,7 +31,7 @@ const MemberCard: React.FC<Props> = ({ member }) => {
         <p className="text-gray-600 mb-6 text-sm">{member.bio}</p>
         
         <div className="flex justify-center space-x-3">
-          {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, iconIndex) => (
+          {[FaFacebook, FaTwitter].map((Icon, iconIndex) => (
             <Link 
               key={iconIndex}
               to="#" 
@@ -40,6 +40,18 @@ const MemberCard: React.FC<Props> = ({ member }) => {
               <Icon size={16} />
             </Link>
           ))}
+          <Link 
+            to="https://www.linkedin.com/in/lymfz-engineering-ltd-4a6853384?trk=contact-info" 
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+          >
+            <FaLinkedin size={16} />
+          </Link>
+          <Link 
+            to="#" 
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
+          >
+            <FaInstagram size={16} />
+          </Link>
         </div>
       </div>
     </div>

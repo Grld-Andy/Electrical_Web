@@ -78,7 +78,7 @@ const ContactPage = () => {
                 </ContactInfoCard>
                 <ContactInfoCard icon={<Globe className="text-gray-600" />} title="Social Media">
                   <div className="flex items-center gap-4">
-                      <a href="#" className="text-gray-600 hover:text-blue-600"><FaLinkedinIn /></a>
+                      <a href="https://www.linkedin.com/in/lymfz-engineering-ltd-4a6853384?trk=contact-info" className="text-gray-600 hover:text-blue-600"><FaLinkedinIn /></a>
                       <a href="#" className="text-gray-600 hover:text-blue-600"><FaFacebookF /></a>
                   </div>
                 </ContactInfoCard>
