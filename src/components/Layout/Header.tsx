@@ -323,9 +323,9 @@ const Header = () => {
                             }
                           }}
                         >
-                          <span className="font-semibold text-lg hover:text-blue-400 transition-colors">
+                          <Link to={link.to} className="font-semibold text-lg hover:text-blue-400 transition-colors">
                             {link.name}
-                          </span>
+                          </Link>
                           {dropdown && (
                             <span className="text-white ml-2">
                               {isOpen ? "-" : "+"}
