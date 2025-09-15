@@ -114,7 +114,6 @@ const Header = () => {
 
   const scrollOrNavigate = (link: string) => {
     const [pathname, hash] = link.split("#")
-    console.log('clicked here: ', pathname, hash)
     if(location.pathname.includes(pathname)){
       if(hash){
         const el = document.getElementById(hash)
@@ -242,7 +241,15 @@ const Header = () => {
                                   (c: { name: string; subItems: string[]; image?: string }) =>
                                      c.name === activeCategory[link.name]
                                 )?.subItems ?? []).map((item: string) => (
-                                  <li key={item} className="flex items-start space-x-3">
+                                  <li
+                                    key={item}
+                                    onClick={() => {
+                                      const catName = dropdown.categories.find((c: { name: string; subItems: string[]; image?: string }) => c.name === activeCategory[link.name])?.name;
+                                      if (catName) {
+                                        handleDetailedDropdownHeaderClick(catName);
+                                      }
+                                    }}
+                                    className="flex items-start space-x-3">
                                     <div className="flex-shrink-0 w-5 h-5 mt-0.5 bg-blue-600 text-white flex items-center justify-center rounded-sm">
                                       <FaCheck size={12}/>
                                     </div>
