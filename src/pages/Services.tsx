@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
@@ -117,12 +118,71 @@ const combinedData: { [category: string]: Category } = {
   },
 };
 
+
 const ProductsAndServicesPage = () => {
+  const location = useLocation();
   const [activeCategory, setActiveCategory] = useState('Services and Solutions');
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
-
-  // for product tabs
   const [activeProductIndex, setActiveProductIndex] = useState(0);
+
+  // Helper to find group index by name
+  const findGroupIndex = (category: string, groupName: string) => {
+    const groups = combinedData[category]?.groups || [];
+    return groups.findIndex(g => g.name === groupName);
+  };
+
+  // On mount or location change, check for navigation state
+  useEffect(() => {
+    if (location.state && location.state.group) {
+      let groupName = location.state.group;
+      // Special case: 'Electrical Products and Equipment Supplies' should open Products sidebar, first tab
+      if (groupName === 'Electrical Products and Equipment Supplies') {
+        setActiveCategory('Products');
+        setActiveProductIndex(0); // Cables & Accessories
+        return;
+      }
+      // If Products, switch to Products tab
+      const prodIdx = findGroupIndex('Products', groupName);
+      if (prodIdx !== -1) {
+        setActiveCategory('Products');
+        setActiveProductIndex(prodIdx);
+      } else {
+        // Otherwise, switch to Services and Solutions group
+        const svcIdx = findGroupIndex('Services and Solutions', groupName);
+        if (svcIdx !== -1) {
+          setActiveCategory('Services and Solutions');
+          setActiveGroupIndex(svcIdx);
+        }
+      }
+    }
+  }, [location.state]);
+
+  // Listen for custom event to switch group/tab
+  useEffect(() => {
+    const handler = (e: any) => {
+      const group = e.detail?.group;
+      if (!group) return;
+      // Special case: 'Electrical Products and Equipment Supplies' should open Products sidebar, first tab
+      if (group === 'Electrical Products and Equipment Supplies') {
+        setActiveCategory('Products');
+        setActiveProductIndex(0);
+        return;
+      }
+      const prodIdx = findGroupIndex('Products', group);
+      if (prodIdx !== -1) {
+        setActiveCategory('Products');
+        setActiveProductIndex(prodIdx);
+      } else {
+        const svcIdx = findGroupIndex('Services and Solutions', group);
+        if (svcIdx !== -1) {
+          setActiveCategory('Services and Solutions');
+          setActiveGroupIndex(svcIdx);
+        }
+      }
+    };
+    window.addEventListener('services-switch-group', handler);
+    return () => window.removeEventListener('services-switch-group', handler);
+  }, []);
 
   const contentVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -142,6 +202,7 @@ const ProductsAndServicesPage = () => {
           {/* Sidebar */}
           <aside className="md:w-1/4 mb-10 md:mb-0">
             <div className="bg-white shadow-md rounded-md border-slate-200 sticky top-20">
+              {/* Category selection */}
               <ul>
                 {Object.keys(combinedData).map((category, catIdx) => (
                   <li
@@ -161,6 +222,31 @@ const ProductsAndServicesPage = () => {
                       {combinedData[category].icon}
                       <span>{category}</span>
                     </button>
+                    {/* Show group list for active category directly underneath */}
+                    {activeCategory === category && (
+                      <ul className="mt-2 mb-2 px-2">
+                        {combinedData[category].groups.map((group, idx) => (
+                          <li key={group.name}>
+                            <button
+                              onClick={() => {
+                                if (category === "Products") {
+                                  setActiveProductIndex(idx);
+                                } else {
+                                  setActiveGroupIndex(idx);
+                                }
+                              }}
+                              className={`w-full cursor-pointer text-left px-3 py-2 rounded-md mb-1 hover:bg-slate-100 text-sm ${
+                                (category === "Products" ? activeProductIndex : activeGroupIndex) === idx
+                                  ? "text-blue-500 font-semibold"
+                                  : "text-gray-700"
+                              }`}
+                            >
+                              {group.name}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -169,24 +255,7 @@ const ProductsAndServicesPage = () => {
 
           {/* Content Area */}
           <div className="md:w-3/4">
-            {/* Product Tabs */}
-            {isProducts && (
-              <div className="mb-6 flex gap-4 border-b border-gray-200">
-                {activeGroups.map((group, idx) => (
-                  <button
-                    key={group.name}
-                    onClick={() => setActiveProductIndex(idx)}
-                    className={`px-4 py-2 -mb-px border-b-2 ${
-                      activeProductIndex === idx
-                        ? "border-blue-500 text-blue-600 font-semibold"
-                        : "border-transparent text-gray-500 hover:text-gray-700"
-                    }`}
-                  >
-                    {group.name}
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* ...no dropdown, group selection is now in sidebar... */}
 
             {/* Show content */}
             <div className={isProducts ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" : "grid grid-cols-1 sm:grid-cols-2 gap-6"}>

@@ -145,6 +145,18 @@ const Header = () => {
     setActiveCategory(prev => ({ ...prev, [navItem]: categoryName }));
   };
 
+  // Handle click on top-level header in Products, Services & Solutions dropdown
+  const handleDetailedDropdownHeaderClick = (categoryName: string) => {
+    if (location.pathname === "/services") {
+      // Dispatch custom event to switch tab/group
+      window.dispatchEvent(new CustomEvent("services-switch-group", { detail: { group: categoryName } }));
+    } else {
+      // Navigate to /services and pass group in state
+      navigate("/services", { state: { group: categoryName } });
+    }
+    setOpenDropdown(null);
+  };
+
   const mobileMenuVariants = {
     hidden: { x: '-100%' },
     visible: { x: 0, transition: { duration: 0.3 } },
@@ -205,11 +217,11 @@ const Header = () => {
                         {/* Left sidebar */}
                         <div className="bg-blue-600 text-white w-80 p-5 flex flex-col space-y-1">
                           {dropdown.categories.map((cat: { name: string; subItems: string[]; image?: string }) => (
-                            <Link
-                              to="services"
+                            <button
                               key={cat.name}
                               onMouseEnter={() => handleCategoryHover(link.name, cat.name)}
-                              className={`relative text-left p-3 rounded-md transition-colors text-sm font-semibold ${
+                              onClick={() => handleDetailedDropdownHeaderClick(cat.name)}
+                              className={`relative text-left p-3 rounded-md transition-colors text-sm font-semibold w-full text-white ${
                                 activeCategory[link.name] === cat.name ? 'bg-blue-700' : 'hover:bg-blue-500/80'
                               }`}
                             >
@@ -217,7 +229,7 @@ const Header = () => {
                               {activeCategory[link.name] === cat.name && (
                                 <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-[10px] border-l-blue-700"></div>
                               )}
-                            </Link>
+                            </button>
                           ))}
                         </div>
 
