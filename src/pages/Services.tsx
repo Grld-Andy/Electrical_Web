@@ -197,7 +197,7 @@ const ProductsAndServicesPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <main>
-        <PageHeader text="PRODUCTS, SERVICES AND SOLUTIONS" />
+        <PageHeader text="PRODUCTS, SERVICES AND SOLUTIONS" image='/images/my/navbar/products.jpg' />
         <div className="py-10 flex flex-col md:flex-row md:space-x-10 px-16">
           {/* Sidebar */}
           <aside className="md:w-1/4 mb-10 md:mb-0">

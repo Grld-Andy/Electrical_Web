@@ -108,7 +108,7 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
                 <div className="text-black text-4xl mb-4">{card.icon}</div>
                 <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 leading-tight">
                     {card.title}{' '}
-                    <span className="text-hertz-blue">{card.highlight}</span>
+                    <span className="text-blue-600">{card.highlight}</span>
                 </h3>
                 <p className="mt-3 text-slate-600 leading-relaxed">{card.description}</p>
             </div>
@@ -116,7 +116,7 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
             <div className="relative z-10 mt-6">
                 <Link to={card.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-slate-800 group/link">
                     <span>{card.buttonText}</span>
-                    <FaArrowRight className="transition-transform duration-300 group-hover/link:translate-x-1 text-hertz-blue" />
+                    <FaArrowRight className="transition-transform duration-300 group-hover/link:translate-x-1 text-blue-600" />
                     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-hertz-blue scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left duration-300"></span>
                 </Link>
             </div>

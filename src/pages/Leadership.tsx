@@ -29,7 +29,7 @@ const profileCardVariants = {
 const Leadership = () => {
   return (
     <div className="bg-gray-50">
-      <PageHeader text="Leadership" />
+      <PageHeader text="Leadership" image='/images/my/navbar/leadership.jpg' />
 
       {/* Combined Summary Section */}
       <div className="container mx-auto px-10 md:px-30 py-20">

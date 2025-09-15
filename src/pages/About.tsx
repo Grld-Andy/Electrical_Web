@@ -59,7 +59,7 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-gray-50 text-gray-800">
-      <PageHeader text="ABOUT US" />
+      <PageHeader text="ABOUT US" image="./images/my/navbar/about.jpg" />
 
       {/* Our Story Section */}
       <div id="our-story" className="max-w-7xl mx-auto px-6 py-20">

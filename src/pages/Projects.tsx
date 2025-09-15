@@ -110,7 +110,7 @@ const Projects: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <PageHeader text="Our Projects" />
+      <PageHeader text="Our Projects" image="/images/my/navbar/projects.jpg" />
 
       {/* Main Content Area */}
       <div className="container mx-auto px-6 py-20">

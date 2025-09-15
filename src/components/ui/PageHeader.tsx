@@ -2,14 +2,15 @@ import React from 'react'
 
 interface Props {
   text: string
+  image: string
 }
 
-const PageHeader: React.FC<Props> = ({ text }) => {
+const PageHeader: React.FC<Props> = ({ text, image }) => {
   return (
     <div
       className="bg-cover bg-center h-[320px] flex items-center justify-center text-white"
       style={{
-        backgroundImage: "url('/aboutbanner.jpg')",
+        backgroundImage: `url(${image})`,
       }}
     >
       <div className="bg-black/50 w-full h-full flex items-center justify-center">

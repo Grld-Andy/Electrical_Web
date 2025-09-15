@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="flex items-start gap-4 flex-col">
               <div className="w-full">
                 <img
-                  src="https://hertzengineering.com/wp-content/uploads/iso.png"
+                  src="https://lymfzengineeringlimited.com/wp-content/uploads/iso.png"
                   alt="ISO Certification"
                   className="w-full object-contain"
                 />

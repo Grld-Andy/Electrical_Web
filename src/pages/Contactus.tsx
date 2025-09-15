@@ -49,7 +49,7 @@ const ContactPage = () => {
   return (
     <main>
       {/* --- Hero Section --- */}
-      <PageHeader text={'CONTACT US'} />
+      <PageHeader text={'CONTACT US'} image='/images/my/navbar/contact.jpg' />
 
       {/* --- Main Content Section --- */}
       <section className="py-20 md:py-28 bg-white">
@@ -70,7 +70,7 @@ const ContactPage = () => {
               </ContactInfoCard>
               
               <ContactInfoCard icon={<Phone />} title="Phone Number">
-                <p>(+233) 0249 811 204</p>
+                <p>(+233) 249 811 204</p>
               </ContactInfoCard>
                 <ContactInfoCard icon={<Mail className="text-gray-600" />} title="Email Addresses">
                   <p>info@lymfzengineering.com</p>
@@ -137,16 +137,18 @@ const ContactPage = () => {
 
             {/* --- Map Section --- */}
             <section>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.7118337775533!2d-1.6961962887968507!3d4.887648940428863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc3e7210b377c85%3A0xe5469950a3251a2d!2sHertz%20Engineering%20Ltd!5e0!3m2!1sen!2sgh!4v1700000000000" 
-                    width="100%" 
-                    height="450" 
-                    style={{ border: 0 }} 
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Lymfz Engineering Location"
-                ></iframe>
+                <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7059767!2d-0.3019511!3d5.7061869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfa10a9e1dd191%3A0x18e638ad3d22cd41!2s5+Good+Street,+Amasaman!5e0!3m2!1sen!2sgh!4v1694772800000!5m2!1sen!2sgh"
+  width="100%"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Jireem Catering and Services Location"
+/>
+
+
             </section>
         </main>
     );
