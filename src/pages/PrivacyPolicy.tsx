@@ -6,8 +6,7 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <div className="bg-gray-50">
       {/* Page Header */}
-      <PageHeader text="Privacy Policy" />
-
+      <PageHeader text="Privacy Policy" image="/images/my/navbar/about.jpg" />
       <div className="container mx-auto px-6 py-20 max-w-4xl">
         {/* Intro */}
         <motion.div
@@ -33,7 +32,7 @@ const PrivacyPolicy: React.FC = () => {
           {[
             {
               title: "1. Introduction",
-              body: `Lymfz Engineering Limited ("we", "our") is an Electrical Engineering
+              body: `Lymfz Engineering Limited is an Electrical Engineering
               company registered in Ghana under the Companies Code 1963 (Act 179).
               This Privacy Policy explains how we handle your information when
               providing services, executing projects, or engaging in

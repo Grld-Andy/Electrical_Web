@@ -71,7 +71,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-wrap gap-4 justify-center mb-4 md:mb-0">
-            {["Privacy Policy", "Terms & Conditions", "Disclaimer", "Support", "FAQ"].map(
+            {["Privacy Policy"].map(
               (item) => (
                 <Link
                   key={item}

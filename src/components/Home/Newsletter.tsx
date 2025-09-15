@@ -5,7 +5,7 @@ import { MailCheck } from 'lucide-react'; // Using a more modern icon from lucid
 const Newsletter = () => {
     // Inline style for the background image with an overlay
     const sectionStyle = {
-        backgroundImage: `linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2940&auto=format&fit=crop')`,
+        backgroundImage: `linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('/images/my/navbar/about.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     };
