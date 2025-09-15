@@ -22,12 +22,12 @@ const projectData: ProjectData = {
   "2025": [
     {
       title: "Supply & Installation of Solar Submersible Pump",
-      client: "Client: GIZ Technologies",
+      client: "Client: GIZ",
       imgSrc: "./images/my/projects/solar.png",
     },
     {
       title: "Supply & Installation of Solar Submersible Pump",
-      client: "Client: GIZ Technologies",
+      client: "Client: GIZ",
       imgSrc: "./images/my/projects/solar2.jpg",
     },
   ],
@@ -71,7 +71,7 @@ const projectData: ProjectData = {
       title:
         "Supply of 2 Sets of 33kV 630A Auto Reclosers",
       client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
-      imgSrc: "./images/my/projects/auto.png"
+      imgSrc: "./images/my/projects/auto.jpg"
     }
   ],
 };

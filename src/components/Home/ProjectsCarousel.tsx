@@ -11,12 +11,18 @@ import 'swiper/css/navigation';
 // Expanded and structured project data for 6 items
 const projects = [
     {
-        status: "2025",
-        category: "Installation",
-        title: "Supply & Installation of Solar Submersible Pump",
-        client: "GIZ Technologies",
-        image:
-        "./images/my/projects/solar.png",
+        status: "2023",
+        category: "Supply",
+        title: "Supply of 3 Sets of 11kV Schneider RMUs",
+        client: "AngloGold Ashanti Obuasi (via Maalotech Engineering)",
+        image: "./images/my/projects/SchneiderRMU.png",
+    },
+    {
+        status: "2023",
+        category: "Supply",
+        title: "Supply of 2 Sets of 33kV 630A Auto Reclosers",
+        client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+        image: "./images/my/projects/autoRecloser.png",
     },
     {
         status: "2024",
@@ -34,18 +40,12 @@ const projects = [
         image: "./images/my/projects/copperCable.png",
     },
     {
-        status: "2023",
-        category: "Supply",
-        title: "Supply of 3 Sets of 11kV Schneider RMUs",
-        client: "AngloGold Ashanti Obuasi (via Maalotech Engineering)",
-        image: "./images/my/projects/SchneiderRMU.png",
-    },
-    {
-        status: "2023",
-        category: "Supply",
-        title: "Supply of 2 Sets of 33kV 630A Auto Reclosers",
-        client: "AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
-        image: "./images/my/projects/autoRecloser.png",
+        status: "2025",
+        category: "Installation",
+        title: "Supply & Installation of Solar Submersible Pump",
+        client: "GIZ",
+        image:
+        "./images/my/projects/solar.png",
     },
 ];
 
