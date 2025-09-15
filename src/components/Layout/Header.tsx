@@ -49,7 +49,7 @@ const dropdownData: DropdownData = {
         name: 'Electrical Engineering & Power Systems',
         subItems: [
           'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
-          'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network & Substation Design & Installation',
+          'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network Substation Design & Installation',
           'Power System Modelling & Studies',
           'Power System Protection Services',
           'Electrical Instrumentation, SCADA & Automation',

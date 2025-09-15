@@ -29,7 +29,7 @@ const slides = [
     image: '/images/my/home/hero11.jpg',
     title: [
       'High, Medium Voltage Transmission and',
-      'LV (Low Voltage) Distribution Network & Substation Design & Installation',
+      'LV (Low Voltage) Distribution Network Substation Design & Installation',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',

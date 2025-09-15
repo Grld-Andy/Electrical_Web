@@ -13,7 +13,7 @@ const serviceData = {
           'Comprehensive EPC and consultancy services covering feasibility studies, design, procurement, and construction of electrical infrastructure.',
       },
       {
-        title: 'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network & Substation Design & Installation',
+        title: 'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network Substation Design & Installation',
         description:
           'Design and installation of transmission, distribution networks, and substations across HV, MV, and LV levels.',
       },
