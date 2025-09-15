@@ -28,8 +28,8 @@ const slides = [
   {
     image: '/images/my/home/hero11.jpg',
     title: [
-      'High & Medium Voltage Transmission',
-      'Low Voltage Distribution (T&D) Network and Substation Design Installation',
+      'High, Medium Voltage Transmission and',
+      'LV (Low Voltage) Distribution Network & Substation Design & Installation',
     ],
     buttonText: 'Our Services',
     buttonLink: '/services',
@@ -72,7 +72,7 @@ const slides = [
   },
   {
     image: '/images/my/home/hero9.jpg',
-    title: ['Products &', 'Electrical Supplies'],
+    title: ['Electrical Products', 'and Equipment Supplies'],
     buttonText: 'Our Services',
     buttonLink: '/services',
   },

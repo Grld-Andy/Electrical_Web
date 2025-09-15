@@ -18,26 +18,28 @@ type Career = {
   desc: string;
 };
 
-const careers: Career[] = [
-  {
-    title: "Electrical Project Engineer",
-    location: "Accra, Ghana",
-    type: "Full-Time",
-    desc: "Manage and execute industrial and commercial electrical projects. Strong knowledge in LV/MV systems, site supervision, and safety compliance required.",
-  },
-  {
-    title: "Site Technician",
-    location: "Takoradi, Ghana",
-    type: "Contract",
-    desc: "Assist engineers with onsite installations, cabling, and maintenance. Great opportunity for hands-on learners with electrical skills and field readiness.",
-  },
-  {
-    title: "Graduate Intern – Electrical Engineering",
-    location: "Accra (Onsite)",
-    type: "Internship",
-    desc: "Fresh graduates in Electrical or Electronics Engineering are welcome. Gain practical experience in project design, panel building, and testing.",
-  },
-];
+const careers: Career[] = []
+
+// const careers: Career[] = [
+//   {
+//     title: "Electrical Project Engineer",
+//     location: "Accra, Ghana",
+//     type: "Full-Time",
+//     desc: "Manage and execute industrial and commercial electrical projects. Strong knowledge in LV/MV systems, site supervision, and safety compliance required.",
+//   },
+//   {
+//     title: "Site Technician",
+//     location: "Takoradi, Ghana",
+//     type: "Contract",
+//     desc: "Assist engineers with onsite installations, cabling, and maintenance. Great opportunity for hands-on learners with electrical skills and field readiness.",
+//   },
+//   {
+//     title: "Graduate Intern - Electrical Engineering",
+//     location: "Accra (Onsite)",
+//     type: "Internship",
+//     desc: "Fresh graduates in Electrical or Electronics Engineering are welcome. Gain practical experience in project design, panel building, and testing.",
+//   },
+// ];
 
 const buttonClasses =
   "bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow hover:bg-blue-700 transition-all duration-300";
@@ -70,7 +72,7 @@ const Careers: React.FC = () => {
 
         {/* Accordion List */}
         <div className="space-y-4">
-          {careers.map((career, index) => (
+          {careers && careers.length > 0 ? careers.map((career, index) => (
             <div
               key={career.title}
               className="bg-white border rounded-md shadow-sm"
@@ -120,7 +122,11 @@ const Careers: React.FC = () => {
                 </div>
               </motion.div>
             </div>
-          ))}
+          )) : 
+          <div>
+            <h1>No vacancies available.</h1>
+          </div>
+          }
         </div>
 
         {/* General Apply Button */}

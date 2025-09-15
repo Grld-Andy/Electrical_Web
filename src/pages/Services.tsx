@@ -3,11 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 
-// combine services and solutions
-// electical with solutions
-// update navbar link
-// place solutions in electical engineering subsection
-
 const serviceData = {
   'Electrical Engineering & Power Systems': {
     icon: <Zap className="w-6 h-6" />,
@@ -18,7 +13,7 @@ const serviceData = {
           'Comprehensive EPC and consultancy services covering feasibility studies, design, procurement, and construction of electrical infrastructure.',
       },
       {
-        title: 'High & Medium Voltage Transmission & Low Voltage Distribution (T&D) Network and Substation Design Installation',
+        title: 'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network & Substation Design & Installation',
         description:
           'Design and installation of transmission, distribution networks, and substations across HV, MV, and LV levels.',
       },
@@ -56,11 +51,11 @@ const serviceData = {
   'Networking & Security Systems': {
     icon: <Cpu className="w-6 h-6" />,
     services: [
-      { title: 'Fiber Optic & Data Networks', description: 'Installation of fiber optic infrastructure, structured cabling, and networks.' },
+      { title: 'Fiber optics, data and telecommunication networks', description: 'Installation of fiber optic infrastructure, structured cabling, and networks.' },
       { title: 'Electric Fencing & Security Systems', description: 'Design and deployment of security solutions including fencing and access control.' },
     ],
   },
-  'Products & Electrical Supplies': {
+  'Electrical Products and Equipment Supplies': {
     icon: <ShieldCheck className="w-6 h-6" />,
     services: [
       { title: 'Cables & Accessories', description: 'High and low voltage electrical cables and control wiring solutions.' },
@@ -77,7 +72,7 @@ type Group = { name: string; items: Item[] };
 type Category = { icon: React.ReactNode; groups: Group[] };
 
 const combinedData: { [category: string]: Category } = {
-  Services: {
+  "Services and Solutions": {
     icon: <Zap className="w-6 h-6" />,
     groups: Object.entries(serviceData).slice(0,4).map(([groupName, group]) => ({
       name: groupName,
@@ -88,15 +83,15 @@ const combinedData: { [category: string]: Category } = {
     icon: <ShieldCheck className="w-6 h-6" />,
     groups: [
       {
-        name: 'Products & Electrical Supplies',
-        items: serviceData['Products & Electrical Supplies'].services.map(p => ({ title: p.title, description: p.description })),
+        name: 'Electrical Products and Equipment Supplies',
+        items: serviceData['Electrical Products and Equipment Supplies'].services.map(p => ({ title: p.title, description: p.description })),
       },
     ],
   }
 };
 
 const ProductsAndServicesPage = () => {
-  const [activeCategory, setActiveCategory] = useState('Services');
+  const [activeCategory, setActiveCategory] = useState('Services and Solutions');
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 

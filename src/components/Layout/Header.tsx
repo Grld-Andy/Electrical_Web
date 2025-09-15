@@ -49,7 +49,7 @@ const dropdownData: DropdownData = {
         name: 'Electrical Engineering & Power Systems',
         subItems: [
           'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
-          'High & Medium Voltage Transmission & Low Voltage Distribution (T&D) Network and Substation Design Installation',
+          'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network & Substation Design & Installation',
           'Power System Modelling & Studies',
           'Power System Protection Services',
           'Electrical Instrumentation, SCADA & Automation',
@@ -66,18 +66,18 @@ const dropdownData: DropdownData = {
         name: 'Renewable & Sustainable Solutions',
         subItems: [
           'Solar Power Systems',
-          'Energy Efficiency Solutions',
+          'Energy Efficiency Solutions (Energy Auditing)',
         ],
       },
       {
         name: 'Networking & Security Systems',
         subItems: [
-          'Fiber Optic & Data Networks',
+          'Fiber optics, data and telecommunication networks',
           'Electric Fencing & Security Systems',
         ],
       },
       {
-        name: 'Products & Electrical Supplies',
+        name: 'Electrical Products and Equipment Supplies',
         subItems: [
           'Cables & Accessories',
           'Power Protection & Distribution Equipment',
