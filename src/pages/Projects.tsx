@@ -25,6 +25,11 @@ const projectData: ProjectData = {
       client: "Client: GIZ Technologies",
       imgSrc: "./images/my/projects/solar.png",
     },
+    {
+      title: "Supply & Installation of Solar Submersible Pump",
+      client: "Client: GIZ Technologies",
+      imgSrc: "./images/my/projects/solar2.jpg",
+    },
   ],
   "2024": [
     {
@@ -33,10 +38,21 @@ const projectData: ProjectData = {
       imgSrc: "./images/my/projects/copper.png",
     },
     {
+      title: "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (500m)",
+      client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+      imgSrc: "./images/my/projects/33.jpg",
+    },
+    {
       title:
         "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (600m) + Electrical Materials",
       client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
       imgSrc: "./images/my/projects/copperCable.png",
+    },
+    {
+      title:
+        "Supply of 33kV 3-Core x 35mm Armoured Copper Cable (600m) + Electrical Materials",
+      client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+      imgSrc: "./images/my/projects/33_2.jpg",
     },
   ],
   "2023": [
@@ -49,7 +65,14 @@ const projectData: ProjectData = {
       title:
         "Supply of 2 Sets of 33kV 630A Auto Reclosers",
       client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
-      imgSrc: "./images/my/projects/autoRecloser.png"    },
+      imgSrc: "./images/my/projects/autoRecloser.png"
+    },
+    {
+      title:
+        "Supply of 2 Sets of 33kV 630A Auto Reclosers",
+      client: "Client: AngloGold Ashanti Iduapriem (via Maalotech Engineering)",
+      imgSrc: "./images/my/projects/auto.png"
+    }
   ],
 };
 
