@@ -53,7 +53,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/hero6.jpg',
+    image: '/images/my/home/heromep.jpg',
     title: ['Mechanical, Electrical', ' & Plumbing (MEP)'],
     buttonText: 'Our Services',
     buttonLink: '/services',

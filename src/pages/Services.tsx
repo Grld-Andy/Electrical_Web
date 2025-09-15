@@ -57,54 +57,79 @@ const serviceData = {
   'Electrical Products and Equipment Supplies': {
     icon: <ShieldCheck className="w-6 h-6" />,
     services: [
-      { title: 'Cables & Accessories', description: 'High and low voltage electrical cables and control wiring solutions.' },
-      { title: 'Power Protection & Distribution Equipment', description: 'Transformers, RMUs, surge protection, and switchgear.' },
-      { title: 'Lighting & Electrical Fittings', description: 'Quality lighting fixtures and electrical fittings for projects.' },
+      { title: 'Cables & Accessories', folder: 'cables' },
+      { title: 'Power Protection & Distribution Equipment', folder: 'protection' },
+      { title: 'Lighting & Electrical Fittings', folder: 'lighting' },
     ],
   },
 };
 
 // --- Combined Grouped Data ---
-type Item = { title: string; description?: string; imgSrc?: string; href?: string };
+type Item = { title: string; imgSrc?: string; description?: string };
 type Group = { name: string; items: Item[] };
 type Category = { icon: React.ReactNode; groups: Group[] };
 
 const combinedData: { [category: string]: Category } = {
   "Services and Solutions": {
     icon: <Zap className="w-6 h-6" />,
-    groups: Object.entries(serviceData).slice(0, 4).map(([groupName, group]) => ({
-      name: groupName,
-      items: group.services.map(s => ({ title: s.title, description: s.description })),
-    })),
+    groups: Object.entries(serviceData)
+      .slice(0, 4)
+      .map(([groupName, group]) => ({
+        name: groupName,
+        items: group.services.map(s => ({ title: s.title, description: s.description })),
+      })),
   },
   Products: {
     icon: <ShieldCheck className="w-6 h-6" />,
     groups: [
       {
-        name: 'Electrical Products and Equipment Supplies',
-        items: serviceData['Electrical Products and Equipment Supplies'].services.map(p => ({
-          title: p.title,
-          description: p.description,
-          imgSrc: `/images/my/products/${p.title}.jpg`, // example path
-        })),
+        name: 'Cables & Accessories',
+        items: [
+          { title: 'Cable 1', imgSrc: '/images/my/products/cables/1.jpg' },
+          { title: 'Cable 2', imgSrc: '/images/my/products/cables/2.jpg' },
+          { title: 'Cable 3', imgSrc: '/images/my/products/cables/3.jpg' },
+        ],
+      },
+      {
+        name: 'Power Protection & Distribution Equipment',
+        items: [
+          { title: 'Protection 1', imgSrc: '/images/my/products/protection/1.jpg' },
+          { title: 'Protection 2', imgSrc: '/images/my/products/protection/2.jpg' },
+          { title: 'Protection 3', imgSrc: '/images/my/products/protection/3.jpg' },
+        ],
+      },
+      {
+        name: 'Lighting & Electrical Fittings',
+        items: [
+          { title: 'Lighting 1', imgSrc: '/images/my/products/lighting/1.jpg' },
+          { title: 'Lighting 2', imgSrc: '/images/my/products/lighting/2.jpg' },
+          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/3.jpg' },
+          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/4.jpg' },
+          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/5.jpg' },
+          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/6.jpg' },
+          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/7.jpg' },
+        ],
       },
     ],
-  }
+  },
 };
 
 const ProductsAndServicesPage = () => {
   const [activeCategory, setActiveCategory] = useState('Services and Solutions');
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+
+  // for product tabs
+  const [activeProductIndex, setActiveProductIndex] = useState(0);
 
   const contentVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as const } },
-    exit: { opacity: 0, x: -50, transition: { duration: 0.3, ease: [0.42, 0, 1, 1] as const } },
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+    exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3 } },
   };
 
   const activeGroups = combinedData[activeCategory].groups;
-  const activeItems = activeGroups[activeGroupIndex].items;
+  const activeItems = activeGroups[activeCategory === "Products" ? activeProductIndex : activeGroupIndex].items;
+  const isProducts = activeCategory === "Products";
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -116,35 +141,23 @@ const ProductsAndServicesPage = () => {
             <div className="bg-white shadow-md rounded-md border-slate-200 sticky top-20">
               <ul>
                 {Object.keys(combinedData).map((category, catIdx) => (
-                  <li key={category} className={`${catIdx !== 0 ? 'border-t border-gray-200' : ''}`}>
+                  <li
+                    key={category}
+                    className={`${catIdx !== 0 ? 'border-t border-gray-200' : ''}`}
+                  >
                     <button
-                      onClick={() => setExpandedCategory(expandedCategory === category ? null : category)}
-                      className="w-full cursor-pointer flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-100 font-semibold"
+                      onClick={() => {
+                        setActiveCategory(category);
+                        setActiveGroupIndex(0);
+                        if (category === "Products") setActiveProductIndex(0);
+                      }}
+                      className={`w-full cursor-pointer flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-100 font-semibold ${
+                        activeCategory === category ? "bg-slate-100 text-blue-600" : ""
+                      }`}
                     >
                       {combinedData[category].icon}
                       <span>{category}</span>
                     </button>
-
-                    {expandedCategory === category && (
-                      <ul className="pl-8">
-                        {combinedData[category].groups.map((group, idx) => (
-                          <li
-                            key={group.name}
-                            className={`py-2 cursor-pointer ${
-                              activeCategory === category && activeGroupIndex === idx
-                                ? 'text-blue-500 font-bold'
-                                : 'text-gray-600 hover:text-black'
-                            }`}
-                            onClick={() => {
-                              setActiveCategory(category);
-                              setActiveGroupIndex(idx);
-                            }}
-                          >
-                            {group.name}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </li>
                 ))}
               </ul>
@@ -152,34 +165,67 @@ const ProductsAndServicesPage = () => {
           </aside>
 
           {/* Content Area */}
-          <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <AnimatePresence mode="wait">
-              {activeItems.map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  variants={contentVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white h-min rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
-                >
-                  {/* Only show images for Products */}
-                  {activeCategory === "Products" && item.imgSrc && (
-                    <img
-                      src={item.imgSrc}
-                      alt={item.title}
-                      className="h-48 w-full object-cover rounded-lg mb-4"
-                    />
-                  )}
+          <div className="md:w-3/4">
+            {/* Product Tabs */}
+            {isProducts && (
+              <div className="mb-6 flex gap-4 border-b border-gray-200">
+                {activeGroups.map((group, idx) => (
+                  <button
+                    key={group.name}
+                    onClick={() => setActiveProductIndex(idx)}
+                    className={`px-4 py-2 -mb-px border-b-2 ${
+                      activeProductIndex === idx
+                        ? "border-blue-500 text-blue-600 font-semibold"
+                        : "border-transparent text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    {group.name}
+                  </button>
+                ))}
+              </div>
+            )}
 
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
-                  {item.description && (
-                    <p className="text-gray-600 flex-grow">{item.description}</p>
-                  )}
-                </motion.div>
-              ))}
-            </AnimatePresence>
+            {/* Show content */}
+            <div className={isProducts ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" : "grid grid-cols-1 sm:grid-cols-2 gap-6"}>
+              <AnimatePresence mode="wait">
+                {isProducts ? (
+                  activeItems.map((item, index) => (
+                    <motion.div
+                      key={item.imgSrc}
+                      variants={contentVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      transition={{ delay: index * 0.05 }}
+                      className="overflow-hidden rounded-xl shadow-sm border border-slate-300"
+                    >
+                      <img
+                        src={item.imgSrc}
+                        alt={item.title}
+                        className="h-48 w-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </motion.div>
+                  ))
+                ) : (
+                  activeItems.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      variants={contentVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white h-min rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
+                    >
+                      <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
+                      {item.description && (
+                        <p className="text-gray-600 flex-grow">{item.description}</p>
+                      )}
+                    </motion.div>
+                  ))
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </main>
