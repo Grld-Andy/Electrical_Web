@@ -4,7 +4,6 @@ import { FaBuilding, FaFilePdf, FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { LineBackgroundPattern } from '../ui/BackgroundPattern';
 
-// 1. UPDATED TYPE DEFINITIONS
 interface CardData {
   title: string;
   highlight: string;
@@ -12,7 +11,7 @@ interface CardData {
   buttonText: string;
   href: string;
   icon: React.ReactNode;
-  hoverColor: string; // New property for unique hover colors
+  hoverColor: string;
 }
 
 interface CardProps {
@@ -20,15 +19,13 @@ interface CardProps {
   isLarge: boolean;
 }
 
-// 2. ENRICHED DATA with hover colors
-// 2. ENRICHED DATA with hover colors (UPDATED CONTENT FOR Lymfz)
 const cardData: CardData[] = [
     { 
       title: "Company", 
       highlight: "Profile", 
       description: "Learn more about Lymfz Engineering Limited, our mission, vision, and track record of delivering quality electrical solutions since 2020.",
       buttonText: "View Profile", 
-      href: "#",
+      href: "./files/COMPANY PROFILE.pdf",
       icon: <FaBuilding />,
       hoverColor: "rgba(0, 111, 255, 0.2)"
     },
@@ -57,15 +54,12 @@ const cardVariants = {
 };
 
 
-// 5. THE NEW CARD COMPONENT with dynamic shadow and unique hover colors
 const Card: React.FC<CardProps> = ({ card, isLarge }) => {
     const ref = useRef<HTMLDivElement>(null);
 
-    // Track mouse position with smoothing
     const mouseX = useMotionValue(Infinity);
     const mouseY = useMotionValue(Infinity);
 
-    // Dynamic drop shadow transform
     const shadowX = useTransform(mouseX, (val) => val === Infinity ? 0 : (val - (ref.current?.offsetWidth ?? 0) / 2) / 20);
     const shadowY = useTransform(mouseY, (val) => val === Infinity ? 0 : (val - (ref.current?.offsetHeight ?? 0) / 2) / 20);
 
@@ -93,7 +87,6 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
             style={{ filter }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
         >
-            {/* Unique color "Aurora Border" effect */}
             <AnimatePresence>
                 <motion.div 
                     className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -103,7 +96,6 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
                 />
             </AnimatePresence>
 
-            {/* Card Content */}
             <div className="relative z-10">
                 <div className="text-black text-4xl mb-4">{card.icon}</div>
                 <h3 className="text-2xl md:text-3xl font-bold font-heading text-slate-900 leading-tight">
@@ -124,7 +116,6 @@ const Card: React.FC<CardProps> = ({ card, isLarge }) => {
     );
 };
 
-// 6. MAIN COMPONENT
 const InfoCards: React.FC = () => {
     return (
         <section className="relative py-20 md:py-28 bg-slate-50 overflow-hidden">
