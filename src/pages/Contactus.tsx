@@ -73,8 +73,8 @@ const ContactPage = () => {
                 <p>(+233) 249 811 204</p>
               </ContactInfoCard>
                 <ContactInfoCard icon={<Mail className="text-gray-600" />} title="Email Addresses">
-                  <p>info@lymfzengineering.com</p>
-                  <p>info.sa@lymfzengineering.com</p>
+                  <p>info@lymfzengineeringltd.com</p>
+                  <p>info.sa@lymfzengineeringltd.com</p>
                 </ContactInfoCard>
                 <ContactInfoCard icon={<Globe className="text-gray-600" />} title="Social Media">
                   <div className="flex items-center gap-4">
