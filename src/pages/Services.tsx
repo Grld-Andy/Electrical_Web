@@ -132,7 +132,7 @@ const combinedData: { [category: string]: Category } = {
         items: [
           { title: 'Solar 1', imgSrc: '/images/my/products/solar/1.webp' },
           { title: 'Solar 2', imgSrc: '/images/my/products/solar/2.jpg' },
-          { title: 'Solar 3', imgSrc: '/images/my/products/solar/3.webp' },
+          { title: 'Solar 3', imgSrc: '/images/my/products/solar/3.jpg' },
           { title: 'Solar 3', imgSrc: '/images/my/products/solar/4.webp' },          
         ],
       },
