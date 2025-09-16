@@ -61,6 +61,7 @@ const serviceData = {
       { title: 'Cables & Accessories', folder: 'cables' },
       { title: 'Power Protection & Distribution Equipment', folder: 'protection' },
       { title: 'Lighting & Electrical Fittings', folder: 'lighting' },
+            { title: 'Solar Systems', folder: 'solar' },
     ],
   },
 };
