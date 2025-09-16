@@ -143,6 +143,7 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Solar 4', imgSrc: '/images/my/products/solar/4.jpg' },          
           { title: 'Solar 5', imgSrc: '/images/my/products/solar/5.jpg' },          
           { title: 'Solar 6', imgSrc: '/images/my/products/solar/6.jpg' },          
+          { title: 'Solar 7', imgSrc: '/images/my/products/solar/7.jpg' },          
         ],
       },
     ],

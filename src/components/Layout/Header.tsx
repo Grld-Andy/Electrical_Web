@@ -373,35 +373,19 @@ const Header = () => {
                                 </div>
                               ))}
 
-                            {/* Detailed Dropdown */}
+                            {/* Detailed Dropdown (Mobile) */}
                             {dropdown.type === "detailed" &&
                               dropdown.categories.map((cat) => (
                                 <div key={cat.name} className="mb-3">
-                                  <Link
-                                    to="services"
+                                  <button
                                     onClick={() => {
-                                      scrollOrNavigate("services");
-                                      setMobileMenuOpen(false); // close sidebar after navigation
+                                      handleDetailedDropdownHeaderClick(cat.name);
+                                      setMobileMenuOpen(false);
                                     }}
-                                    className="text-gray-300 text-sm hover:text-blue-400"
+                                    className="w-full text-left text-gray-300 text-sm font-semibold hover:text-blue-400"
                                   >
                                     {cat.name}
-                                  </Link>
-                                  {/* If you want sub-items uncomment & handle */}
-                                  {/* <ul className="ml-3 mt-1 space-y-1">
-                                    {cat.subItems.map((sub) => (
-                                      <li
-                                        key={sub}
-                                        onClick={() => {
-                                          scrollOrNavigate(link.to);
-                                          setMobileMenuOpen(false);
-                                        }}
-                                        className="text-gray-300 hover:text-blue-400 text-sm cursor-pointer"
-                                      >
-                                        {sub}
-                                      </li>
-                                    ))}
-                                  </ul> */}
+                                  </button>
                                 </div>
                               ))}
                           </div>
