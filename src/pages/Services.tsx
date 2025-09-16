@@ -61,7 +61,7 @@ const serviceData = {
       { title: 'Cables & Accessories', folder: 'cables' },
       { title: 'Power Protection & Distribution Equipment', folder: 'protection' },
       { title: 'Lighting & Electrical Fittings', folder: 'lighting' },
-            { title: 'Solar Systems', folder: 'solar' },
+      { title: 'Solar Systems', folder: 'solar' },
     ],
   },
 };
@@ -125,6 +125,15 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/5.jpg' },
           { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/6.jpg' },
           { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/7.jpg' },
+        ],
+      },
+      {
+        name: 'Solar Systems',
+        items: [
+          { title: 'Solar 1', imgSrc: '/images/my/products/solar/1.webp' },
+          { title: 'Solar 2', imgSrc: '/images/my/products/solar/2.jpg' },
+          { title: 'Solar 3', imgSrc: '/images/my/products/solar/3.webp' },
+          { title: 'Solar 3', imgSrc: '/images/my/products/solar/4.webp' },          
         ],
       },
     ],
