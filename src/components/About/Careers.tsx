@@ -61,8 +61,10 @@ const Careers: React.FC = () => {
       id="career"
     >
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-          Careers at Lymfz Enineering Ltd.
+        <h2 className="text-3xl font-bold  mb-4 text-center">
+          <span className="text-gray-800">Careers at </span>
+          <span className="text-blue-600">Lymfz </span>
+          <span className="text-gray-800">Engineering Ltd.</span>
         </h2>
         <p className="text-gray-600 mb-10 text-center max-w-2xl mx-auto">
           At Lymfz Engineering Limited, we believe in nurturing talent and
