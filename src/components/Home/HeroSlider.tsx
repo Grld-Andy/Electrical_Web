@@ -71,7 +71,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/heroo9.jpg',
+    image: '/images/my/home/heroo9.png',
     title: ['Electrical Products', 'and Equipment Supplies'],
     buttonText: 'Our Services',
     buttonLink: '/services',
