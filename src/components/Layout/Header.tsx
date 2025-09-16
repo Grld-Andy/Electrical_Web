@@ -82,6 +82,7 @@ const dropdownData: DropdownData = {
           'Cables & Accessories',
           'Power Protection & Distribution Equipment',
           'Lighting & Electrical Fittings',
+          'Solar Systems',
         ],
       }
     ],
