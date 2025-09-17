@@ -67,7 +67,7 @@ const serviceData = {
       {
         title: 'Energy Efficiency Solutions (Energy Auditing)',
         description: 'Customized energy-saving solutions for reduced costs and sustainability.',
-        imgSrc: '/images/my/energy_efficiency.jpg'
+        imgSrc: '/images/my/solar1.jpg'
       },
     ],
   },
