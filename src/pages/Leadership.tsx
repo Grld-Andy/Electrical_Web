@@ -24,7 +24,7 @@ const leadershipTeam : Array<LeadershipTeamInterface> = [
     email: '',
   },
   {
-    name: 'Eng. Augustus Moses PMP',
+    name: 'Ing. Augustus Moses, PMP',
     title: 'Operations Manager',
     imageUrl: '/images/my/brafii.jpg',
     email: 'Bra.Fii@lymfz.com',
