@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, HardHat, ShieldCheck, Sun, Cpu } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
+import Sidebar from '@/components/Services/Sidebar';
 
 const serviceData = {
   'Electrical Engineering & Power Systems': {
@@ -12,47 +13,72 @@ const serviceData = {
         title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
         description:
           'Comprehensive EPC and consultancy services covering feasibility studies, design, procurement, and construction of electrical infrastructure.',
+          imgSrc: '/images/my/products/cables/1.jpg'
       },
       {
         title: 'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network Substation Design & Installation',
         description:
           'Design and installation of transmission, distribution networks, and substations across HV, MV, and LV levels.',
+          imgSrc: '/images/my/products/cables/1.jpg'
       },
       {
         title: 'Power System Modelling & Studies',
         description:
           'Advanced modeling, simulations, and studies to optimize the reliability, efficiency, and stability of power systems.',
+          imgSrc: '/images/my/products/cables/1.jpg'
       },
       {
         title: 'Power System Protection Services',
         description:
           'Specialized design and implementation of protection schemes to safeguard electrical networks and equipment.',
+          imgSrc: '/images/my/products/cables/1.jpg'
       },
       {
         title: 'Electrical Instrumentation, SCADA & Automation',
         description:
           'Integration of instrumentation systems, SCADA solutions, and automation for smart and efficient operations.',
+          imgSrc: '/images/my/products/cables/1.jpg'
       },
     ],
   },
   'Mechanical, Electrical & Plumbing (MEP)': {
     icon: <HardHat className="w-6 h-6" />,
     services: [
-      { title: 'Air Conditioning', description: 'Installation and servicing of cooling systems for all applications.' },
+      {
+        title: 'Air Conditioning',
+        description: 'Installation and servicing of cooling systems for all applications.',
+        imgSrc: '/images/my/products/cables/1.jpg'
+      },
     ],
   },
   'Renewable & Sustainable Solutions': {
     icon: <Sun className="w-6 h-6" />,
     services: [
-      { title: 'Solar Power Systems', description: 'Supply and installation of solar systems including pumping and grid integration.' },
-      { title: 'Energy Efficiency Solutions (Energy Auditing)', description: 'Customized energy-saving solutions for reduced costs and sustainability.' },
+      {
+        title: 'Solar Power Systems',
+        description: 'Supply and installation of solar systems including pumping and grid integration.',
+        imgSrc: '/images/my/products/cables/1.jpg'
+      },
+      {
+        title: 'Energy Efficiency Solutions (Energy Auditing)',
+        description: 'Customized energy-saving solutions for reduced costs and sustainability.',
+        imgSrc: '/images/my/products/cables/1.jpg'
+      },
     ],
   },
   'Networking & Security Systems': {
     icon: <Cpu className="w-6 h-6" />,
     services: [
-      { title: 'Fiber optics, data and telecommunication networks', description: 'Installation of fiber optic infrastructure, structured cabling, and networks.' },
-      { title: 'Electric Fencing & Security Systems', description: 'Design and deployment of security solutions including fencing and access control.' },
+      {
+        title: 'Fiber optics, data and telecommunication networks',
+        description: 'Installation of fiber optic infrastructure, structured cabling, and networks.',
+        imgSrc: '/images/my/products/cables/1.jpg'
+      },
+      {
+        title: 'Electric Fencing & Security Systems',
+        description: 'Design and deployment of security solutions including fencing and access control.',
+        imgSrc: '/images/my/products/cables/1.jpg'
+      },
     ],
   },
   'Electrical Products and Equipment Supplies': {
@@ -69,10 +95,10 @@ const serviceData = {
 // --- Combined Grouped Data ---
 type Item = { title: string; imgSrc?: string; description?: string };
 type Group = { name: string; items: Item[] };
-type Category = { icon: React.ReactNode; groups: Group[] };
+export type Category = { icon: React.ReactNode; groups: Group[] };
 
 const combinedData: { [category: string]: Category } = {
-  "Services and Solutions": {
+  'Services and Solutions': {
     icon: <Zap className="w-6 h-6" />,
     groups: Object.entries(serviceData)
       .slice(0, 4)
@@ -81,6 +107,7 @@ const combinedData: { [category: string]: Category } = {
         items: group.services.map(s => ({
           title: s.title,
           description: 'description' in s ? s.description : undefined,
+          imgSrc: 'imgSrc' in s ? s.imgSrc : undefined,
         })),
       })),
   },
@@ -128,10 +155,10 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Lighting 1', imgSrc: '/images/my/products/lighting/1.jpg' },
           { title: 'Lighting 2', imgSrc: '/images/my/products/lighting/2.jpg' },
           { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/3.jpg' },
-          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/4.jpg' },
-          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/5.jpg' },
-          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/6.jpg' },
-          { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/7.jpg' },
+          { title: 'Lighting 4', imgSrc: '/images/my/products/lighting/4.jpg' },
+          { title: 'Lighting 5', imgSrc: '/images/my/products/lighting/5.jpg' },
+          { title: 'Lighting 6', imgSrc: '/images/my/products/lighting/6.jpg' },
+          { title: 'Lighting 7', imgSrc: '/images/my/products/lighting/7.jpg' },
         ],
       },
       {
@@ -140,16 +167,15 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Solar 1', imgSrc: '/images/my/products/solar/1.webp' },
           { title: 'Solar 2', imgSrc: '/images/my/products/solar/2.jpg' },
           { title: 'Solar 3', imgSrc: '/images/my/products/solar/3.jpg' },
-          { title: 'Solar 4', imgSrc: '/images/my/products/solar/4.jpg' },          
-          { title: 'Solar 5', imgSrc: '/images/my/products/solar/5.jpg' },          
-          { title: 'Solar 6', imgSrc: '/images/my/products/solar/6.jpg' },          
-          { title: 'Solar 7', imgSrc: '/images/my/products/solar/7.jpg' },          
+          { title: 'Solar 4', imgSrc: '/images/my/products/solar/4.jpg' },
+          { title: 'Solar 5', imgSrc: '/images/my/products/solar/5.jpg' },
+          { title: 'Solar 6', imgSrc: '/images/my/products/solar/6.jpg' },
+          { title: 'Solar 7', imgSrc: '/images/my/products/solar/7.jpg' },
         ],
       },
     ],
   },
 };
-
 
 const ProductsAndServicesPage = () => {
   const location = useLocation();
@@ -157,29 +183,24 @@ const ProductsAndServicesPage = () => {
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
   const [activeProductIndex, setActiveProductIndex] = useState(0);
 
-  // Helper to find group index by name
   const findGroupIndex = (category: string, groupName: string) => {
     const groups = combinedData[category]?.groups || [];
     return groups.findIndex(g => g.name === groupName);
   };
 
-  // On mount or location change, check for navigation state
   useEffect(() => {
-    if (location.state && location.state.group) {
-      let groupName = location.state.group;
-      // Special case: 'Electrical Products and Equipment Supplies' should open Products sidebar, first tab
+    if (location.state?.group) {
+      const groupName = location.state.group;
       if (groupName === 'Electrical Products and Equipment Supplies') {
         setActiveCategory('Products');
-        setActiveProductIndex(0); // Cables & Accessories
+        setActiveProductIndex(0);
         return;
       }
-      // If Products, switch to Products tab
       const prodIdx = findGroupIndex('Products', groupName);
       if (prodIdx !== -1) {
         setActiveCategory('Products');
         setActiveProductIndex(prodIdx);
       } else {
-        // Otherwise, switch to Services and Solutions group
         const svcIdx = findGroupIndex('Services and Solutions', groupName);
         if (svcIdx !== -1) {
           setActiveCategory('Services and Solutions');
@@ -189,12 +210,10 @@ const ProductsAndServicesPage = () => {
     }
   }, [location.state]);
 
-  // Listen for custom event to switch group/tab
   useEffect(() => {
-    const handler = (e: any) => {
+    const handler = (e: CustomEvent) => {
       const group = e.detail?.group;
       if (!group) return;
-      // Special case: 'Electrical Products and Equipment Supplies' should open Products sidebar, first tab
       if (group === 'Electrical Products and Equipment Supplies') {
         setActiveCategory('Products');
         setActiveProductIndex(0);
@@ -212,122 +231,64 @@ const ProductsAndServicesPage = () => {
         }
       }
     };
-    window.addEventListener('services-switch-group', handler);
-    return () => window.removeEventListener('services-switch-group', handler);
+    window.addEventListener('services-switch-group', handler as EventListener);
+    return () => window.removeEventListener('services-switch-group', handler as EventListener);
   }, []);
 
   const contentVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
-    exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
   };
 
   const activeGroups = combinedData[activeCategory].groups;
-  const activeItems = activeGroups[activeCategory === "Products" ? activeProductIndex : activeGroupIndex].items;
-  const isProducts = activeCategory === "Products";
+  const activeItems = activeGroups[activeCategory === 'Products' ? activeProductIndex : activeGroupIndex].items;
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <main>
-        <PageHeader text="PRODUCTS, SERVICES AND SOLUTIONS" image='/images/my/navbar/products.jpg' />
-        <div className="py-10 flex flex-col md:flex-row md:space-x-10 px-16">
-          {/* Sidebar */}
-          <aside className="md:w-1/4 mb-10 md:mb-0">
-            <div className="bg-white shadow-md rounded-md border-slate-200 sticky top-20">
-              {/* Category selection */}
-              <ul>
-                {Object.keys(combinedData).map((category, catIdx) => (
-                  <li
-                    key={category}
-                    className={`${catIdx !== 0 ? 'border-t border-gray-200' : ''}`}
-                  >
-                    <button
-                      onClick={() => {
-                        setActiveCategory(category);
-                        setActiveGroupIndex(0);
-                        if (category === "Products") setActiveProductIndex(0);
-                      }}
-                      className={`w-full cursor-pointer flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-100 font-semibold ${
-                        activeCategory === category ? "bg-slate-100 text-blue-600" : ""
-                      }`}
-                    >
-                      {combinedData[category].icon}
-                      <span>{category}</span>
-                    </button>
-                    {/* Show group list for active category directly underneath */}
-                    {activeCategory === category && (
-                      <ul className="mt-2 mb-2 px-2">
-                        {combinedData[category].groups.map((group, idx) => (
-                          <li key={group.name}>
-                            <button
-                              onClick={() => {
-                                if (category === "Products") {
-                                  setActiveProductIndex(idx);
-                                } else {
-                                  setActiveGroupIndex(idx);
-                                }
-                              }}
-                              className={`w-full cursor-pointer text-left px-3 py-2 rounded-md mb-1 hover:bg-slate-100 text-sm ${
-                                (category === "Products" ? activeProductIndex : activeGroupIndex) === idx
-                                  ? "text-blue-500 font-semibold"
-                                  : "text-gray-700"
-                              }`}
-                            >
-                              {group.name}
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+        <PageHeader text="PRODUCTS, SERVICES AND SOLUTIONS" image="/images/my/navbar/products.jpg" />
+        <div className="py-10 flex flex-col md:flex-row md:space-x-10 px-4 sm:px-8 md:px-16">
+          <Sidebar
+            combinedData={combinedData}
+            setActiveCategory={setActiveCategory}
+            setActiveGroupIndex={setActiveGroupIndex}
+            setActiveProductIndex={setActiveProductIndex}
+            activeCategory={activeCategory}
+            activeGroupIndex={activeGroupIndex}
+            activeProductIndex={activeProductIndex}
+          />
 
-          {/* Content Area */}
           <div className="md:w-3/4">
-            {/* ...no dropdown, group selection is now in sidebar... */}
-
-            {/* Show content */}
-            <div className={isProducts ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" : "grid grid-cols-1 sm:grid-cols-2 gap-6"}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <AnimatePresence mode="wait">
-                {isProducts ? (
-                  activeItems.map((item, index) => (
-                    <motion.div
-                      key={item.imgSrc}
-                      variants={contentVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      transition={{ delay: index * 0.05 }}
-                      className="overflow-hidden rounded-xl shadow-sm border border-slate-300"
-                    >
-                      <img
-                        src={item.imgSrc}
-                        alt={item.title}
-                        className="h-48 w-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </motion.div>
-                  ))
-                ) : (
-                  activeItems.map((item, index) => (
-                    <motion.div
-                      key={item.title}
-                      variants={contentVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-white h-min rounded-xl p-6 shadow-sm border border-slate-300 flex flex-col"
-                    >
+                {activeItems.map((item, index) => (
+                  <motion.div
+                    key={item.title + index}
+                    variants={contentVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={{ delay: index * 0.05, duration: 0.4, ease: 'easeInOut' }}
+                    className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 border border-gray-200 flex flex-col group"
+                  >
+                    {item.imgSrc && (
+                      <div className="overflow-hidden h-48">
+                        <img
+                          src={item.imgSrc}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 flex flex-col flex-grow">
                       <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
                       {item.description && (
                         <p className="text-gray-600 flex-grow">{item.description}</p>
                       )}
-                    </motion.div>
-                  ))
-                )}
+                    </div>
+                  </motion.div>
+                ))}
               </AnimatePresence>
             </div>
           </div>
