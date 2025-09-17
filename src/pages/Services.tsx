@@ -77,7 +77,7 @@ const serviceData = {
       {
         title: 'Fiber optics, data and telecommunication networks',
         description: 'Installation of fiber optic infrastructure, structured cabling, and networks.',
-        imgSrc: '/images/my/home/heroo8.jpg'
+        imgSrc: '/images/my/fiber.jpg'
       },
       {
         title: 'Electric Fencing & Security Systems',
