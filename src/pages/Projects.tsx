@@ -3,9 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import PageHeader from "@/components/ui/PageHeader";
 
-// use images in brochure
-// add clients
-
 // --- Types ---
 type Project = {
   title: string;
@@ -103,18 +100,14 @@ const cardVariants: Variants = {
   },
 };
 
-// --- The Main Projects Page Component ---
 const Projects: React.FC = () => {
   const [activeYear, setActiveYear] = useState<keyof ProjectData>(years[0]);
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <PageHeader text="Our Projects" image="/images/my/navbar/projects.jpg" />
 
-      {/* Main Content Area */}
       <div className="container mx-auto px-6 py-20">
-        {/* Year Selection Tabs */}
         <div className="flex justify-center border-b border-gray-200 mb-12">
           <div className="relative flex space-x-2 md:space-x-4">
             {years.map((year) => (
@@ -141,7 +134,6 @@ const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Project Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeYear}
