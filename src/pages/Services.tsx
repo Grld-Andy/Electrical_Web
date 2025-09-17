@@ -13,31 +13,31 @@ const serviceData = {
         title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
         description:
           'Comprehensive EPC and consultancy services covering feasibility studies, design, procurement, and construction of electrical infrastructure.',
-          imgSrc: '/images/my/products/cables/1.jpg'
+          imgSrc: '/images/my/home/hero10.jpg'
       },
       {
         title: 'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network Substation Design & Installation',
         description:
           'Design and installation of transmission, distribution networks, and substations across HV, MV, and LV levels.',
-          imgSrc: '/images/my/products/cables/1.jpg'
+          imgSrc: '/images/my/home/hero4.jpg'
       },
       {
         title: 'Power System Modelling & Studies',
         description:
           'Advanced modeling, simulations, and studies to optimize the reliability, efficiency, and stability of power systems.',
-          imgSrc: '/images/my/products/cables/1.jpg'
+          imgSrc: '/images/my/home/hero5.jpg '
       },
       {
         title: 'Power System Protection Services',
         description:
           'Specialized design and implementation of protection schemes to safeguard electrical networks and equipment.',
-          imgSrc: '/images/my/products/cables/1.jpg'
+          imgSrc: '/images/my/home/whyChooseUs.jpg'
       },
       {
         title: 'Electrical Instrumentation, SCADA & Automation',
         description:
           'Integration of instrumentation systems, SCADA solutions, and automation for smart and efficient operations.',
-          imgSrc: '/images/my/products/cables/1.jpg'
+          imgSrc: '/images/my/home/hero11.jpg'
       },
     ],
   },
@@ -47,7 +47,7 @@ const serviceData = {
       {
         title: 'Air Conditioning',
         description: 'Installation and servicing of cooling systems for all applications.',
-        imgSrc: '/images/my/products/cables/1.jpg'
+        imgSrc: '/images/my/home/heromep.jpg'
       },
     ],
   },
@@ -57,7 +57,7 @@ const serviceData = {
       {
         title: 'Solar Power Systems',
         description: 'Supply and installation of solar systems including pumping and grid integration.',
-        imgSrc: '/images/my/products/cables/1.jpg'
+        imgSrc: '/images/my/home/homeSolar.jpg'
       },
       {
         title: 'Energy Efficiency Solutions (Energy Auditing)',
@@ -72,12 +72,12 @@ const serviceData = {
       {
         title: 'Fiber optics, data and telecommunication networks',
         description: 'Installation of fiber optic infrastructure, structured cabling, and networks.',
-        imgSrc: '/images/my/products/cables/1.jpg'
+        imgSrc: '/images/my/home/heroo8.jpg'
       },
       {
         title: 'Electric Fencing & Security Systems',
         description: 'Design and deployment of security solutions including fencing and access control.',
-        imgSrc: '/images/my/products/cables/1.jpg'
+        imgSrc: '/images/my/home/heroo8.jpg'
       },
     ],
   },
