@@ -152,6 +152,7 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Protection 8', imgSrc: '/images/my/products/protection/14.jpg' },
           { title: 'Protection 9', imgSrc: '/images/my/products/protection/15.jpg' },
           { title: 'Protection 10', imgSrc: '/images/my/products/protection/17.jpg' },
+          { title: 'Protection 11', imgSrc: '/images/my/products/protection/18.jpg' },
         ],
       },
       {
