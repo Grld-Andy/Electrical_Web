@@ -65,7 +65,7 @@ const slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/heroo8.jpg',
+    image: '/images/my/home/hero8a.jpg',
     title: ['Networking &', 'Security Systems', 'including Electric Fencing'],
     buttonText: 'Our Services',
     buttonLink: '/services',

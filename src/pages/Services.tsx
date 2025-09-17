@@ -62,7 +62,7 @@ const serviceData = {
       {
         title: 'Solar Power Systems',
         description: 'Supply and installation of solar systems including pumping and grid integration.',
-        imgSrc: '/images/my/home/homeSolar.jpg'
+        imgSrc: '/images/my/energy_efficiency.jpg'
       },
       {
         title: 'Energy Efficiency Solutions (Energy Auditing)',
