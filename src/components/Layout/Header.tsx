@@ -39,7 +39,7 @@ const dropdownData: DropdownData = {
       { name: 'Vision, Mission & Values', to: '/about#mission' },
       { name: 'Market Segment', to: '/about#market-segment' },
       { name: 'Technology & Expertise', to: '/about#technical-expertise' },
-      { name: 'Career', to: '/about#career' }
+      { name: 'Careers', to: '/about#career' }
     ],
   },
   'Products, Services & Solutions': {
