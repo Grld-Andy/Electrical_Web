@@ -49,6 +49,11 @@ const serviceData = {
         description: 'Installation and servicing of cooling systems for all applications.',
         imgSrc: '/images/my/home/heromep.jpg'
       },
+      {
+        title: 'Electrical commercial and domestic wiring installations',
+        description: 'Design, installation, and maintenance of safe and efficient electrical wiring systems for residential, commercial, and industrial buildings, ensuring compliance with standards and long-term reliability.',
+        imgSrc: '/images/my/wiring.jpg'
+      },
     ],
   },
   'Renewable & Sustainable Solutions': {
