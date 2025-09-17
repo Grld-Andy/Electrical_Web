@@ -179,7 +179,7 @@ const SmootherHeroSlider = () => {
             <motion.h1
               key={i}
               variants={textItemVariants}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans leading-tight tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans w-[70%] md:w-full leading-tight tracking-tight"
             >
               {line}
             </motion.h1>
