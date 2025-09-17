@@ -13,7 +13,7 @@ const serviceData = {
         title: 'Electrical Infrastructure: Feasibility Studies, Engineering, Procurement, Construction & Consultancy',
         description:
           'Comprehensive EPC and consultancy services covering feasibility studies, design, procurement, and construction of electrical infrastructure.',
-          imgSrc: '/images/my/home/hero10.jpg'
+          imgSrc: '/images/my/infrastructure.jpg'
       },
       {
         title: 'High, Medium Voltage Transmission and LV (Low Voltage) Distribution Network Substation Design & Installation',
