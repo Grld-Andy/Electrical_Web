@@ -72,7 +72,7 @@ let slides = [
     buttonLink: '/services',
   },
   {
-    image: '/images/my/home/heroo9.png',
+    image: '/images/my/home/heroo9.jpg',
     title: ['Electrical Products', 'and Equipment Supplies'],
     buttonText: 'Our Services',
     buttonLink: '/services',
