@@ -158,7 +158,6 @@ const combinedData: { [category: string]: Category } = {
         name: 'Lighting & Electrical Fittings',
         items: [
           { title: 'Lighting 1', imgSrc: '/images/my/products/lighting/1.jpg' },
-          { title: 'Lighting 2', imgSrc: '/images/my/products/lighting/2.jpg' },
           { title: 'Lighting 3', imgSrc: '/images/my/products/lighting/3.jpg' },
           { title: 'Lighting 4', imgSrc: '/images/my/products/lighting/4.jpg' },
           { title: 'Lighting 5', imgSrc: '/images/my/products/lighting/5.jpg' },

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useIsMobile from '@/hooks/isMobile';
 
 // Slides with matching images
 const MotionLink = motion(Link);
 
-const slides = [
+let slides = [
   {
     image: '/images/my/home/hero1.jpg',
     title: [
@@ -117,6 +118,7 @@ const swipePower = (offset: number, velocity: number) =>
   Math.abs(offset) * velocity;
 
 const SmootherHeroSlider = () => {
+  const isMobile = useIsMobile();
   const [[page, direction], setPage] = useState([0, 0]);
 
   const paginate = (newDirection: number) => {
@@ -132,6 +134,19 @@ const SmootherHeroSlider = () => {
   }, [page]);
 
   const slideIndex = page;
+
+  slides = slides.map((slide) => {
+    let parts = slide.image.split("/"); 
+    let newArray: any[] = []
+
+    if (!isMobile) {
+      newArray = [parts[0], parts[1], parts[2], parts[3], "desktop", parts[4]];
+    }
+    return {
+      ...slide,
+      image: parts.join("/"),
+    };
+  });
 
   return (
     <div className="relative h-screen min-h-[700px] w-full overflow-hidden bg-gray-800">
