@@ -126,6 +126,8 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Cable 7', imgSrc: '/images/my/products/cables/7.jpg' },
           { title: 'Cable 8', imgSrc: '/images/my/products/cables/8.jpg' },
           { title: 'Cable 9', imgSrc: '/images/my/products/cables/9.jpg' },
+          { title: 'Protection 11', imgSrc: '/images/my/products/protection/11.jpg' },
+          { title: 'Protection 12', imgSrc: '/images/my/products/protection/12.jpg' },
         ],
       },
       {
@@ -141,8 +143,6 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Protection 8', imgSrc: '/images/my/products/protection/8.jpg' },
           { title: 'Protection 9', imgSrc: '/images/my/products/protection/9.jpg' },
           { title: 'Protection 10', imgSrc: '/images/my/products/protection/10.jpg' },
-          { title: 'Protection 11', imgSrc: '/images/my/products/protection/11.jpg' },
-          { title: 'Protection 12', imgSrc: '/images/my/products/protection/12.jpg' },
           { title: 'Protection 13', imgSrc: '/images/my/products/protection/13.jpg' },
           { title: 'Protection 14', imgSrc: '/images/my/products/protection/14.jpg' },
           { title: 'Protection 15', imgSrc: '/images/my/products/protection/15.jpg' },
