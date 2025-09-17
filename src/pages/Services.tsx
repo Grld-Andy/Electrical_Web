@@ -259,7 +259,7 @@ const ProductsAndServicesPage = () => {
           />
 
           <div className="md:w-3/4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-8`}>
               <AnimatePresence mode="wait">
                 {activeItems.map((item, index) => (
                   <motion.div
@@ -272,7 +272,7 @@ const ProductsAndServicesPage = () => {
                     className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 border border-gray-200 flex flex-col group"
                   >
                     {item.imgSrc && (
-                      <div className="overflow-hidden h-48">
+                      <div className="overflow-hidden h-[240px]">
                         <img
                           src={item.imgSrc}
                           alt={item.title}
