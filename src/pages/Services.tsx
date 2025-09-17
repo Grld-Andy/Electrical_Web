@@ -34,7 +34,7 @@ const serviceData = {
           imgSrc: '/images/my/home/whyChooseUs.jpg'
       },
       {
-        title: 'Electrical Instrumentation, SCADA & Automation',
+        title: 'Electrical Instrumentascation, SCADA & Automation',
         description:
           'Integration of instrumentation systems, SCADA solutions, and automation for smart and efficient operations.',
           imgSrc: '/images/my/home/hero11.jpg'
