@@ -58,8 +58,8 @@ const dropdownData: DropdownData = {
       {
         name: 'Mechanical, Electrical & Plumbing (MEP)',
         subItems: [
-          'MEP Engineering',
           'Air Conditioning',
+          'Electrical commercial and domestic wiring installations'
         ],
       },
       {
