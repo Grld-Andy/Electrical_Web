@@ -51,7 +51,7 @@ const serviceData = {
       },
       {
         title: 'Electrical commercial and domestic wiring installations',
-        description: 'Design, installation, and maintenance of safe and efficient electrical wiring systems for residential, commercial, and industrial buildings, ensuring compliance with standards and long-term reliability.',
+        description: 'Safe and reliable wiring solutions for homes and businesses.',
         imgSrc: '/images/my/wiring.jpg'
       },
     ],
