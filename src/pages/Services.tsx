@@ -47,10 +47,10 @@ const serviceData = {
       {
         title: 'Air Conditioning',
         description: 'Installation and servicing of cooling systems for all applications.',
-        imgSrc: '/images/my/home/heromep.jpg'
+        imgSrc: '/images/my/ac.jpg'
       },
       {
-        title: 'Electrical commercial and domestic wiring installations',
+        title: 'Electrical Commercial and Domestic Wiring Installations',
         description: 'Safe and reliable wiring solutions for homes and businesses.',
         imgSrc: '/images/my/wiring.jpg'
       },
@@ -75,14 +75,14 @@ const serviceData = {
     icon: <Cpu className="w-6 h-6" />,
     services: [
       {
-        title: 'Fiber optics, data and telecommunication networks',
+        title: 'Fiber Optics, Data and Telecommunication Networks',
         description: 'Installation of fiber optic infrastructure, structured cabling, and networks.',
         imgSrc: '/images/my/fiber.jpg'
       },
       {
         title: 'Electric Fencing & Security Systems',
         description: 'Design and deployment of security solutions including fencing and access control.',
-        imgSrc: '/images/my/home/heroo8.jpg'
+        imgSrc: '/images/my/fencing.jpg'
       },
     ],
   },
