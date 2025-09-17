@@ -126,26 +126,26 @@ const combinedData: { [category: string]: Category } = {
           { title: 'Cable 7', imgSrc: '/images/my/products/cables/7.jpg' },
           { title: 'Cable 8', imgSrc: '/images/my/products/cables/8.jpg' },
           { title: 'Cable 9', imgSrc: '/images/my/products/cables/9.jpg' },
-          { title: 'Protection 5', imgSrc: '/images/my/products/protection/5.jpg' },
-          { title: 'Protection 6', imgSrc: '/images/my/products/protection/6.jpg' },
-          { title: 'Protection 7', imgSrc: '/images/my/products/protection/7.jpg' },
-          { title: 'Protection 9', imgSrc: '/images/my/products/protection/9.jpg' },
-          { title: 'Protection 11', imgSrc: '/images/my/products/protection/11.jpg' },
-          { title: 'Protection 12', imgSrc: '/images/my/products/protection/12.jpg' },
+          { title: 'Cable 10', imgSrc: '/images/my/products/protection/5.jpg' },
+          { title: 'Cable 11', imgSrc: '/images/my/products/protection/6.jpg' },
+          { title: 'Cable 12', imgSrc: '/images/my/products/protection/7.jpg' },
+          { title: 'Cable 13', imgSrc: '/images/my/products/protection/9.jpg' },
+          { title: 'Cable 14', imgSrc: '/images/my/products/protection/11.jpg' },
+          { title: 'Cable 15', imgSrc: '/images/my/products/protection/12.jpg' },
         ],
       },
       {
         name: 'Power Protection & Distribution Equipment',
         items: [
           { title: 'Protection 1', imgSrc: '/images/my/products/protection/1.jpg' },
+          { title: 'Protection 2', imgSrc: '/images/my/products/protection/16.jpg' },
           { title: 'Protection 3', imgSrc: '/images/my/products/protection/3.jpg' },
           { title: 'Protection 4', imgSrc: '/images/my/products/protection/4.jpg' },
-          { title: 'Protection 8', imgSrc: '/images/my/products/protection/8.jpg' },
-          { title: 'Protection 10', imgSrc: '/images/my/products/protection/10.jpg' },
-          { title: 'Protection 13', imgSrc: '/images/my/products/protection/13.jpg' },
-          { title: 'Protection 14', imgSrc: '/images/my/products/protection/14.jpg' },
-          { title: 'Protection 15', imgSrc: '/images/my/products/protection/15.jpg' },
-          { title: 'Protection 16', imgSrc: '/images/my/products/protection/16.jpg' },
+          { title: 'Protection 5', imgSrc: '/images/my/products/protection/10.jpg' },
+          { title: 'Protection 6', imgSrc: '/images/my/products/protection/8.jpg' },
+          { title: 'Protection 7', imgSrc: '/images/my/products/protection/13.jpg' },
+          { title: 'Protection 8', imgSrc: '/images/my/products/protection/14.jpg' },
+          { title: 'Protection 9', imgSrc: '/images/my/products/protection/15.jpg' },
         ],
       },
       {
@@ -280,12 +280,12 @@ const ProductsAndServicesPage = () => {
                         />
                       </div>
                     )}
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
-                      {item.description && (
+                    {item.description && (
+                      <div className="p-6 flex flex-col flex-grow">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
                         <p className="text-gray-600 flex-grow">{item.description}</p>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </AnimatePresence>
