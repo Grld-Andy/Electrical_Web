@@ -138,7 +138,6 @@ const combinedData: { [category: string]: Category } = {
         name: 'Power Protection & Distribution Equipment',
         items: [
           { title: 'Protection 1', imgSrc: '/images/my/products/protection/1.jpg' },
-          { title: 'Protection 2', imgSrc: '/images/my/products/protection/2.jpg' },
           { title: 'Protection 3', imgSrc: '/images/my/products/protection/3.jpg' },
           { title: 'Protection 4', imgSrc: '/images/my/products/protection/4.jpg' },
           { title: 'Protection 8', imgSrc: '/images/my/products/protection/8.jpg' },
