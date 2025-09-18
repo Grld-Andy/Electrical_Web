@@ -48,7 +48,7 @@ let slides = [
     buttonLink: '/services',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyvgLJvm2zLjhcqV6LFaoZw9hz0mQd17b68g&s',
+    image: '/images/my/home/scada.jpg',
     title: ['Electrical Instrumentation', 'SCADA & Automation'],
     buttonText: 'Our Services',
     buttonLink: '/services',

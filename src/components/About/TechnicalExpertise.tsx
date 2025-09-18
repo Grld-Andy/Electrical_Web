@@ -14,7 +14,7 @@ const expertiseAreas = [
   {
     name: "SCADA & Industrial Automation",
     desc: "Schneider Vijeo Citect, Siemens SIMATIC WinCC for process monitoring & automation.",
-    imageUrl: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop&crop=center"
+    imageUrl: "/images/my/scada1.jpg"
   },
   {
     name: "Construction & Project Coordination",
