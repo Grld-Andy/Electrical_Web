@@ -24,7 +24,7 @@ const leadershipTeam : Array<LeadershipTeamInterface> = [
     email: '',
   },
   {
-    name: 'Ing. Augustus Moses, PMP, CEWP-I(Industrial),CEWP(Industrial), SEMP, CPBA,Inspecting Engineer-Mincom',
+    name: 'Ing. Augustus Moses, PMP, CEWP-I(Industrial), CEWP(Industrial), SEMP, CPBA, Inspecting Engineer-Mincom',
     title: 'Operations Manager',
     imageUrl: '/images/my/brafii.jpg',
     email: 'Bra.Fii@lymfz.com',
@@ -114,7 +114,7 @@ const Leadership = () => {
                 </div>
 
                 {/* Info */}
-                <h3 className="text-2xl font-bold text-gray-800 relative">
+                <h3 className="text-xl text-center font-bold text-gray-800 relative">
                   {member.name}
                   <span className="block h-1 w-12 bg-blue-600 mx-auto mt-1 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </h3>
