@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const slides = [
@@ -76,80 +76,42 @@ const slides = [
   },
 ];
 
-const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
+// duplicate slides for infinite effect
+const infiniteSlides = [...slides, ...slides];
 
 const MobileHeroSlider = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (slider) {
-      slider.scrollTo({ left: slider.clientWidth });
-    }
-  }, []);
+    const track = trackRef.current;
+    if (!track) return;
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+    let offset = 0;
+    const slideWidth = track.clientWidth / infiniteSlides.length;
 
-    const handleScroll = () => {
-      if (isTransitioning) return;
-
-      const width = slider.clientWidth;
-      const index = Math.round(slider.scrollLeft / width);
-
-      if (index === 0) {
-        setIsTransitioning(true);
-        setTimeout(() => {
-          slider.scrollTo({ left: width * slides.length });
-          setIsTransitioning(false);
-        }, 50);
-        setActiveIndex(slides.length - 1);
-      } else if (index === slides.length + 1) {
-        setIsTransitioning(true);
-        setTimeout(() => {
-          slider.scrollTo({ left: width });
-          setIsTransitioning(false);
-        }, 50);
-        setActiveIndex(0);
-      } else {
-        setActiveIndex(index - 1);
+    const step = () => {
+      offset -= 1; // speed: 1px per frame
+      if (Math.abs(offset) >= slideWidth * slides.length) {
+        offset = 0; // reset when first batch finishes
       }
+      track.style.transform = `translateX(${offset}px)`;
+      requestAnimationFrame(step);
     };
 
-    slider.addEventListener("scroll", handleScroll, { passive: true });
-    return () => slider.removeEventListener("scroll", handleScroll);
-  }, [isTransitioning]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      scrollToSlide((activeIndex + 1) % slides.length);
-    }, 9000);
-    return () => clearInterval(interval);
-  }, [activeIndex]);
-
-  const scrollToSlide = (index: number) => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    slider.scrollTo({
-      left: (index + 1) * slider.clientWidth,
-      behavior: "smooth",
-    });
-    setActiveIndex(index);
-  };
+    requestAnimationFrame(step);
+  }, []);
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <div
-        ref={sliderRef}
-        className="h-full w-full overflow-x-scroll flex snap-x snap-mandatory scroll-smooth"
+        ref={trackRef}
+        className="flex h-full transition-transform duration-100 ease-linear"
+        style={{ width: `${infiniteSlides.length * 100}%` }}
       >
-        {loopedSlides.map((slide, i) => (
+        {infiniteSlides.map((slide, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-full h-full snap-center relative bg-cover bg-center"
+            className="w-full flex-shrink-0 h-full relative bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className="absolute inset-0 bg-black/40" />
@@ -174,18 +136,6 @@ const MobileHeroSlider = () => {
               </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => scrollToSlide(i)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              i === activeIndex ? "bg-white" : "bg-white/50"
-            }`}
-          />
         ))}
       </div>
     </div>

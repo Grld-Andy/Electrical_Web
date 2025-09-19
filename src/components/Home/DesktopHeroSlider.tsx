@@ -121,7 +121,7 @@ const DesktopHeroSlider = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => paginate(1), 9000);
+    const interval = setInterval(() => paginate(1), 5000);
     return () => clearInterval(interval);
   }, [page]);
 
