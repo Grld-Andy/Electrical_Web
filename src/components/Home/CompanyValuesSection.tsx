@@ -20,7 +20,7 @@ const CompanyValues = () => {
             
             {/* Hero Section with Overlay */}
             <div className="relative overflow-hidden">
-                <div className="relative max-h-[70vh]">
+                <div className="relative h-[250px] md:max-h-[70vh]">
                     
                     {/* Right Side with Overlay */}
                     <div>

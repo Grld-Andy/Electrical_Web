@@ -76,18 +76,17 @@ const slides = [
   },
 ];
 
-// Create a looped slides array
 const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
 const MobileHeroSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Jump to first "real" slide on mount
   useEffect(() => {
     const slider = sliderRef.current;
     if (slider) {
-      slider.scrollTo({ left: slider.clientWidth, behavior: "instant" as any });
+      slider.scrollTo({ left: slider.clientWidth });
     }
   }, []);
 
@@ -96,37 +95,53 @@ const MobileHeroSlider = () => {
     if (!slider) return;
 
     const handleScroll = () => {
+      if (isTransitioning) return;
+
       const width = slider.clientWidth;
       const index = Math.round(slider.scrollLeft / width);
 
       if (index === 0) {
-        // Jump to last real slide
-        slider.scrollTo({ left: width * slides.length, behavior: "instant" as any });
+        setIsTransitioning(true);
+        setTimeout(() => {
+          slider.scrollTo({ left: width * slides.length });
+          setIsTransitioning(false);
+        }, 50);
         setActiveIndex(slides.length - 1);
       } else if (index === slides.length + 1) {
-        // Jump to first real slide
-        slider.scrollTo({ left: width, behavior: "instant" as any });
+        setIsTransitioning(true);
+        setTimeout(() => {
+          slider.scrollTo({ left: width });
+          setIsTransitioning(false);
+        }, 50);
         setActiveIndex(0);
       } else {
-        setActiveIndex(index - 1); // adjust for the cloned slide at start
+        setActiveIndex(index - 1);
       }
     };
 
     slider.addEventListener("scroll", handleScroll, { passive: true });
     return () => slider.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isTransitioning]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      scrollToSlide((activeIndex + 1) % slides.length);
+    }, 9000);
+    return () => clearInterval(interval);
+  }, [activeIndex]);
 
   const scrollToSlide = (index: number) => {
     const slider = sliderRef.current;
     if (!slider) return;
     slider.scrollTo({
-      left: (index + 1) * slider.clientWidth, // +1 offset for cloned first
+      left: (index + 1) * slider.clientWidth,
       behavior: "smooth",
     });
+    setActiveIndex(index);
   };
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative h-screen w-full overflow-hidden">
       <div
         ref={sliderRef}
         className="h-full w-full overflow-x-scroll flex snap-x snap-mandatory scroll-smooth"
@@ -162,7 +177,6 @@ const MobileHeroSlider = () => {
         ))}
       </div>
 
-      {/* Pagination Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
         {slides.map((_, i) => (
           <button
