@@ -39,12 +39,12 @@ const clients: Client[] = [
     name: "Tullow Oil",
     link: "https://www.tullowoil.com/",
   },
-//   {
-//     src: "https://solarshopghana.com/wp-content/uploads/2021/09/solarshop-ghana-logo.png",
-//     alt: "Solarshop Ghana",
-//     name: "Solarshop Ghana",
-//     link: "",
-//   },
+   {
+     src: "https://psglghana.com/wp-content/uploads/2023/04/logo-250x80.png",
+     alt: "Sankofa Gold Limited",
+     name: "Sankofa Gold Limited",
+     link: "https://psglghana.com/",
+   },
 ];
 
 const Clients = () => {
