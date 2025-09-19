@@ -1,0 +1,237 @@
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion(Link);
+
+const slides = [
+  {
+    image: "/images/my/home/desktop/hero1.jpg",
+    title: ["Lymfz Engineering Limited(EPCM)", "Reliable Electrical Solutions"],
+    buttonText: "About Us",
+    buttonLink: "/about",
+  },
+  {
+    image: "/images/my/home/desktop/hero10.jpg",
+    title: [
+      "Electrical Infrastructure",
+      "Feasibility Studies, Engineering, Procurement, Construction & Consultancy",
+    ],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/hero4.jpg",
+    title: [
+      "High, Medium Voltage Transmission and",
+      "LV (Low Voltage) Distribution Network Substation Design & Installation",
+    ],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/hero5.jpg",
+    title: ["Power System ", "Modelling & Studies"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/whyChooseUs.jpg",
+    title: ["Power System ", "Protection Services"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/scada.jpg",
+    title: ["Electrical Instrumentation", "SCADA & Automation"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/heromep.jpg",
+    title: ["Mechanical, Electrical", " & Plumbing (MEP)"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/homeSolar.jpg",
+    title: ["Renewable &", "Sustainable Solutions"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/hero8a.jpg",
+    title: ["Networking &", "Security Systems", "including Electric Fencing"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/heroo9.jpg",
+    title: ["Electrical Products", "and Equipment Supplies"],
+    buttonText: "Our Services",
+    buttonLink: "/services",
+  },
+  {
+    image: "/images/my/home/desktop/heroC.jpg",
+    title: ["Get in Touch with Us", "Consultation, Support & Enquiries"],
+    buttonText: "Contact Us",
+    buttonLink: "/contact",
+  },
+];
+
+// --- Framer Motion Variants ---
+const sliderVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? "100%" : "-100%",
+    opacity: 0,
+  }),
+  center: { zIndex: 1, x: 0, opacity: 1 },
+  exit: (direction: number) => ({
+    zIndex: 0,
+    x: direction < 0 ? "100%" : "-100%",
+    opacity: 0,
+  }),
+};
+
+const textContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.5 },
+  },
+};
+
+const textItemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+};
+
+// --- Swipe Helper ---
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) =>
+  Math.abs(offset) * velocity;
+
+const DesktopHeroSlider = () => {
+  const [[page, direction], setPage] = useState([0, 0]);
+
+  const paginate = (newDirection: number) => {
+    setPage([
+      (page + newDirection + slides.length) % slides.length,
+      newDirection,
+    ]);
+  };
+
+  // Auto-paginate every 9s
+  useEffect(() => {
+    const interval = setInterval(() => paginate(1), 9000);
+    return () => clearInterval(interval);
+  }, [page]);
+
+  const slideIndex = page;
+
+  return (
+    <div className="relative h-screen min-h-[700px] w-full overflow-hidden bg-gray-800">
+      {/* Background Image Transition */}
+      <AnimatePresence initial={false} custom={direction || 0}>
+        <motion.div
+          key={page}
+          className="absolute h-full w-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${slides[slideIndex]?.image || ""})`,
+          }}
+          custom={direction || 0}
+          variants={sliderVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.5 },
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={(_e, { offset, velocity }) => {
+            const swipe = swipePower(offset.x, velocity.x);
+            if (swipe < -swipeConfidenceThreshold) {
+              paginate(1);
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1);
+            }
+          }}
+        >
+          <div className="absolute inset-0 bg-black/30" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Slide Content */}
+      <div className="relative z-10 flex flex-col justify-center h-full container mx-auto px-6 text-white">
+        <motion.div
+          key={slideIndex}
+          variants={textContainerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-lg md:max-w-3xl relative left-10"
+        >
+          {slides[slideIndex].title.map((line, i) => (
+            <motion.h1
+              key={i}
+              variants={textItemVariants}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold font-sans w-[70%] md:w-full leading-tight tracking-tight"
+            >
+              {line}
+            </motion.h1>
+          ))}
+          {slides[slideIndex].buttonText && (
+            <MotionLink
+              to={slides[slideIndex].buttonLink}
+              variants={textItemVariants}
+              className="inline-block mt-8 bg-blue-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+            >
+              {slides[slideIndex].buttonText}
+            </MotionLink>
+          )}
+        </motion.div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
+        <button
+          onClick={() => paginate(-1)}
+          className="w-12 h-12 bg-white/20 cursor-pointer backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          aria-label="Previous Slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+      </div>
+      <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
+        <button
+          onClick={() => paginate(1)}
+          className="w-12 h-12 bg-white/20 cursor-pointer backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-colors"
+          aria-label="Next Slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Pagination Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setPage([i, i > slideIndex ? 1 : -1])}
+            className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
+              i === slideIndex
+                ? "bg-white"
+                : "bg-white/50 hover:bg-white/75"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default DesktopHeroSlider;
