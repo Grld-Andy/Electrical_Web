@@ -80,7 +80,6 @@ const MobileHeroSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Track scroll position → update active index
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -94,7 +93,6 @@ const MobileHeroSlider = () => {
     return () => slider.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Jump to slide when clicking a dot
   const scrollToSlide = (index: number) => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -106,7 +104,6 @@ const MobileHeroSlider = () => {
 
   return (
     <div className="relative h-screen w-full">
-      {/* Slides */}
       <div
         ref={sliderRef}
         className="h-full w-full overflow-x-scroll flex snap-x snap-mandatory scroll-smooth"
@@ -142,7 +139,6 @@ const MobileHeroSlider = () => {
         ))}
       </div>
 
-      {/* Pagination dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
         {slides.map((_, i) => (
           <button

@@ -80,7 +80,6 @@ const slides = [
   },
 ];
 
-// --- Framer Motion Variants ---
 const sliderVariants = {
   enter: (direction: number) => ({
     x: direction > 0 ? "100%" : "-100%",
@@ -107,7 +106,6 @@ const textItemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
 };
 
-// --- Swipe Helper ---
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) =>
   Math.abs(offset) * velocity;
@@ -122,7 +120,6 @@ const DesktopHeroSlider = () => {
     ]);
   };
 
-  // Auto-paginate every 9s
   useEffect(() => {
     const interval = setInterval(() => paginate(1), 9000);
     return () => clearInterval(interval);
@@ -132,7 +129,6 @@ const DesktopHeroSlider = () => {
 
   return (
     <div className="relative h-screen min-h-[700px] w-full overflow-hidden bg-gray-800">
-      {/* Background Image Transition */}
       <AnimatePresence initial={false} custom={direction || 0}>
         <motion.div
           key={page}
@@ -165,7 +161,6 @@ const DesktopHeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Slide Content */}
       <div className="relative z-10 flex flex-col justify-center h-full container mx-auto px-6 text-white">
         <motion.div
           key={slideIndex}
@@ -195,7 +190,6 @@ const DesktopHeroSlider = () => {
         </motion.div>
       </div>
 
-      {/* Navigation Arrows */}
       <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
         <button
           onClick={() => paginate(-1)}
@@ -215,7 +209,6 @@ const DesktopHeroSlider = () => {
         </button>
       </div>
 
-      {/* Pagination Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
         {slides.map((_, i) => (
           <button
