@@ -288,7 +288,7 @@ const ProductsAndServicesPage = () => {
                         <img
                           src={item.imgSrc}
                           alt={item.title}
-                          className={`w-full h-full ${item.title == "Protection 2" ? "" : "object-cover"} object-bottom group-hover:scale-105 transition-transform duration-300`}
+                          className={`w-full h-full ${item.title == "Protection 2" ? "" : "object-cover"} group-hover:scale-105 transition-transform duration-300`}
                         />
                       </div>
                     )}
