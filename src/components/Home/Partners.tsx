@@ -89,7 +89,7 @@ const Partners: React.FC = () => {
                 </div>
 
                 <motion.div 
-                    className="flex gap-6 flex-wrap justify-center"
+                    className="md:flex md:gap-6 md:flex-wrap grid grid-cols-2 justify-center gap-3"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
