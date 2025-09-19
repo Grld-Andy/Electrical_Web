@@ -33,17 +33,14 @@ const WhyChooseUs = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: i * 0.1 }}
                         >
-                            {/* Background Image */}
                             <img
                                 src={item.image}
                                 alt={item.title}
-                                className="absolute inset-0 w-full h-full object-cover"
+                                className="absolute inset-0 w-full h-full"
                             />
 
-                            {/* Overlay for readability */}
                             <div className="absolute inset-0 bg-black/70"></div>
 
-                            {/* Text Content */}
                             <div className="relative p-6 text-white">
                                 <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
                                 <p className="text-gray-200 text-md leading-relaxed opacity-100">
@@ -54,7 +51,6 @@ const WhyChooseUs = () => {
                     ))}
                 </div>
 
-                {/* Additional Info Section */}
                 <Clients/>
             </div>
         </div>
