@@ -61,7 +61,7 @@ const Clients = () => {
         </p>
 
         {/* Client Logos in Cards */}
-        <div className="flex flex-wrap justify-center align-center gap-6">
+        <div className="md:flex md:flex-wrap grid grid-cols-2 justify-center align-center gap-4 md:gap-6 mx-[-20px] md:mx-0">
           {clients.map((client, idx) => (
             <motion.a
               key={idx}
@@ -69,7 +69,7 @@ const Clients = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
-              className="bg-white w-[150px] rounded-lg shadow-md p-4 flex flex-col items-center justify-center hover:shadow-lg transition"
+              className="bg-white w-full md:w-[150px] rounded-lg shadow-md p-4 flex flex-col items-center justify-center hover:shadow-lg transition"
             >
               <img
                 src={client.src}
