@@ -132,8 +132,11 @@ const MobileHeroSlider = () => {
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <div
-              className="relative w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
+              className={`
+                ${slide.title[0] == "Electrical Instrumentation" ? "bg-no-repeat bg-[length:100%_100%]" : "bg-cover bg-center"}
+                relative w-full h-full bg-center
+              `}
+              style={{ backgroundImage: `url(${slide.image})`}}
             >
               <div className="absolute inset-0 bg-black/40" />
               <div className="relative z-10 flex flex-col justify-center h-full container mx-auto px-6 text-white">
