@@ -38,3 +38,11 @@
 .animate-pulse {
   animation: pulse 2s infinite;
 }
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
