@@ -98,6 +98,26 @@ const MobileHeroSlider = () => {
 
   return (
     <div className="relative h-screen w-full">
+      {/* ✅ Custom styles for pagination bullets */}
+      <style>{`
+        .swiper-pagination {
+          bottom: 20px !important; /* move dots up from the bottom */
+        }
+        .swiper-pagination-bullet {
+          width: 14px;
+          height: 14px;
+          background: rgba(255,255,255,0.6);
+          opacity: 1;
+          margin: 0 6px !important;
+          transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+          background: #2563eb; /* Tailwind blue-600 */
+          width: 20px;
+          height: 20px;
+        }
+      `}</style>
+
       <Swiper
         modules={[Autoplay, Pagination]}
         spaceBetween={0}
