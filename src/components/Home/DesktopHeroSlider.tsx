@@ -132,8 +132,9 @@ const DesktopHeroSlider = () => {
       <AnimatePresence initial={false} custom={direction || 0}>
         <motion.div
           key={page}
-          className="absolute h-full w-full bg-cover bg-center"
+          className="absolute h-full w-full bg-no-repeat bg-center"
           style={{
+            backgroundSize: "100% 100%",
             backgroundImage: `url(${slides[slideIndex]?.image || ""})`,
           }}
           custom={direction || 0}
