@@ -289,7 +289,13 @@ const ProductsAndServicesPage = () => {
                           src={item.imgSrc}
                           alt={item.title}
                           className={`w-full h-full
-                            ${(item.title == "Protection 2" || item.title == "Protection 7") ? "" : "object-cover"}
+                            ${(
+                              item.title == "Protection 2" ||
+                              item.title == "Protection 2" ||
+                              item.title == "Protection 10" ||
+                              item.title == "Protection 11" ||
+                              item.title == "Protection 12" ||
+                              item.title == "Protection 7") ? "" : "object-cover"}
                             group-hover:scale-105 transition-transform duration-300`}
                         />
                       </div>
