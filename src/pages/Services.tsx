@@ -290,6 +290,12 @@ const ProductsAndServicesPage = () => {
                           alt={item.title}
                           className={`w-full h-full
                             ${(
+                              item.title == "Solar 1" ||
+                              item.title == "Solar 2" ||
+                              item.title == "Solar 6" ||
+                              item.title == "Solar 5" ||
+                              item.title == "Cable 5" ||
+                              item.title == "Cable 7" ||
                               item.title == "Protection 2" ||
                               item.title == "Protection 2" ||
                               item.title == "Protection 10" ||
