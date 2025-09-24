@@ -29,6 +29,12 @@ const leadershipTeam : Array<LeadershipTeamInterface> = [
     imageUrl: '/images/my/brafii.jpg',
     email: 'Bra.Fii@lymfz.com',
   },
+  {
+    name: 'Obed Nkrumah',
+    title: 'Web & IT Support Specialist',
+    imageUrl: '/images/my/obed.jpg',
+    email: 'obednkrumah41@gmail.com',
+  },
 ];
 
 // Animation variants
